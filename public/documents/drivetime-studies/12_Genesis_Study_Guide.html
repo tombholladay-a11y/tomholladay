@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GENESIS: A Small Group Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-color: #1a365d; /* Dark Blue Theme */
+        --gray-text: #7f8c8d;
+        --dark-text: #2c3e50;
+        --light-gray: #f5f5f5;
+    }
+    
+    body {
+        font-family: 'Lato', sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+
+    .page {
+        background-color: white;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto 20px auto;
+        padding: 0.85in 1in 1.4in 1in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    /* Print settings */
+    @page { margin: 0; size: letter; }
+    @media print {
+        body { 
+            background-color: white; 
+            margin: 0;
+            padding: 0;
+        }
+        .page { 
+            width: 8.5in;
+            height: 11in;
+            margin: 0; 
+            box-shadow: none; 
+            border: none;
+            padding: 0.65in 0.75in 1.1in 0.75in;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: var(--primary-color);
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    /* Cover Page */
+    .cover-page {
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2in 1in;
+    }
+    
+    .cover-page h2 {
+        color: white;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    
+    .cover-page h1 {
+        color: white;
+        font-size: 4.5em;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        border-bottom: 6px solid #f39c12; /* Matches the orange "time" in the logo */
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .cover-page .author {
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .cover-logo-container {
+        position: absolute;
+        bottom: 1.5in;
+        right: 1.5in;
+        text-align: right;
+    }
+    
+    .cover-logo-container img {
+        width: 200px;
+    }
+
+    /* Headers for regular pages */
+    .page-header {
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    /* Sections with Icons */
+    .section-header {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .section-icon {
+        width: 50px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    
+    .section-content {
+        flex: 1;
+    }
+    
+    .section-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    /* Listen Page Layout */
+    .listen-page .listen-title {
+        color: var(--primary-color);
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    .listen-notes {
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+
+    /* Lists and Typography */
+    ol.questions {
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ol.questions li {
+        margin-bottom: 14px;
+        font-size: 1.1em;
+        color: var(--dark-text);
+    }
+    
+    ul.checkin {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ul.checkin li { 
+        margin-bottom: 12px; 
+        font-size: 1.1em;
+    }
+
+    .key-verse {
+        font-style: italic;
+        font-size: 1.15em;
+        margin-left: 70px;
+        color: var(--dark-text);
+    }
+    
+    .verse-ref {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 8px;
+        font-size: 1.1em;
+    }
+    
+    p.section-text {
+        font-size: 1.2em;
+        margin-left: 70px;
+    }
+
+    /* Intro pages */
+    .intro-title {
+        font-size: 2.5em;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+    
+    .intro-text {
+        font-size: 1.3em;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .page-number {
+        position: absolute;
+        bottom: 0.5in;
+        width: 100%;
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 0.9em;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="page cover-page">
+    <h2>A SMALL GROUP STUDY</h2>
+    <div>
+        <!-- ✏️ REPLACE: Book name (all caps) -->
+        <h1>GENESIS</h1>
+    </div>
+    <!-- ✏️ REPLACE: Author name -->
+    <div class="author">Tom Holladay</div>
+    
+    <div class="cover-logo-container">
+        <!-- ✏️ REPLACE: Cover image (or keep Cover.png if it's your standard logo) -->
+        <img src="Cover.png" alt="Cover Image" style="max-width: 300px;">
+    </div>
+</div>
+
+<!-- ============================================================
+     COPYRIGHT PAGE
+     ============================================================ -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="margin-top: 3in;">
+        <!-- ✏️ REPLACE: Book name -->
+        <h3 style="font-size: 1.2em; color: var(--primary-color); margin-bottom: 30px;">GENESIS: A SMALL GROUP STUDY</h3>
+        <!-- ✏️ REPLACE: Copyright year and author -->
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Copyright © 2026 Tom Holladay</p>
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 40px;">All rights reserved. No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form, without the written permission of the author.</p>
+        
+        <hr style="border: 0; border-bottom: 1px solid #ccc; margin: 40px 0;">
+        
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Unless otherwise noted, all Scripture quotations are taken from THE HOLY BIBLE, NEW INTERNATIONAL VERSION, NIV®. Copyright © 1973, 1978, 1984, 2011, by Biblica, Inc. Used by permission. All rights reserved worldwide.</p>
+    </div>
+</div>
+
+<!-- ============================================================
+     ABOUT DRIVETIME DEVOTIONS (Page 3)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">ABOUT DRIVETIME DEVOTIONS<br>SMALL GROUP STUDIES</h2>
+    
+    <!-- ✏️ OPTIONAL: Change "five-week" to match your study length -->
+    <p class="intro-text"><strong style="color: var(--primary-color);">Welcome</strong> to this special Drivetime Devotions, small group study. This 10-week study is designed so that you can enjoy Drivetime Devotions as a podcast throughout the week and then talk about it with your small group. This will allow for more time in your small group for discussion, application, and fellowship.</p>
+    
+    <p class="intro-text">The purpose of Drivetime Devotions is to help you know God's Word and put it into practice. It's usually better to study small sections of God's Word each day instead of a larger section once a week. Studying the Bible is like eating—you'll be healthier if you eat small amounts each day rather than one big meal a week! Episodes are designed to be listened to once per day, five days a week. In the event you miss a day or two, you can still stay on schedule.</p>
+    <div class="page-number">3</div>
+</div>
+
+<div class="page" style="padding-top: 1.5in;">
+    <div class="page-header">ABOUT DRIVETIME DEVOTIONS SMALL GROUP STUDIES</div>
+    
+    <p class="intro-text">In Drivetime Devotions, Pastor Tom Holladay teaches God's Word and helps you put it into practice. With over 30 million downloads, Drivetime Devotions has built a reputation for changing lives and helping people grow closer to God. You can access this podcast study on GENESIS by downloading the DrivetimeDevotions app for your phone or by going to DrivetimeDevotions.com.</p>
+    <div class="page-number">4</div>
+</div>
+
+<!-- ============================================================
+     HOW TO USE (Page 5)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">HOW TO USE THIS INTERACTIVE<br>STUDY GUIDE</h2>
+    
+    <p class="intro-text">This study guide is designed to be used as a downloaded file on your tablet or phone. You do not need to print it out unless you want to.</p>
+    <div class="page-number">5</div>
+</div>
+
+<!-- ============================================================
+     A FEW TIPS (Page 6)
+     ============================================================ -->
+<div class="page" style="padding-top: 2.5in;">
+    <h2 class="intro-title">A FEW TIPS BEFORE YOU DIG IN</h2>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Prepare yourself before each study by listening to each week's five daily podcast episodes (one per day).</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Open each meeting with a time for everyone to check in on each other's progress with the podcast. Accountability is a key to success in this study!</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Each week you will find a key verse (or verses) from the chapter you are studying. You may want to memorize this verse together as a group.</p>
+        </div>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<div class="page">
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">These are questions for group discussion. Please don't feel pressured to discuss every single question. The material in this study is meant to be your servant, not your master. Therefore there is no reason to rush through your discussions. Give everyone ample time to share their thoughts.</p>
+            <p style="font-size: 1.2em;">Some questions will reference the verses from which they are taken. Many groups will want to have someone read those verses accompanying the question. There is something powerful about hearing the Bible read aloud together as a group.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">This section helps you encourage each other in balancing God's five purposes of evangelism, discipleship, fellowship, ministry, and worship. Each week, there will be a prayer, practical action, or personal assignment that focuses on one of these purposes.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">At the end of each session you will find suggestions for your group prayer time. Praying together is one of the greatest privileges of small group life. Please don't take it for granted.</p>
+            <p style="font-size: 1.2em;">Get ready for God to do incredible things in your life as you begin the adventure of learning more deeply about the most exciting message in the world: the truth about God!</p>
+        </div>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<div class="page">
+    <div class="page-header">A FEW TIPS BEFORE YOU DIG IN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">As you go through each session, the Holy Spirit may bring to mind different people in your life. You may even want to write their names down beside a point, phrase, or verse in the margins. Take the opportunity to share God's Word in a friend's life during the week.</p>
+        </div>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+
+<!-- ============================================================
+     ╔══════════════════════════════════════════════════════════╗
+     ║  WEEKLY CONTENT STARTS HERE                             ║
+     ║  Copy the 4-page block below for each week of study.    ║
+     ║  Each week = 4 pages (to fit 6 discovery questions):    ║
+     ║    Page A: Listen page                                  ║
+     ║    Page B: Checking In + Key Verse + Questions 1-4      ║
+     ║    Page C: Questions 5-6 + Purpose + Prayer             ║
+     ║    Page D: Tell a Friend                                ║
+     ╚══════════════════════════════════════════════════════════╝
+     ============================================================ -->
+
+
+<!-- ============================================================
+     WEEK ONE
+     ======<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK ONE: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 1-5</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">9</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you see God's "process" or timing working in your life this past week?</li>
+        <li>When you look at the natural world, what is the one thing that brings you the most awe or wonder?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "So God created mankind in his own image, in the image of God he created them; male and female he created them."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 1:27 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you consider God's absolute, supernatural power, how does it change the way you view "impossible" situations in your life, and how can we encourage each other to trust Him more fully? <i>Genesis 1:3</i></li>
+        <li>How can we practice finding joy in God's creation today, and how can we remind each other to appreciate the goodness around us rather than waiting for a future hope? <i>Genesis 1:31</i></li>
+    </ol>
+    <div class="page-number">10</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>When your daily life feels chaotic, how does the promise of God's orderly design give you peace, and how can we support one another in trusting His plan? <i>Genesis 1</i></li>
+        <li>What does it mean practically for you to reflect the image and character of God in your workplace or neighborhood this week, and how can we hold each other accountable to live this out? <i>Genesis 1:26-27</i></li>
+        <li>How does our God-given responsibility to care for His creation shape your daily values, and in what practical ways can we challenge each other to treat people and the world around us with more care? <i>Genesis 1:28</i></li>
+        <li>How does the promise of God's presence and patience encourage you in your own family struggles, and how can we support each other when our family situations feel messy? <i>Genesis 2-5</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">We were created to know and love God. This week, take a few minutes each morning to step outside, look at creation, and thank God for His power and His presence in your life.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God for the wonder of His creation and the incredible privilege that you are made in His image. Pray that your group would trust God's supernatural power and His perfect, orderly plan for your lives.</p>
+        </div>
+    </div>
+    <div class="page-number">11</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWO: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 6-10</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">13</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did it go this past week trying to intentionally reflect God's image in a difficult relationship?</li>
+        <li>Have you ever had to wait a long time for a difficult season to end (like Noah on the ark)? How did you handle the waiting?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "I establish my covenant with you: Never again will all life be cut off by the waters of a flood; never again will there be a flood to destroy the earth."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 9:11 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Why is the "waiting" part of our trials often harder than the crisis itself, and how can we encourage each other to find hope in God's promise to remember us during those long seasons? <i>Genesis 8:1-5</i></li>
+        <li>When a crisis in your life finally ends, is your first instinct to move on or to stop and worship, and how can we hold each other accountable to live with a posture of gratitude? <i>Genesis 8:15-21</i></li>
+    </ol>
+    <div class="page-number">14</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>What are some of the "signs" or reminders of God's promises that you look to when you need reassurance, and how can we help point one another to those promises in difficult times? <i>Genesis 9:8-16</i></li>
+        <li>How does recognizing our ongoing capacity to sin even after spiritual victories keep us dependent on God's grace, and how can we support each other when we stumble? <i>Genesis 9:20-23</i></li>
+        <li>How do we balance taking our own sin seriously while still resting completely in the grace and mercy of God, and how can we encourage one another to live in that tension? <i>Genesis 6-8</i></li>
+        <li>If you were to look at the legacy you are leaving behind today, what do you hope your children or spiritual children will inherit from you, and how can we challenge each other to live intentionally for that legacy? <i>Genesis 10</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Noah built the ark as a testimony to his generation. This week, share with someone outside of your church family one specific way God has been faithful to you recently.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God for His covenant of grace and the new beginnings He offers us. Pray for the patience to trust Him when you feel "stuck" in a waiting season.</p>
+        </div>
+    </div>
+    <div class="page-number">15</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">16</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK THREE: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 11-15</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">17</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>What specific promise of God did you thank Him for this past week?</li>
+        <li>When you have to leave your "comfort zone," what is usually your biggest fear?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Abram believed the LORD, and he credited it to him as righteousness."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 15:6 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When has God asked you to step out into the unknown, what made it difficult to trust Him, and how can we encourage one another to take bold steps of faith? <i>Genesis 12:1-4</i></li>
+        <li>How does knowing that God's blessings in your life are meant to be shared change the way you view your time, talents, and resources, and how can we inspire each other to be more generous? <i>Genesis 12:2-3</i></li>
+    </ol>
+    <div class="page-number">18</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>How does trusting in God's provision free us to be generous in our relationships, and how can we support each other in putting relationships above personal gain? <i>Genesis 13:5-12</i></li>
+        <li>When you are waiting on God's promises, how tempted are you to "settle for less" and try to fix the problem yourself, and how can we help each other wait patiently for God's timing? <i>Genesis 15:1-3</i></li>
+        <li>What practical things can you do to remind yourself of God's promises when your faith is wavering, and how can we point each other to those reminders? <i>Genesis 15:4-5</i></li>
+        <li>What is the difference between simply believing that God exists and truly trusting Him with your future, and how can we encourage each other to live with active trust today? <i>Genesis 15:6</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Abraham grew in his faith by stepping out into the unknown. This week, identify one area of your life where you need to trust God more, and share it with a trusted Christian friend.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to increase your faith to trust Him even when you can't see the outcome. Pray for the courage to be a generous blessing to those around you this week.</p>
+        </div>
+    </div>
+    <div class="page-number">19</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">20</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FOUR: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 16-20</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">21</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Who were you able to bless unexpectedly this past week?</li>
+        <li>Have you ever tried to "help God out" with a problem, only to make things much worse?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Is anything too hard for the LORD? I will return to you at the appointed time next year, and Sarah will have a son."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 18:14 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Why is it so hard to wait for God's timing, what are the dangers of taking matters into our own hands, and how can we support each other when we feel tired of waiting? <i>Genesis 16:1-6</i></li>
+        <li>When you look at the seemingly impossible situations in your life, do you ever find yourself doubting that God can fix them, and how can we remind each other of His power? <i>Genesis 18:10-15</i></li>
+    </ol>
+    <div class="page-number">22</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>How would your daily life change if you truly lived as if nothing were too hard for God, and how can we hold each other accountable to live with that kind of faith? <i>Genesis 18:14</i></li>
+        <li>How does the example of bold intercession challenge the way you pray for your city, nation, or loved ones who are far from God, and how can we join together in prayer for them? <i>Genesis 18:16-33</i></li>
+        <li>What are the things in our culture or past that you are sometimes tempted to look back at with longing, and how can we encourage each other to keep moving forward? <i>Genesis 19:26</i></li>
+        <li>How does it encourage you to know that God can still protect and use us even when we repeat old sins out of fear, and how can we help each other overcome our recurring struggles? <i>Genesis 20:1-17</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Abraham and Lot's conflict reminds us of the importance of maintaining unity. This week, intentionally reach out to someone in your small group just to encourage them or see how they are doing.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God that His promises do not depend on our perfection, but on His faithfulness. Pray for the strength to stop looking back at old habits and to move forward in His grace.</p>
+        </div>
+    </div>
+    <div class="page-number">23</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">24</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FIVE: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 21-25</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">25</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>What area of your life did you consciously surrender to God's timing this past week?</li>
+        <li>When you have a big decision to make, how do you typically go about finding the right path?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Abraham named the place Yahweh-Yireh (which means 'the LORD will provide'). To this day, people still use that name as a proverb: 'On the mountain of the LORD it will be provided.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 22:14 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you have waited a long time for a prayer to be answered, how does it feel when the breakthrough finally comes, and how can we celebrate those answered prayers together? <i>Genesis 21:1-7</i></li>
+        <li>Why does God sometimes ask us to surrender the things we love the most, and how can we encourage each other to trust Him fully when tested? <i>Genesis 22:1-12</i></li>
+    </ol>
+    <div class="page-number">26</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>How does the picture of God providing a substitute encourage you personally when you think about Jesus on the cross, and how can we remind each other of this ultimate provision? <i>Genesis 22:13-14</i></li>
+        <li>How does valuing a servant's heart change the way we evaluate our own relationships and leadership, and how can we challenge each other to cultivate that kind of heart? <i>Genesis 24:12-21</i></li>
+        <li>Why is it so easy to forget to thank God once our problems are solved, and how can we cultivate a habit of immediate praise together? <i>Genesis 24:26-27</i></li>
+        <li>In what ways are we tempted to trade the long-term promises of God for short-term comfort or pleasure, and how can we help each other value what truly matters? <i>Genesis 25:29-34</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Abraham pleaded with God on behalf of Sodom. This week, find a specific way to serve someone in need, whether through a physical act of service or by dedicating time to intercede for them in prayer.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God for being Yahweh-Yireh, the God who provides. Pray for the faith to surrender your most precious dreams back to Him.</p>
+        </div>
+    </div>
+    <div class="page-number">27</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">28</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SIX: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 26-30</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">29</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did it change your perspective to declare "The Lord will provide" when you felt anxious this week?</li>
+        <li>When you find yourself in a conflict, do you tend to face it head-on or run away?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "I am with you and will watch over you wherever you go, and I will bring you back to this land. I will not leave you until I have done what I have promised you."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 28:15 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When are we tempted to take the easy way out instead of staying where God has planted us, and how can we encourage each other to remain faithful in difficult seasons? <i>Genesis 26:1-6</i></li>
+        <li>Have you ever felt the pain of a broken family relationship caused by deceit or favoritism, and how can we support each other in seeking God's healing for those wounds? <i>Genesis 27</i></li>
+    </ol>
+    <div class="page-number">30</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Why does God often reveal Himself to us most clearly when we are tired or at rock bottom, and how can we remind each other of His presence during those times? <i>Genesis 28:10-15</i></li>
+        <li>How can we become more aware of God's presence in the ordinary or difficult places of our daily lives, and how can we point each other to Him in the mundane? <i>Genesis 28:16</i></li>
+        <li>How does God sometimes use the frustrating actions of others to mature our own character, and how can we encourage each other to grow through these challenges? <i>Genesis 29</i></li>
+        <li>How does choosing praise change our attitude when we feel unloved or overlooked, and how can we help each other choose gratitude over our painful circumstances? <i>Genesis 29:35</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Isaac willingly submitted to his father, reflecting an attitude of worship and surrender. This week, identify one area of your life you have been holding back from God and surrender it to Him in prayer.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God that He is with you even in your lowest moments. Pray for the strength to stop scheming and start trusting Him with your relationships and future.</p>
+        </div>
+    </div>
+    <div class="page-number">31</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">32</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SEVEN: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 31-35</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">33</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Did you practice acknowledging God's presence during the day this past week? How did it affect your mood?</li>
+        <li>Have you ever had to reconcile with someone you hadn't spoken to in a very long time?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Then the man said, 'Your name will no longer be Jacob, but Israel, because you have struggled with God and with humans and have overcome.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 32:28 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Why is it sometimes terrifying to obey God when He calls us to face our unresolved past, and how can we support each other in taking those frightening steps? <i>Genesis 31:3-13</i></li>
+        <li>What can we learn from desperate, honest prayers based on God's promises, and how can we encourage one another to approach God when we feel overwhelmed by fear? <i>Genesis 32:9-12</i></li>
+    </ol>
+    <div class="page-number">34</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>What does intense and persistent prayer look like during our darkest nights, and how can we hold each other up when we are struggling to keep praying? <i>Genesis 32:24-26</i></li>
+        <li>How does God transform our identity when we stop running and finally surrender our struggles to Him, and how can we encourage each other to live out of that new identity? <i>Genesis 32:27-28</i></li>
+        <li>How do our past spiritual struggles serve as reminders of our dependence on God's grace, and how can we help each other view our weaknesses as reasons to trust Him more? <i>Genesis 32:31</i></li>
+        <li>What are the distractions in your life that you might need to bury in order to fully worship God, and how can we hold each other accountable to get rid of them? <i>Genesis 35:1-4</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">God's blessings on Isaac were obvious even to his enemies (Abimelek). This week, look for an opportunity to respond to conflict or difficulty at work or home in a way that points others to Christ.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to transform your identity from someone who relies on their own strength to someone who relies completely on Him. Pray for the courage to bury any "foreign gods" that are distracting you from wholehearted worship.</p>
+        </div>
+    </div>
+    <div class="page-number">35</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">36</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK EIGHT: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 36-40</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">37</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>What relationship or situation did you take a step toward facing honestly this past week?</li>
+        <li>When you have a big dream or goal, how do you handle the setbacks that get in your way?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "But while Joseph was there in the prison, the LORD was with him; he showed him kindness and granted him favor in the eyes of the prison warden."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 39:20-21 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Why does stepping into God's purpose often invite intense opposition, and how can we encourage each other to hold onto our faith during those early setbacks? <i>Genesis 37</i></li>
+        <li>How does recognizing that God is with you change your attitude toward the difficult, unfair seasons of your life, and how can we remind each other of His presence? <i>Genesis 39:2-23</i></li>
+    </ol>
+    <div class="page-number">38</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>What practical boundaries do you need to set to resist temptation when you are vulnerable or waiting, and how can we hold each other accountable to maintain those boundaries? <i>Genesis 39:7-12</i></li>
+        <li>When your own life feels like it's falling apart, how can choosing to serve someone else help you survive the setback, and how can we encourage each other to look outward? <i>Genesis 40:6-8</i></li>
+        <li>How do you deal with the disappointment of broken promises from people you trusted, and how can we support each other when we feel forgotten or let down? <i>Genesis 40:23</i></li>
+        <li>What is one specific way you can stay faithful to God's calling even when you are currently in a difficult "waiting room" season, and how can we help each other plant seeds right where we are? <i>Genesis 40</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Joseph learned to succeed in Egypt while waiting for his dream. This week, choose one task or responsibility you dislike doing and ask God to help you grow in discipline by doing it with excellence and faithfulness.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God that He is always with you, in both the palace and the prison. Pray for the tenacity to keep hoping and serving even when the people around you let you down.</p>
+        </div>
+    </div>
+    <div class="page-number">39</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">40</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK NINE: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 41-45</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">41</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK NINE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did it go doing a difficult or disliked task with excellence this past week?</li>
+        <li>Has there been a time when a major disappointment in your life unexpectedly turned out to be a blessing?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "And now, do not be distressed and do not be angry with yourselves for selling me here, because it was to save lives that God sent me ahead of you."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 45:5 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you reflect on seasons of waiting, how does it encourage you to know that God's timing is perfect, and how can we help each other trust that He is never late? <i>Genesis 41</i></li>
+        <li>Why is it sometimes necessary to set boundaries and look for changed character in those who have deeply hurt us before fully restoring the relationship, and how can we support each other in doing this wisely? <i>Genesis 42-44</i></li>
+    </ol>
+    <div class="page-number">42</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>What does genuine repentance and taking responsibility look like in our own lives, and how can we encourage one another when we need to make amends? <i>Genesis 44:18-34</i></li>
+        <li>Why is expressing our deep emotions an essential part of the forgiveness and healing process, and how can we create a safe space for each other to be vulnerable? <i>Genesis 45:1-3</i></li>
+        <li>How does looking at your past pain from God's sovereign perspective empower you to truly forgive those who caused it, and how can we help each other find purpose in our painful pasts? <i>Genesis 45:4-8</i></li>
+        <li>When God is bringing restoration to your family or group, what old habits or arguments do you need to intentionally avoid, and how can we hold each other accountable to pursue peace? <i>Genesis 45:24</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Joseph forgave the unforgivable and restored his broken family. This week, write down the name of someone who has hurt you and consciously pray for their well-being every day, taking a step toward restored fellowship.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Praise God for His amazing ability to bring good out of the worst situations. Ask Him for the grace to view your past hurts through the lens of His sovereign, restorative plan.</p>
+        </div>
+    </div>
+    <div class="page-number">43</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK NINE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">44</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TEN: <span style="color: var(--gray-text); font-weight: 400;">GENESIS Chapters 46-50</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">45</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did praying for someone who hurt you impact your own heart this past week?</li>
+        <li>When you think about the end of your life, what kind of legacy do you most want to leave behind?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "You intended to harm me, but God intended it for good to accomplish what is now being done, the saving of many lives."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Genesis 50:20 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>How does it encourage you to know that God has uniquely shaped you for a specific purpose despite your flaws and messy past, and how can we affirm those God-given purposes in each other? <i>Genesis 49</i></li>
+        <li>Why is it so difficult for us to accept true grace, why do we often expect God to hold a grudge against us, and how can we remind each other of His complete forgiveness? <i>Genesis 50:15-17</i></li>
+    </ol>
+    <div class="page-number">46</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GENESIS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Why is releasing our desire for revenge and giving our right to judge over to God so crucial for our own spiritual freedom, and how can we support each other in letting go of bitterness? <i>Genesis 50:18-19</i></li>
+        <li>How can you apply the truth that God can use harmful things for good to a specific trial or painful relationship in your life today, and how can we encourage each other to trust His plan? <i>Genesis 50:20</i></li>
+        <li>How does true forgiveness move beyond just "letting it go" to actively seeking the good of the other person, and how can we challenge each other to show that kind of radical grace? <i>Genesis 50:21</i></li>
+        <li>How does keeping your eyes on the eternal promises of God give you peace as you face the future, and how can we help each other stay focused on our ultimate hope? <i>Genesis 50:24-25</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Joseph used his painful past and his God-given position to save others from starvation. This week, look for a way to use your own past experiences (even the painful ones) to minister to someone going through a similar trial.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God that He is always in control and that He specializes in turning our pain into His purpose. Pray for the faith to confidently trust His promises for your future, leaving a legacy of faith for the next generation.</p>
+        </div>
+    </div>
+    <div class="page-number">47</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">48</div>
+</div>
+
+
+
+
+</body>
+</html>

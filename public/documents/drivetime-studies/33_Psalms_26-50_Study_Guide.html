@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSALMS 26-50: A Small Group Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-color: #1a365d; /* Dark Blue Theme */
+        --gray-text: #7f8c8d;
+        --dark-text: #2c3e50;
+        --light-gray: #f5f5f5;
+    }
+    
+    body {
+        font-family: 'Lato', sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+
+    .page {
+        background-color: white;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto 20px auto;
+        padding: 0.85in 1in 1.4in 1in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    /* Print settings */
+    @page { margin: 0; size: letter; }
+    @media print {
+        body { 
+            background-color: white; 
+            margin: 0;
+            padding: 0;
+        }
+        .page { 
+            width: 8.5in;
+            height: 11in;
+            margin: 0; 
+            box-shadow: none; 
+            border: none;
+            padding: 0.65in 0.75in 1.1in 0.75in;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: var(--primary-color);
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    /* Cover Page */
+    .cover-page {
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2in 1in;
+    }
+    
+    .cover-page h2 {
+        color: white;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    
+    .cover-page h1 {
+        color: white;
+        font-size: 4.5em;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        border-bottom: 6px solid #f39c12; /* Matches the orange "time" in the logo */
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .cover-page .author {
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .cover-logo-container {
+        position: absolute;
+        bottom: 1.5in;
+        right: 1.5in;
+        text-align: right;
+    }
+    
+    .cover-logo-container img {
+        width: 200px;
+    }
+
+    /* Headers for regular pages */
+    .page-header {
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    /* Sections with Icons */
+    .section-header {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .section-icon {
+        width: 50px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    
+    .section-content {
+        flex: 1;
+    }
+    
+    .section-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    /* Listen Page Layout */
+    .listen-page .listen-title {
+        color: var(--primary-color);
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    .listen-notes {
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+
+    /* Lists and Typography */
+    ol.questions {
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ol.questions li {
+        margin-bottom: 14px;
+        font-size: 1.1em;
+        color: var(--dark-text);
+    }
+    
+    ul.checkin {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ul.checkin li { 
+        margin-bottom: 12px; 
+        font-size: 1.1em;
+    }
+
+    .key-verse {
+        font-style: italic;
+        font-size: 1.15em;
+        margin-left: 70px;
+        color: var(--dark-text);
+    }
+    
+    .verse-ref {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 8px;
+        font-size: 1.1em;
+    }
+    
+    p.section-text {
+        font-size: 1.2em;
+        margin-left: 70px;
+    }
+
+    /* Intro pages */
+    .intro-title {
+        font-size: 2.5em;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+    
+    .intro-text {
+        font-size: 1.3em;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .page-number {
+        position: absolute;
+        bottom: 0.5in;
+        width: 100%;
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 0.9em;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="page cover-page">
+    <h2>A SMALL GROUP STUDY</h2>
+    <div>
+        <!-- ✏️ REPLACE: Book name (all caps) -->
+        <h1>PSALMS 26-50</h1>
+    </div>
+    <!-- ✏️ REPLACE: Author name -->
+    <div class="author">Tom Holladay</div>
+    
+    <div class="cover-logo-container">
+        <!-- ✏️ REPLACE: Cover image (or keep Cover.png if it's your standard logo) -->
+        <img src="Cover.png" alt="Cover Image" style="max-width: 300px;">
+    </div>
+</div>
+
+<!-- ============================================================
+     COPYRIGHT PAGE
+     ============================================================ -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="margin-top: 3in;">
+        <!-- ✏️ REPLACE: Book name -->
+        <h3 style="font-size: 1.2em; color: var(--primary-color); margin-bottom: 30px;">PSALMS 26-50: A SMALL GROUP STUDY</h3>
+        <!-- ✏️ REPLACE: Copyright year and author -->
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Copyright © 2024 Tom Holladay</p>
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 40px;">All rights reserved. No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form, without the written permission of the author.</p>
+        
+        <hr style="border: 0; border-bottom: 1px solid #ccc; margin: 40px 0;">
+        
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Unless otherwise noted, all Scripture quotations are taken from THE HOLY BIBLE, NEW INTERNATIONAL VERSION, NIV®. Copyright © 1973, 1978, 1984, 2011, by Biblica, Inc. Used by permission. All rights reserved worldwide.</p>
+    </div>
+</div>
+
+<!-- ============================================================
+     ABOUT DRIVETIME DEVOTIONS (Page 3)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">ABOUT DRIVETIME DEVOTIONS<br>SMALL GROUP STUDIES</h2>
+    
+    <!-- ✏️ OPTIONAL: Change "five-week" to match your study length -->
+    <p class="intro-text"><strong style="color: var(--primary-color);">Welcome</strong> to this special Drivetime Devotions, small group study. This 5-week study is designed so that you can enjoy Drivetime Devotions as a podcast throughout the week and then talk about it with your small group. This will allow for more time in your small group for discussion, application, and fellowship.</p>
+    
+    <p class="intro-text">The purpose of Drivetime Devotions is to help you know God's Word and put it into practice. It's usually better to study small sections of God's Word each day instead of a larger section once a week. Studying the Bible is like eating—you'll be healthier if you eat small amounts each day rather than one big meal a week! Episodes are designed to be listened to once per day, five days a week. In the event you miss a day or two, you can still stay on schedule.</p>
+    <div class="page-number">3</div>
+</div>
+
+<div class="page" style="padding-top: 1.5in;">
+    <div class="page-header">ABOUT DRIVETIME DEVOTIONS SMALL GROUP STUDIES</div>
+    
+    <p class="intro-text">In Drivetime Devotions, Pastor Tom Holladay teaches God's Word and helps you put it into practice. With over 30 million downloads, Drivetime Devotions has built a reputation for changing lives and helping people grow closer to God. You can access this podcast study on PSALMS 26-50 by downloading the DrivetimeDevotions app for your phone or by going to DrivetimeDevotions.com.</p>
+    <div class="page-number">4</div>
+</div>
+
+<!-- ============================================================
+     HOW TO USE (Page 5)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">HOW TO USE THIS INTERACTIVE<br>STUDY GUIDE</h2>
+    
+    <p class="intro-text">This study guide is designed to be used as a downloaded file on your tablet or phone. You do not need to print it out unless you want to.</p>
+    <div class="page-number">5</div>
+</div>
+
+<!-- ============================================================
+     A FEW TIPS (Page 6)
+     ============================================================ -->
+<div class="page" style="padding-top: 2.5in;">
+    <h2 class="intro-title">A FEW TIPS BEFORE YOU DIG IN</h2>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Prepare yourself before each study by listening to each week's five daily podcast episodes (one per day).</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Open each meeting with a time for everyone to check in on each other's progress with the podcast. Accountability is a key to success in this study!</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Each week you will find a key verse (or verses) from the chapter you are studying. You may want to memorize this verse together as a group.</p>
+        </div>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<div class="page">
+    <div class="page-header">PSALMS 26-50: A SMALL GROUP STUDY</div>
+    
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">These are questions for group discussion. Please don't feel pressured to discuss every single question. The material in this study is meant to be your servant, not your master. Therefore there is no reason to rush through your discussions. Give everyone ample time to share their thoughts.</p>
+            <p style="font-size: 1.2em;">Some questions will reference the verses from which they are taken. Many groups will want to have someone read those verses accompanying the question. There is something powerful about hearing the Bible read aloud together as a group.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">This section helps you encourage each other in balancing God's five purposes of evangelism, discipleship, fellowship, ministry, and worship. Each week, there will be a prayer, practical action, or personal assignment that focuses on one of these purposes.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">At the end of each session you will find suggestions for your group prayer time. Praying together is one of the greatest privileges of small group life. Please don't take it for granted.</p>
+            <p style="font-size: 1.2em;">Get ready for God to do incredible things in your life as you begin the adventure of learning more deeply about the most exciting message in the world: the truth about God!</p>
+        </div>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<div class="page">
+    <div class="page-header">A FEW TIPS BEFORE YOU DIG IN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">As you go through each session, the Holy Spirit may bring to mind different people in your life. You may even want to write their names down beside a point, phrase, or verse in the margins. Take the opportunity to share God's Word in a friend's life during the week.</p>
+        </div>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+
+<!-- ============================================================
+     ╔══════════════════════════════════════════════════════════╗
+     ║  WEEKLY CONTENT STARTS HERE                             ║
+     ║  Copy the 4-page block below for each week of study.    ║
+     ║  Each week = 4 pages (to fit 6 discovery questions):    ║
+     ║    Page A: Listen page                                  ║
+     ║    Page B: Checking In + Key Verse + Questions 1-4      ║
+     ║    Page C: Questions 5-6 + Purpose + Prayer             ║
+     ║    Page D: Tell a Friend                                ║
+     ╚══════════════════════════════════════════════════════════╝
+     ============================================================ -->
+
+
+
+
+
+<!-- ============================================================
+     WEEK ONE
+     ============================================================ -->
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK ONE: <span style="color: var(--gray-text); font-weight: 400;">Psalms 26-30</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">9</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>What is your name, and what is one thing you are hoping to get out of this group study?</li>
+        <li>What is one song or type of music that always lifts your mood, and why?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "Ascribe to the LORD the glory due his name; worship the LORD in the splendor of his holiness."
+    </div>
+    <div class="verse-ref">Psalm 29:2</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>Asking God to test our hearts can bring up feelings of being unworthy. How do you handle those feelings, and what practices help you refocus on His love? Psalm 26:2-3</li>
+        <li>Standing on the "level ground" of spiritual balance provides security against falling. What areas of your life make you feel wobbly, and how can this group support you in standing firm? Psalm 26:12</li>
+    </ol>
+    <div class="page-number">10</div>
+</div>
+
+<!-- Page C: Questions 3-8 -->
+<div class="page">
+    <div class="page-header">PSALMS 26-50: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>Inviting God's presence into the dark corners of our lives brings His light to our fears. What is one fear you've been carrying lately, and what does it look like practically for you to seek His face in the midst of it? Psalm 27:1</li>
+        <li>We live in a world where we often feel surrounded by oppressors or bad news. How can we encourage each other to trust that God will keep us safe in His dwelling when the world feels dangerous? Psalm 27:5</li>
+        <li>When we feel desperate for help, we often try to bear the burden on our own rather than trusting God's strength. What prevents you from fully relying on God, and how can you shift that trust to Him? Psalm 28:7</li>
+        <li>Picturing God as a shepherd who tenderly picks up His sheep reminds us of His personal care. How does this image impact the way you view your current struggles and need for Him? Psalm 28:9</li>
+        <li>God's powerful voice in creation should draw us closer to Him rather than pushing us away. When was a time you felt the majesty of God's presence, and how did it affect your worship? Psalm 29:3-4</li>
+        <li>Recognizing God's power gives us the promise of His peace in the midst of life's storms. How can we help each other listen for His voice and find His peace in whatever storm we are facing? Psalm 29:11</li>
+    </ol>
+    <div class="page-number">11</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <ol class="questions" start="9">
+        <li>It is easy to try and ignore our negative feelings until they go away instead of being honest with God. When you are in a season of mourning or feeling like you are in a pit, what makes it difficult for you to share those feelings with Him? Psalm 30:2-3</li>
+        <li>God promises that our weeping will eventually turn into a morning of joy. How have you experienced God bringing joy out of a dark night, and how can we remind each other of His lifelong favor? Psalm 30:5</li>
+    </ol>
+
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: WORSHIP</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Start your day this week by spending five minutes quietly listening to a worship song, focusing on God's character before you look at your to-do list.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that we would honestly bring our fears, burdens, and true feelings to God this week, trusting Him as our stronghold and shepherd in every situation.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+<!-- ============================================================
+     WEEK TWO
+     ============================================================ -->
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK TWO: <span style="color: var(--gray-text); font-weight: 400;">Psalms 31-35</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">13</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>Looking back at last week, how did your five minutes of daily worship impact your perspective on your to-do list?</li>
+        <li>If you had to describe your current season of life using only the weather, what would it be and why?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "Taste and see that the LORD is good; blessed is the man who takes refuge in him."
+    </div>
+    <div class="verse-ref">Psalm 34:8</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>Recommitting your spirit into God's hands means focusing on His spacious place of opportunity rather than feeling constricted by stress. How can you practically commit your current anxieties to God this week? Psalm 31:5</li>
+        <li>When things look the darkest, God's love often shines the brightest. How has God used an impossible circumstance to show you His incredible love, and how can your story encourage someone else today? Psalm 31:21</li>
+    </ol>
+    <div class="page-number">14</div>
+</div>
+
+<!-- Page C: Questions 3-8 -->
+<div class="page">
+    <div class="page-header">PSALMS 26-50: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>The joy of forgiveness comes when we stop trying to cover up our own sin and trust God to cover it. How do you move past the guilt of a mistake and fully accept the joy of His forgiveness? Psalm 32:5</li>
+        <li>God promises to instruct us, but we often act like stubborn horses that need to be forced. What is one area where you are struggling to hear God's direction, and how can we help you trust Him rather than forcing your own way? Psalm 32:8-9</li>
+        <li>Singing a "new song" involves finding a freshness in your praise rather than just going through the motions. When your daily routine feels spiritually tired, what helps you rediscover the joy of worship? Psalm 33:3</li>
+        <li>Knowing that God's eternal purposes will always prevail brings comfort when our own plans fail. How does focusing on God's plans help you, and how can we support you when your personal dreams are disappointing? Psalm 33:11</li>
+        <li>Celebrating God involves enthusiastically bragging about His goodness. What is one specific thing God has done recently in your life that you can boast about with us? Psalm 34:2</li>
+        <li>The truth that God has His eyes on you and His ears attentive to your cry offers deep comfort. How does knowing God is watching over you change the way you approach your daily struggles? Psalm 34:15</li>
+    </ol>
+    <div class="page-number">15</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <ol class="questions" start="9">
+        <li>When people scheme against us or misunderstand us, our first instinct is often to retaliate. How do you resist the urge to fight back, and what helps you trust God to defend you instead? Psalm 35:1</li>
+        <li>Keeping our focus on worship is crucial when we feel attacked or slandered by others. In seasons where you feel like you need vindication, how can we encourage each other to keep praising God and avoid bitterness? Psalm 35:28</li>
+    </ol>
+
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: EVANGELISM</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one person in your life who needs encouragement and share a brief story with them this week about how God has been your refuge.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for opportunities to boast in God's goodness to those around us and for the courage to share our stories of His faithfulness.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">16</div>
+</div>
+
+<!-- ============================================================
+     WEEK THREE
+     ============================================================ -->
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK THREE: <span style="color: var(--gray-text); font-weight: 400;">Psalms 36-40</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">17</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>Who did you share a story of God's refuge with last week, and how did that conversation go?</li>
+        <li>What is the most memorable piece of advice you've ever been given?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "Commit your way to the LORD; trust in him and he will do this."
+    </div>
+    <div class="verse-ref">Psalm 37:5</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>Looking to God as our provider confronts the problem of evil by reminding us of His limitless love and refuge. When destruction feels overwhelming, how does focusing on God's provision guard your heart? Psalm 36:7</li>
+        <li>God provides for our daily needs out of His great abundance. How can we as a group remind each other of this abundant provision when one of us feels like we are running on empty? Psalm 36:8</li>
+    </ol>
+    <div class="page-number">18</div>
+</div>
+
+<!-- Page C: Questions 3-8 -->
+<div class="page">
+    <div class="page-header">PSALMS 26-50: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>Anger often stems from insecurity or not getting what we want, but God calls us to be still and trust Him. When frustration threatens to take control, what practical steps can you take to entrust the outcome to God? Psalm 37:7-8</li>
+        <li>Choosing to delight in the Lord transforms our very desires to align with His heart. How does focusing on Him change what you want, and in what area do you need Him to transform your desires? Psalm 37:4</li>
+        <li>Sin acts as a destroyer that leaves us feeling crushed under the heavy burden of guilt. What holds you back from bringing your failures to God, and how can you move toward honest confession? Psalm 38:4</li>
+        <li>One of the consequences of sin is a deep sense of loneliness and isolation from others. How have you experienced this isolation, and in what ways can leaning into God's forgiveness restore your relationships? Psalm 38:18</li>
+        <li>Looking within ourselves during difficult times often brings anxiety instead of peace. When your situation goes from bad to worse, how do you shift your perspective to placing your hope solely in God? Psalm 39:7</li>
+        <li>Remembering that our time on earth is a mere handbreadth helps us seek fulfillment beyond this life. How does acknowledging that life is fleeting change the way you spend your time and energy? Psalm 39:4-5</li>
+    </ol>
+    <div class="page-number">19</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <ol class="questions" start="9">
+        <li>The life of faith requires both waiting patiently and acting on God's command. When you find yourself in a "slimy pit" of difficult circumstances, what makes it hardest for you to wait for God's timing? Psalm 40:1-2</li>
+        <li>God wants to proclaim His greatness through our lives as we willingly submit to His plans. How can we help each other hold our personal plans with an open hand, desiring God's will above our own? Psalm 40:8</li>
+    </ol>
+
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: DISCIPLESHIP</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one area of your life where you are holding onto control, and intentionally commit it to God in prayer every morning this week.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would give us the patience to wait on His timing and the discipline to align our deepest desires with His will.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">20</div>
+</div>
+
+<!-- ============================================================
+     WEEK FOUR
+     ============================================================ -->
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK FOUR: <span style="color: var(--gray-text); font-weight: 400;">Psalms 41-45</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">21</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>What was it like committing an area of control to God each morning this past week?</li>
+        <li>What is your favorite way to recharge after a long, draining week?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "Why are you downcast, O my soul? Why so disturbed within me? Put your hope in God, for I will yet praise him, my Savior and my God."
+    </div>
+    <div class="verse-ref">Psalm 42:5</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>Godly leaders use their influence to stand up for the vulnerable and care for those who have no influence. When you consider the weak in our community, how can we better support and advocate for them? Psalm 41:1</li>
+        <li>True leadership often involves facing rejection or misunderstanding from those we are trying to help. Have you ever felt betrayed when doing the right thing, and how did you seek God's mercy in that moment? Psalm 41:9-10</li>
+    </ol>
+    <div class="page-number">22</div>
+</div>
+
+<!-- Page C: Questions 3-8 -->
+<div class="page">
+    <div class="page-header">PSALMS 26-50: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>A downcast soul is often a soul that is desperately panting for God, even when we mistake it for a thirst for success or rest. When you find yourself asking "Where is God?", how do you recognize your true need for Him? Psalm 42:1-2</li>
+        <li>Remembering God's past faithfulness is crucial when we are stuck feeling sorry for ourselves on "Mount Little." What are some practical ways you recall God's goodness when you feel discouraged? Psalm 42:6</li>
+        <li>When our souls are mourning, we desperately need the light of God's truth to guide us back to His presence. How can this group be a source of His light and truth for you in dark seasons? Psalm 43:3</li>
+        <li>Entering God's presence allows us to recognize our joy and delight in Him. How does knowing that you can always go to God's holy mountain change your perspective when you feel isolated? Psalm 43:4</li>
+        <li>Defeat can make us feel like God is asleep to our needs or has rejected our efforts. When you feel completely defeated, how do you hold onto the truth that God knows exactly what you are going through? Psalm 44:23-24</li>
+        <li>Trusting God allows us to be transformed by both our victories and our defeats. How can we encourage each other to rely on God so that neither success nor failure defines our identity? Psalm 44:8</li>
+    </ol>
+    <div class="page-number">23</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <ol class="questions" start="9">
+        <li>The majestic descriptions of Jesus as the bridegroom remind us of His grace, justice, and joy. Which characteristic of Jesus brings you the most comfort right now, and why? Psalm 45:2-4</li>
+        <li>As the church, we are called to be the bride who honors and commits to Christ above all others. In what ways can we better express our devotion to Him amid the competing distractions in our lives? Psalm 45:10-11</li>
+    </ol>
+
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: FELLOWSHIP</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Reach out to one person in the group this week with an encouraging text or note, reminding them of God's faithfulness in their life.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that our group would be a safe stronghold for one another, pointing each other toward God's unfailing love when our souls are downcast.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">24</div>
+</div>
+
+<!-- ============================================================
+     WEEK FIVE
+     ============================================================ -->
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK FIVE: <span style="color: var(--gray-text); font-weight: 400;">Psalms 46-50</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">25</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>How did you encourage someone in the group this week, or how were you encouraged by someone else?</li>
+        <li>What is the most beautiful place in nature you have ever visited?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "God is our refuge and strength, an ever"
+    </div>
+    <div class="verse-ref">present help in trouble." — Psalm 46:1</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>Being still is a moment to quiet our spirits and recognize God's indescribable power. When your life is in an uproar, what makes it difficult for you to pause and trust that God is your fortress? Psalm 46:10</li>
+        <li>God's presence brings a refreshing river of joy even when mountains are quaking around us. How have you experienced His steadying presence during a time when everything else felt unstable? Psalm 46:4-5</li>
+    </ol>
+    <div class="page-number">26</div>
+</div>
+
+<!-- Page C: Questions 3-8 -->
+<div class="page">
+    <div class="page-header">PSALMS 26-50: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>Psalm 47 encourages us to clap our hands and use our enthusiasm to applaud God's greatness. Do you lean more toward quiet stillness or enthusiastic shouting, and how can you stretch yourself in worship? Psalm 47:1</li>
+        <li>Remembering that the awesome God has chosen us and subdues nations under His feet should inspire confident praise. How does focusing on God's mighty actions help you worship Him more boldly? Psalm 47:3-4</li>
+        <li>Our ultimate security comes from meditating on God's unfailing love rather than our changing circumstances. When you feel insecure about your future, how does focusing on His eternal protection bring you peace? Psalm 48:9</li>
+        <li>Knowing that we are citizens of the heavenly Jerusalem changes the way we view our physical location on earth. How does remembering that you live in Christ affect your perspective on your current struggles? Psalm 48:14</li>
+        <li>Wealth can easily confuse our trust, making us rely on ourselves instead of looking through the lens of eternity. When you find yourself envious of others' success, how can you shift your perspective back to God's redemption? Psalm 49:16-17</li>
+        <li>We are called to use our earthly resources for God's glory rather than hoarding them. In what practical ways can we use the wealth or time God has given us to serve others and build eternal friendships? Psalm 49:15</li>
+    </ol>
+    <div class="page-number">27</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <ol class="questions" start="9">
+        <li>We often make worship about ourselves, falsely thinking that God needs our sacrifices when He already owns it all. When you evaluate your motives, how often do you catch yourself acting as if God needs you? Psalm 50:9-12</li>
+        <li>God's judgment reminds us that we cannot just say the right things while living however we want. How can we hold each other accountable to live authentically and offer true sacrifices of thanksgiving? Psalm 50:14</li>
+    </ol>
+
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: MINISTRY</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look for a tangible need in your church or neighborhood this week and use your time or resources to meet it as an act of worship.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would show us how to use our resources and gifts to serve others, and that our actions would flow from a heart of deep gratitude.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">28</div>
+</div>
+
+<!-- ============================================================
+     BACK COVER — REUSABLE
+     ============================================================ -->
+<div class="page cover-page" style="align-items: center; justify-content: flex-end; padding-bottom: 1.5in;">
+    <div style="font-size: 1.5em; text-align: center; color: white;">drivetimedevotions.com</div>
+</div>
+
+</body>
+</html>

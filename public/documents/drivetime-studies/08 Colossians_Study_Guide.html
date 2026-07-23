@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COLOSSIANS: A Small Group Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-color: #1a365d; /* Dark Blue Theme */
+        --gray-text: #7f8c8d;
+        --dark-text: #2c3e50;
+        --light-gray: #f5f5f5;
+    }
+    
+    body {
+        font-family: 'Lato', sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+
+    .page {
+        background-color: white;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto 20px auto;
+        padding: 0.85in 1in 1.4in 1in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    /* Print settings */
+    @page { margin: 0; size: letter; }
+    @media print {
+        body { 
+            background-color: white; 
+            margin: 0;
+            padding: 0;
+        }
+        .page { 
+            width: 8.5in;
+            height: 11in;
+            margin: 0; 
+            box-shadow: none; 
+            border: none;
+            padding: 0.65in 0.75in 1.1in 0.75in;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: var(--primary-color);
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    /* Cover Page */
+    .cover-page {
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2in 1in;
+    }
+    
+    .cover-page h2 {
+        color: white;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    
+    .cover-page h1 {
+        color: white;
+        font-size: 4.5em;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        border-bottom: 6px solid #f39c12; /* Matches the orange "time" in the logo */
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .cover-page .author {
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .cover-logo-container {
+        position: absolute;
+        bottom: 1.5in;
+        right: 1.5in;
+        text-align: right;
+    }
+    
+    .cover-logo-container img {
+        width: 200px;
+    }
+
+    /* Headers for regular pages */
+    .page-header {
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    /* Sections with Icons */
+    .section-header {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .section-icon {
+        width: 50px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    
+    .section-content {
+        flex: 1;
+    }
+    
+    .section-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    /* Listen Page Layout */
+    .listen-page .listen-title {
+        color: var(--primary-color);
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    .listen-notes {
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+
+    /* Lists and Typography */
+    ol.questions {
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ol.questions li {
+        margin-bottom: 14px;
+        font-size: 1.1em;
+        color: var(--dark-text);
+    }
+    
+    ul.checkin {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ul.checkin li { 
+        margin-bottom: 12px; 
+        font-size: 1.1em;
+    }
+
+    .key-verse {
+        font-style: italic;
+        font-size: 1.15em;
+        margin-left: 70px;
+        color: var(--dark-text);
+    }
+    
+    .verse-ref {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 8px;
+        font-size: 1.1em;
+    }
+    
+    p.section-text {
+        font-size: 1.2em;
+        margin-left: 70px;
+    }
+
+    /* Intro pages */
+    .intro-title {
+        font-size: 2.5em;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+    
+    .intro-text {
+        font-size: 1.3em;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .page-number {
+        position: absolute;
+        bottom: 0.5in;
+        width: 100%;
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 0.9em;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="page cover-page">
+    <h2>A SMALL GROUP STUDY</h2>
+    <div>
+        <!-- ✏️ REPLACE: Book name (all caps) -->
+        <h1>COLOSSIANS</h1>
+    </div>
+    <!-- ✏️ REPLACE: Author name -->
+    <div class="author">Tom Holladay</div>
+    
+    <div class="cover-logo-container">
+        <!-- ✏️ REPLACE: Cover image (or keep Cover.png if it's your standard logo) -->
+        <img src="Cover.png" alt="Cover Image" style="max-width: 300px;">
+    </div>
+</div>
+
+<!-- ============================================================
+     COPYRIGHT PAGE
+     ============================================================ -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="margin-top: 3in;">
+        <!-- ✏️ REPLACE: Book name -->
+        <h3 style="font-size: 1.2em; color: var(--primary-color); margin-bottom: 30px;">COLOSSIANS: A SMALL GROUP STUDY</h3>
+        <!-- ✏️ REPLACE: Copyright year and author -->
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Copyright © 2026 Tom Holladay</p>
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 40px;">All rights reserved. No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form, without the written permission of the author.</p>
+        
+        <hr style="border: 0; border-bottom: 1px solid #ccc; margin: 40px 0;">
+        
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Unless otherwise noted, all Scripture quotations are taken from THE HOLY BIBLE, NEW INTERNATIONAL VERSION, NIV®. Copyright © 1973, 1978, 1984, 2011, by Biblica, Inc. Used by permission. All rights reserved worldwide.</p>
+    </div>
+</div>
+
+<!-- ============================================================
+     ABOUT DRIVETIME DEVOTIONS (Page 3)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">ABOUT DRIVETIME DEVOTIONS<br>SMALL GROUP STUDIES</h2>
+    
+    <!-- ✏️ OPTIONAL: Change "five-week" to match your study length -->
+    <p class="intro-text"><strong style="color: var(--primary-color);">Welcome</strong> to this special Drivetime Devotions, small group study. This 4-week study is designed so that you can enjoy Drivetime Devotions as a podcast throughout the week and then talk about it with your small group. This will allow for more time in your small group for discussion, application, and fellowship.</p>
+    
+    <p class="intro-text">The purpose of Drivetime Devotions is to help you know God's Word and put it into practice. It's usually better to study small sections of God's Word each day instead of a larger section once a week. Studying the Bible is like eating—you'll be healthier if you eat small amounts each day rather than one big meal a week! Episodes are designed to be listened to once per day, five days a week. In the event you miss a day or two, you can still stay on schedule.</p>
+    <div class="page-number">3</div>
+</div>
+
+<div class="page" style="padding-top: 1.5in;">
+    <div class="page-header">ABOUT DRIVETIME DEVOTIONS SMALL GROUP STUDIES</div>
+    
+    <p class="intro-text">In Drivetime Devotions, Pastor Tom Holladay teaches God's Word and helps you put it into practice. With over 30 million downloads, Drivetime Devotions has built a reputation for changing lives and helping people grow closer to God. You can access this podcast study on COLOSSIANS by downloading the DrivetimeDevotions app for your phone or by going to DrivetimeDevotions.com.</p>
+    <div class="page-number">4</div>
+</div>
+
+<!-- ============================================================
+     HOW TO USE (Page 5)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">HOW TO USE THIS INTERACTIVE<br>STUDY GUIDE</h2>
+    
+    <p class="intro-text">This study guide is designed to be used as a downloaded file on your tablet or phone. You do not need to print it out unless you want to.</p>
+    <div class="page-number">5</div>
+</div>
+
+<!-- ============================================================
+     A FEW TIPS (Page 6)
+     ============================================================ -->
+<div class="page" style="padding-top: 2.5in;">
+    <h2 class="intro-title">A FEW TIPS BEFORE YOU DIG IN</h2>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Prepare yourself before each study by listening to each week's five daily podcast episodes (one per day).</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Open each meeting with a time for everyone to check in on each other's progress with the podcast. Accountability is a key to success in this study!</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Each week you will find a key verse (or verses) from the chapter you are studying. You may want to memorize this verse together as a group.</p>
+        </div>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<div class="page">
+    <div class="page-header">COLOSSIANS: A SMALL GROUP STUDY</div>
+    
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">These are questions for group discussion. Please don't feel pressured to discuss every single question. The material in this study is meant to be your servant, not your master. Therefore there is no reason to rush through your discussions. Give everyone ample time to share their thoughts.</p>
+            <p style="font-size: 1.2em;">Some questions will reference the verses from which they are taken. Many groups will want to have someone read those verses accompanying the question. There is something powerful about hearing the Bible read aloud together as a group.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">This section helps you encourage each other in balancing God's five purposes of evangelism, discipleship, fellowship, ministry, and worship. Each week, there will be a prayer, practical action, or personal assignment that focuses on one of these purposes.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">At the end of each session you will find suggestions for your group prayer time. Praying together is one of the greatest privileges of small group life. Please don't take it for granted.</p>
+            <p style="font-size: 1.2em;">Get ready for God to do incredible things in your life as you begin the adventure of learning more deeply about the most exciting message in the world: the truth about God!</p>
+        </div>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<div class="page">
+    <div class="page-header">A FEW TIPS BEFORE YOU DIG IN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">As you go through each session, the Holy Spirit may bring to mind different people in your life. You may even want to write their names down beside a point, phrase, or verse in the margins. Take the opportunity to share God's Word in a friend's life during the week.</p>
+        </div>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+
+<!-- ============================================================
+     ╔══════════════════════════════════════════════════════════╗
+     ║  WEEKLY CONTENT STARTS HERE                             ║
+     ║  Copy the 4-page block below for each week of study.    ║
+     ║  Each week = 4 pages (to fit 6 discovery questions):    ║
+     ║    Page A: Listen page                                  ║
+     ║    Page B: Checking In + Key Verse + Questions 1-4      ║
+     ║    Page C: Questions 5-6 + Purpose + Prayer             ║
+     ║    Page D: Tell a Friend                                ║
+     ╚══════════════════════════════════════════════════════════╝
+     ============================================================ -->
+
+
+
+
+<!-- ============================================================
+     WEEK ONE
+     ======<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK ONE: <span style="color: var(--gray-text); font-weight: 400;">Colossians 1</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">9</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>If you're just starting as a group, take some time to get to know each other by going around the circle and sharing your name, where you grew up, and something about your life.</li>
+        <li>What comes to mind when you hear the word "rescue," and have you ever had to be rescued from a difficult situation?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "For he has rescued us from the dominion of darkness and brought us into the kingdom of the Son he loves, in whom we have redemption, the forgiveness of sins."
+    </div>
+    <div class="verse-ref">Colossians 1:13-14</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>Paul prays that the Colossians would be filled with the knowledge of God's will so they may live a life worthy of the Lord. What does living a "worthy" life look like to you in your daily routine, and what is one area you want to bear more fruit in? <i>Verses 9-12</i></li>
+        <li>We learned that Jesus is the image of the invisible God and the firstborn over all creation. How does knowing that Jesus holds all things together give you peace when your own life feels out of control? <i>Verses 15-17</i></li>
+    </ol>
+    <div class="page-number">10</div>
+</div>
+
+<!-- Page C: Questions 3-6 -->
+<div class="page">
+    <div class="page-header">COLOSSIANS: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>The teaching highlighted that we were once alienated from God, but have now been reconciled through Christ's physical body. How does the reality that you are now "holy in his sight, without blemish and free from accusation" change the way you view your own past mistakes? <i>Verses 21-23</i></li>
+        <li>Paul rejoiced in what he suffered for the Colossians, filling up what was lacking in regard to Christ's afflictions. When have you experienced suffering or hardship as a result of helping someone else grow spiritually, and what did you learn from that experience? <i>Verse 24</i></li>
+        <li>The mystery that has been kept hidden for ages is finally revealed as "Christ in you, the hope of glory." How does the truth that Christ actually lives inside of you impact the way you make decisions, and how can we encourage each other to rely on His energy instead of our own? <i>Verses 25-27</i></li>
+        <li>Paul's ultimate goal was to present everyone fully mature in Christ, laboring with all of God's energy. What is one specific way you feel God calling you to step out and labor for Him this week, and what is holding you back? <i>Verses 28-29</i></li>
+    </ol>
+    <div class="page-number">11</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: FELLOWSHIP</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Plan a simple get-together with another member of your group this week—like grabbing coffee or going for a walk—to intentionally build your friendship and encourage one another.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Share specific prayer requests with the group, and have everyone pray aloud for the person sitting on their right, asking God to give them spiritual wisdom and understanding for the week ahead.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK TWO: <span style="color: var(--gray-text); font-weight: 400;">Colossians 2</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">13</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>Looking back at last week, how did you do at connecting with someone in the group or finding a way to deepen a friendship?</li>
+        <li>What is the most elaborate set of rules you've ever had to follow (e.g., at a job, in a game, or growing up)?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "So then, just as you received Christ Jesus as Lord, continue to live in him, rooted and built up in him, strengthened in the faith as you were taught, and overflowing with thankfulness."
+    </div>
+    <div class="verse-ref">Colossians 2:6-7</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>Paul's purpose was that the believers would be encouraged in heart and united in love. Who is someone in your life that consistently encourages you, and what is one specific thing you can do to encourage someone else this week? <i>Verses 1-3</i></li>
+        <li>We were warned not to let anyone take us captive through hollow and deceptive philosophy. What are some of the "empty philosophies" of our modern culture that you find most tempting to believe, and how do you combat them with God's truth? <i>Verses 4-8</i></li>
+    </ol>
+    <div class="page-number">14</div>
+</div>
+
+<!-- Page C: Questions 3-6 -->
+<div class="page">
+    <div class="page-header">COLOSSIANS: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>The teaching pointed out that God has canceled the written code that was against us, nailing it to the cross. What thoughts or emotions do you experience when you realize that the complete record of your sins has been entirely erased? <i>Verses 13-14</i></li>
+        <li>We learned that Jesus disarmed the powers and authorities, making a public spectacle of them. Where do you currently feel spiritually attacked or overwhelmed, and how does Christ's total victory on the cross give you the courage to stand firm? <i>Verse 15</i></li>
+        <li>Paul tells the Colossians not to let anyone judge them by what they eat or drink, or by religious festivals, which are just a shadow of the reality found in Christ. Have you ever struggled with evaluating your own spirituality by a strict list of rules, and what helps you live by grace instead of legalism? <i>Verses 16-17</i></li>
+        <li>The passage warns against submitting to worldly rules like "Do not handle! Do not taste! Do not touch!" which lack any value in restraining sensual indulgence. Why do you think we are so drawn to self-imposed rules, and how can our group support you in resisting the urge to earn God's approval? <i>Verses 20-23</i></li>
+    </ol>
+    <div class="page-number">15</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: DISCIPLESHIP</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one specific area of your life where you struggle with legalism or trying to earn God's approval, and commit to reading Colossians 2 every morning this week to let God remind you of His grace.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would protect your minds from deceptive philosophies, and ask Him to help your group remain firmly rooted and built up in Jesus rather than human traditions.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">16</div>
+</div>
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK THREE: <span style="color: var(--gray-text); font-weight: 400;">Colossians 3</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">17</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>Looking back at last week, what was your experience like trying to rest in God's grace instead of relying on your own rules?</li>
+        <li>If you could instantly master any musical instrument, which one would you choose and why?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "Let the peace of Christ rule in your hearts, since as members of one body you were called to peace. And be thankful."
+    </div>
+    <div class="verse-ref">Colossians 3:15</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>We are commanded to set our hearts and minds on things above, where Christ is seated. What are the earthly things that most easily distracted your thoughts, and what is one practical step you can take to set your mind on heaven this week? <i>Verses 1-2</i></li>
+        <li>Paul tells us to put to death whatever belongs to our earthly nature, including anger, rage, malice, and slander. Which of these "sins in good standing" is most difficult for you to rid yourself of, and how can you actively take off that old self today? <i>Verses 5-8</i></li>
+    </ol>
+    <div class="page-number">18</div>
+</div>
+
+<!-- Page C: Questions 3-6 -->
+<div class="page">
+    <div class="page-header">COLOSSIANS: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>We learned that as God's chosen people, we must clothe ourselves with compassion, kindness, humility, gentleness, and patience. Which of these virtues do you want to grow in the most, and how can we encourage one another to put on this new clothing in our relationships? <i>Verses 12-14</i></li>
+        <li>The teaching emphasized letting the peace of Christ rule—or act as the umpire—in our hearts. Can you share a recent situation where you had to let God's peace make the final call instead of your anxiety, and what was the result? <i>Verse 15</i></li>
+        <li>We are told to let the word of Christ dwell in us richly as we teach and admonish one another through psalms, hymns, and spiritual songs. How does music or worship help you connect with God's Word, and what is a song that has been particularly meaningful to you lately? <i>Verse 16</i></li>
+        <li>Paul challenges us to do everything, whether in word or deed, in the name of the Lord Jesus. What does it look like for you to practically do your daily tasks—like your job, chores, or errands—in the name of Jesus? <i>Verse 17</i></li>
+    </ol>
+    <div class="page-number">19</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: WORSHIP</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Take a 15-minute walk by yourself this week without any music or distractions, and spend that time simply praising God for who He is and thanking Him for the new life you have in Christ.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Have each person share one specific area where they need the peace of Christ to rule this week, and pray over one another for that peace to guard their hearts and minds.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">20</div>
+</div>
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <div class="listen-title">WEEK FOUR: <span style="color: var(--gray-text); font-weight: 400;">Colossians 4</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">21</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-3 -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <li>Looking back at last week, how did taking time for undistracted worship impact your perspective on the things you were stressed about?</li>
+        <li>Who is the best storyteller you know, and what makes them so captivating?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        "Devote yourselves to prayer, being watchful and thankful."
+    </div>
+    <div class="verse-ref">Colossians 4:2</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <li>Paul urges the believers to devote themselves to prayer, being watchful and thankful. In what ways do you find it challenging to stay devoted to prayer, and what is one habit that helps you maintain a consistent prayer life? <i>Verse 2</i></li>
+        <li>We learned that Paul asked for prayer so that God would open a door for their message, even while he was in chains. When have you seen God open a door for the gospel in an unexpected way, and who are you currently praying for God to open a door with? <i>Verses 3-4</i></li>
+    </ol>
+    <div class="page-number">22</div>
+</div>
+
+<!-- Page C: Questions 3-6 -->
+<div class="page">
+    <div class="page-header">COLOSSIANS: A SMALL GROUP STUDY</div>
+    
+    <ol class="questions" start="3">
+        <li>The passage instructs us to be wise in the way we act toward outsiders and to make the most of every opportunity. How can you be more intentional about the way you interact with coworkers or neighbors who don't know Jesus? <i>Verse 5</i></li>
+        <li>We are told to let our conversations be always full of grace, seasoned with salt. How would you evaluate the "flavor" of your daily conversations, and how can our group help you speak with more grace when dealing with difficult people? <i>Verse 6</i></li>
+        <li>Paul highlights several faithful companions like Tychicus, Onesimus, and Aristarchus who supported him in ministry. Who are the faithful companions in your own life that support your spiritual growth, and how can you show your appreciation for them this week? <i>Verses 7-11</i></li>
+        <li>Epaphras is described as always wrestling in prayer for the Colossians, that they would stand firm in all the will of God. What does it mean to "wrestle in prayer" for someone, and who is someone you need to commit to wrestling in prayer for today? <i>Verses 12-13</i></li>
+    </ol>
+    <div class="page-number">23</div>
+</div>
+
+<!-- Page D: Application (Purpose, Prayer, Tell a Friend) -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE: EVANGELISM</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Ask the Lord to show you someone who needs to experience the joy of the good news, and commit to finding a specific way to bless them or share your story with them this week.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Spend time praying for the people you identified in your Living on Purpose challenge, asking God to open doors for conversations and to give you the right words to say.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">24</div>
+</div>
+
+
+
+</body>
+</html>

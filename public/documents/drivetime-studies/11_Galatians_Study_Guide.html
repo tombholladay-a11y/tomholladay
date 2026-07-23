@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GALATIANS: A Small Group Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-color: #1a365d; /* Dark Blue Theme */
+        --gray-text: #7f8c8d;
+        --dark-text: #2c3e50;
+        --light-gray: #f5f5f5;
+    }
+    
+    body {
+        font-family: 'Lato', sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+
+    .page {
+        background-color: white;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto 20px auto;
+        padding: 0.85in 1in 1.4in 1in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    /* Print settings */
+    @page { margin: 0; size: letter; }
+    @media print {
+        body { 
+            background-color: white; 
+            margin: 0;
+            padding: 0;
+        }
+        .page { 
+            width: 8.5in;
+            height: 11in;
+            margin: 0; 
+            box-shadow: none; 
+            border: none;
+            padding: 0.65in 0.75in 1.1in 0.75in;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: var(--primary-color);
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    /* Cover Page */
+    .cover-page {
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2in 1in;
+    }
+    
+    .cover-page h2 {
+        color: white;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    
+    .cover-page h1 {
+        color: white;
+        font-size: 4.5em;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        border-bottom: 6px solid #f39c12; /* Matches the orange "time" in the logo */
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .cover-page .author {
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .cover-logo-container {
+        position: absolute;
+        bottom: 1.5in;
+        right: 1.5in;
+        text-align: right;
+    }
+    
+    .cover-logo-container img {
+        width: 200px;
+    }
+
+    /* Headers for regular pages */
+    .page-header {
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    /* Sections with Icons */
+    .section-header {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .section-icon {
+        width: 50px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    
+    .section-content {
+        flex: 1;
+    }
+    
+    .section-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    /* Listen Page Layout */
+    .listen-page .listen-title {
+        color: var(--primary-color);
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    .listen-notes {
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+
+    /* Lists and Typography */
+    ol.questions {
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ol.questions li {
+        margin-bottom: 14px;
+        font-size: 1.1em;
+        color: var(--dark-text);
+    }
+    
+    ul.checkin {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ul.checkin li { 
+        margin-bottom: 12px; 
+        font-size: 1.1em;
+    }
+
+    .key-verse {
+        font-style: italic;
+        font-size: 1.15em;
+        margin-left: 70px;
+        color: var(--dark-text);
+    }
+    
+    .verse-ref {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 8px;
+        font-size: 1.1em;
+    }
+    
+    p.section-text {
+        font-size: 1.2em;
+        margin-left: 70px;
+    }
+
+    /* Intro pages */
+    .intro-title {
+        font-size: 2.5em;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+    
+    .intro-text {
+        font-size: 1.3em;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .page-number {
+        position: absolute;
+        bottom: 0.5in;
+        width: 100%;
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 0.9em;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="page cover-page">
+    <h2>A SMALL GROUP STUDY</h2>
+    <div>
+        <!-- ✏️ REPLACE: Book name (all caps) -->
+        <h1>GALATIANS</h1>
+    </div>
+    <!-- ✏️ REPLACE: Author name -->
+    <div class="author">Tom Holladay</div>
+    
+    <div class="cover-logo-container">
+        <!-- ✏️ REPLACE: Cover image (or keep Cover.png if it's your standard logo) -->
+        <img src="Cover.png" alt="Cover Image" style="max-width: 300px;">
+    </div>
+</div>
+
+<!-- ============================================================
+     COPYRIGHT PAGE
+     ============================================================ -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="margin-top: 3in;">
+        <!-- ✏️ REPLACE: Book name -->
+        <h3 style="font-size: 1.2em; color: var(--primary-color); margin-bottom: 30px;">GALATIANS: A SMALL GROUP STUDY</h3>
+        <!-- ✏️ REPLACE: Copyright year and author -->
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Copyright © 2026 Tom Holladay</p>
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 40px;">All rights reserved. No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form, without the written permission of the author.</p>
+        
+        <hr style="border: 0; border-bottom: 1px solid #ccc; margin: 40px 0;">
+        
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Unless otherwise noted, all Scripture quotations are taken from THE HOLY BIBLE, NEW INTERNATIONAL VERSION, NIV®. Copyright © 1973, 1978, 1984, 2011, by Biblica, Inc. Used by permission. All rights reserved worldwide.</p>
+    </div>
+</div>
+
+<!-- ============================================================
+     ABOUT DRIVETIME DEVOTIONS (Page 3)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">ABOUT DRIVETIME DEVOTIONS<br>SMALL GROUP STUDIES</h2>
+    
+    <!-- ✏️ OPTIONAL: Change "five-week" to match your study length -->
+    <p class="intro-text"><strong style="color: var(--primary-color);">Welcome</strong> to this special Drivetime Devotions, small group study. This 6-week study is designed so that you can enjoy Drivetime Devotions as a podcast throughout the week and then talk about it with your small group. This will allow for more time in your small group for discussion, application, and fellowship.</p>
+    
+    <p class="intro-text">The purpose of Drivetime Devotions is to help you know God's Word and put it into practice. It's usually better to study small sections of God's Word each day instead of a larger section once a week. Studying the Bible is like eating—you'll be healthier if you eat small amounts each day rather than one big meal a week! Episodes are designed to be listened to once per day, five days a week. In the event you miss a day or two, you can still stay on schedule.</p>
+    <div class="page-number">3</div>
+</div>
+
+<div class="page" style="padding-top: 1.5in;">
+    <div class="page-header">ABOUT DRIVETIME DEVOTIONS SMALL GROUP STUDIES</div>
+    
+    <p class="intro-text">In Drivetime Devotions, Pastor Tom Holladay teaches God's Word and helps you put it into practice. With over 30 million downloads, Drivetime Devotions has built a reputation for changing lives and helping people grow closer to God. You can access this podcast study on GALATIANS by downloading the DrivetimeDevotions app for your phone or by going to DrivetimeDevotions.com.</p>
+    <div class="page-number">4</div>
+</div>
+
+<!-- ============================================================
+     HOW TO USE (Page 5)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">HOW TO USE THIS INTERACTIVE<br>STUDY GUIDE</h2>
+    
+    <p class="intro-text">This study guide is designed to be used as a downloaded file on your tablet or phone. You do not need to print it out unless you want to.</p>
+    <div class="page-number">5</div>
+</div>
+
+<!-- ============================================================
+     A FEW TIPS (Page 6)
+     ============================================================ -->
+<div class="page" style="padding-top: 2.5in;">
+    <h2 class="intro-title">A FEW TIPS BEFORE YOU DIG IN</h2>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Prepare yourself before each study by listening to each week's five daily podcast episodes (one per day).</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Open each meeting with a time for everyone to check in on each other's progress with the podcast. Accountability is a key to success in this study!</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Each week you will find a key verse (or verses) from the chapter you are studying. You may want to memorize this verse together as a group.</p>
+        </div>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<div class="page">
+    <div class="page-header">GALATIANS: A SMALL GROUP STUDY</div>
+    
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">These are questions for group discussion. Please don't feel pressured to discuss every single question. The material in this study is meant to be your servant, not your master. Therefore there is no reason to rush through your discussions. Give everyone ample time to share their thoughts.</p>
+            <p style="font-size: 1.2em;">Some questions will reference the verses from which they are taken. Many groups will want to have someone read those verses accompanying the question. There is something powerful about hearing the Bible read aloud together as a group.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">This section helps you encourage each other in balancing God's five purposes of evangelism, discipleship, fellowship, ministry, and worship. Each week, there will be a prayer, practical action, or personal assignment that focuses on one of these purposes.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">At the end of each session you will find suggestions for your group prayer time. Praying together is one of the greatest privileges of small group life. Please don't take it for granted.</p>
+            <p style="font-size: 1.2em;">Get ready for God to do incredible things in your life as you begin the adventure of learning more deeply about the most exciting message in the world: the truth about God!</p>
+        </div>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<div class="page">
+    <div class="page-header">A FEW TIPS BEFORE YOU DIG IN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">As you go through each session, the Holy Spirit may bring to mind different people in your life. You may even want to write their names down beside a point, phrase, or verse in the margins. Take the opportunity to share God's Word in a friend's life during the week.</p>
+        </div>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+
+<!-- ============================================================
+     ╔══════════════════════════════════════════════════════════╗
+     ║  WEEKLY CONTENT STARTS HERE                             ║
+     ║  Copy the 4-page block below for each week of study.    ║
+     ║  Each week = 4 pages (to fit 6 discovery questions):    ║
+     ║    Page A: Listen page                                  ║
+     ║    Page B: Checking In + Key Verse + Questions 1-4      ║
+     ║    Page C: Questions 5-6 + Purpose + Prayer             ║
+     ║    Page D: Tell a Friend                                ║
+     ╚══════════════════════════════════════════════════════════╝
+     ============================================================ -->
+
+
+<!-- ============================================================
+     WEEK ONE
+     ======<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK ONE: <span style="color: var(--gray-text); font-weight: 400;">GALATIANS Chapter 1</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">9</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How was your week?</li>
+        <li>What is one thing you are thankful for this week?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Am I now trying to win the approval of human beings, or of God? Or am I trying to please people? If I were still trying to please people, I would not be a servant of Christ."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Galatians 1:10 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you consider the grace of Christ mentioned in verses 1-5, in what specific ways do you personally struggle with trying to earn God's approval, and how can we remind each other to rest in His grace? <i>Galatians 1:1-5</i></li>
+        <li>Where do you feel the most pressure from our culture to compromise the true message of the Gospel, and how can our group help you stand firm in the truth? <i>Galatians 1:6-9</i></li>
+    </ol>
+    <div class="page-number">10</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GALATIANS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Looking at your daily life, when are you most tempted to seek human approval over pleasing God, and how can we encourage one another to live purely as servants of Christ? <i>Galatians 1:10</i></li>
+        <li>How has God's calling transformed your own life or perspective, and how can sharing these personal stories of change strengthen our faith together? <i>Galatians 1:11-16</i></li>
+        <li>What barriers keep you from taking time for quiet reflection with God, and what practical steps can we take to help each other prioritize those moments? <i>Galatians 1:17-20</i></li>
+        <li>Who in your life needs to hear your personal story of transformation, and how can we support you in sharing it so that others might glorify God? <i>Galatians 1:21-24</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one area where you are seeking human approval and intentionally choose to worship God in that area this week.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Close your time by praying for the courage to seek God's approval over human approval this week. Ask God to help each of you build times of quiet reflection into your lives.</p>
+        </div>
+    </div>
+    <div class="page-number">11</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWO: <span style="color: var(--gray-text); font-weight: 400;">GALATIANS Chapter 2</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">13</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>In what area were you able to intentionally choose to worship God over seeking human approval this past week?</li>
+        <li>When you were growing up, what was a rule in your house that you never really understood?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Galatians 2:20 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When have you experienced divisions or disagreements getting in the way of sharing the Gospel, and how can we as a group foster the kind of unity that draws others to Jesus? <i>Galatians 2:1-5</i></li>
+        <li>Who is someone in your life that you struggle to see through the lens of the Gospel, and how can we challenge each other to show God's grace to everyone regardless of their background? <i>Galatians 2:6-10</i></li>
+    </ol>
+    <div class="page-number">14</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GALATIANS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>In what environments do you feel the most pressure to conform to religious expectations instead of living in the freedom of the Gospel, and how can we keep each other accountable to grace? <i>Galatians 2:11-14</i></li>
+        <li>How does the reality that we are justified entirely by faith change the way you personally talk about Jesus with non-believers, and how can we pray for your conversations this week? <i>Galatians 2:15-16</i></li>
+        <li>What does it practically look like for you to trust that 'Christ lives in me' during your daily struggles, and how can we encourage one another to rely on His power instead of our own? <i>Galatians 2:17-20</i></li>
+        <li>When are you most tempted to rely on your own efforts instead of God's grace, and how can we remind each other that Christ's sacrifice is enough? <i>Galatians 2:21</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for one specific person who doesn't know Christ and share a simple testimony of God's grace with them this week.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Go around the circle and share the name of the person you plan to pray for this week. Have the group pray together for boldness and compassion to share God's grace with those specific individuals.</p>
+        </div>
+    </div>
+    <div class="page-number">15</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">16</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK THREE: <span style="color: var(--gray-text); font-weight: 400;">GALATIANS Chapter 3</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">17</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did it go this past week praying for and sharing a simple testimony of God's grace with someone?</li>
+        <li>Have you ever tried to assemble something without looking at the instructions, only to realize you needed them? What happened?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "So in Christ Jesus you are all children of God through faith, for all of you who were baptized into Christ have clothed yourselves with Christ."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Galatians 3:26-27 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>What specific areas of your spiritual growth are you currently trying to manage through your own effort, and how can we help each other rely more fully on the Holy Spirit? <i>Galatians 3:1-5</i></li>
+        <li>Where is God calling you to step out in faith right now, and how can we as a group support you in trusting His promises even when it feels difficult? <i>Galatians 3:6-9</i></li>
+    </ol>
+    <div class="page-number">18</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GALATIANS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>How does knowing that Christ took on the curse for you change how you handle feelings of guilt, and how can we remind each other of this profound redemption? <i>Galatians 3:10-14</i></li>
+        <li>When you face uncertainties in your life, how does holding onto God's unchanging promises bring you peace, and how can we encourage one another to trust Him completely? <i>Galatians 3:15-18</i></li>
+        <li>How do you balance the desire for spiritual boundaries with the freedom you have in Christ, and what can we do to help each other live out that freedom responsibly? <i>Galatians 3:19-25</i></li>
+        <li>What prejudices or divisions do you struggle with, and how can our group model the true equality and unity we have as children of God? <i>Galatians 3:26-29</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Spend 15 minutes each day this week reading Scripture to listen to the Spirit, rather than just to check off a box.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray together that your group would learn to walk by the Spirit rather than relying on human effort. Ask God to help you trust in His promises and grow deeply as disciples this week.</p>
+        </div>
+    </div>
+    <div class="page-number">19</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">20</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FOUR: <span style="color: var(--gray-text); font-weight: 400;">GALATIANS Chapter 4</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">21</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did your 15 minutes of daily Scripture reading go this past week? Did you sense the Spirit speaking to you?</li>
+        <li>What is the best inheritance or family heirloom you have ever received or heard of someone receiving?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Because you are his sons, God sent the Spirit of his Son into our hearts, the Spirit who calls out, 'Abba, Father.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Galatians 4:6 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>In what ways do you still act like a slave to fear or rules instead of an heir to God's promises, and how can we encourage each other to live out our true identity? <i>Galatians 4:1-7</i></li>
+        <li>What old habits or mindsets are you currently tempted to slip back into, and how can we as a fellowship help protect each other from returning to them? <i>Galatians 4:8-11</i></li>
+    </ol>
+    <div class="page-number">22</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GALATIANS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>How can we as a group cultivate the kind of deep, caring relationships where we can speak truth to one another even when it is hard? <i>Galatians 4:12-16</i></li>
+        <li>When have you experienced passion or zeal being used in a manipulative way, and how can we ensure our group's zeal is always rooted in genuine love? <i>Galatians 4:17-20</i></li>
+        <li>Where in your life are you currently trying to force a result through your own effort rather than waiting on God's promise, and how can we pray for your patience? <i>Galatians 4:21-27</i></li>
+        <li>How can we actively foster an environment of grace rather than judgment within our fellowship, and what practical steps can you take this week to show that grace to someone else? <i>Galatians 4:28-31</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Reach out to one person in this group during the week just to encourage them and remind them of their identity in Christ.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Break into groups of two or three. Have each person share one specific burden or fear they are facing right now, and then pray for one another, asking God to help you live as free children of promise rather than slaves to fear.</p>
+        </div>
+    </div>
+    <div class="page-number">23</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">24</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FIVE: <span style="color: var(--gray-text); font-weight: 400;">GALATIANS Chapter 5</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">25</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Who were you able to reach out to and encourage this past week, and how did it impact both of you?</li>
+        <li>If you could instantly grow any fruit tree in your backyard, what kind of fruit would it be?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "You, my brothers and sisters, were called to be free. But do not use your freedom to indulge the flesh; rather, serve one another humbly in love."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Galatians 5:13 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>What external religious practices do you sometimes use as a substitute for genuinely loving others, and how can we keep each other accountable to serving in true freedom? <i>Galatians 5:1-6</i></li>
+        <li>What negative influences or distractions are currently throwing you off course in your faith, and how can we help you remove those obstacles? <i>Galatians 5:7-12</i></li>
+    </ol>
+    <div class="page-number">26</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GALATIANS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Who is God calling you to humbly serve in love this week, and how can our group support you in making that a practical reality? <i>Galatians 5:13-15</i></li>
+        <li>In what specific situations do you find it hardest to walk by the Spirit rather than reacting in the flesh, and how can we encourage each other in those moments? <i>Galatians 5:16-18</i></li>
+        <li>Which of the struggles mentioned in these verses do you find most damaging to your relationships, and how can we pray for your healing and growth? <i>Galatians 5:19-21</i></li>
+        <li>Which fruit of the Spirit do you feel is most lacking in your life right now, and how can we challenge each other to cultivate that fruit this week? <i>Galatians 5:22-26</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Find a tangible way to humbly serve a family member, neighbor, or coworker this week without expecting anything in return.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask the group to share which fruit of the Spirit they need most this week. Close by praying that the Holy Spirit would cultivate that specific fruit in each of you, empowering you to humbly serve others in love.</p>
+        </div>
+    </div>
+    <div class="page-number">27</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">28</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SIX: <span style="color: var(--gray-text); font-weight: 400;">GALATIANS Chapter 6</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">29</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How were you able to tangibly and humbly serve someone this past week without expecting anything in return?</li>
+        <li>Have you ever tried to carry something that was way too heavy for one person? Who stepped in to help you?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "May I never boast except in the cross of our Lord Jesus Christ, through which the world has been crucified to me, and I to the world."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Galatians 6:14 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When have you had to gently restore someone or be restored yourself, and how can we practice that kind of humble grace within our own group? <i>Galatians 6:1-3</i></li>
+        <li>What heavy burden are you carrying right now that you need help with, and how can we as a group step in to practically carry it with you? <i>Galatians 6:4-5</i></li>
+    </ol>
+    <div class="page-number">30</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">GALATIANS: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Who has spiritually invested in your life recently, and what practical steps can you take this week to show them gratitude and share your life with them? <i>Galatians 6:6</i></li>
+        <li>In what specific areas of your daily routine are you currently 'sowing to please the flesh,' and how can we encourage each other to invest in the Spirit instead? <i>Galatians 6:7-8</i></li>
+        <li>Where in your life are you feeling most 'weary in doing good,' and how can our group come alongside you to renew your strength and encourage you to persevere? <i>Galatians 6:9-10</i></li>
+        <li>What worldly achievements are you most tempted to boast in, and how can we remind each other to find our true worth and glory only in the cross of Jesus? <i>Galatians 6:11-18</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Take time each day this week to write down one thing you are grateful for about the cross of Christ as an intentional act of worship.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Have everyone in the group briefly share one thing they are grateful for about the cross of Christ. Conclude by praying together that God would give you the strength to not grow weary in doing good as you live for His glory.</p>
+        </div>
+    </div>
+    <div class="page-number">31</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">32</div>
+</div>
+
+
+
+
+</body>
+</html>

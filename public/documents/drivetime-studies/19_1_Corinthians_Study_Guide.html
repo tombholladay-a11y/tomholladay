@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><span style="white-space: nowrap;">1 CORINTHIANS</span>: A Small Group Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-color: #1a365d; /* Dark Blue Theme */
+        --gray-text: #7f8c8d;
+        --dark-text: #2c3e50;
+        --light-gray: #f5f5f5;
+    }
+    
+    body {
+        font-family: 'Lato', sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+
+    .page {
+        background-color: white;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto 20px auto;
+        padding: 0.85in 1in 1.4in 1in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    /* Print settings */
+    @page { margin: 0; size: letter; }
+    @media print {
+        body { 
+            background-color: white; 
+            margin: 0;
+            padding: 0;
+        }
+        .page { 
+            width: 8.5in;
+            height: 11in;
+            margin: 0; 
+            box-shadow: none; 
+            border: none;
+            padding: 0.65in 0.75in 1.1in 0.75in;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: var(--primary-color);
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    /* Cover Page */
+    .cover-page {
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2in 1in;
+    }
+    
+    .cover-page h2 {
+        color: white;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    
+    .cover-page h1 {
+        color: white;
+        font-size: 4.5em;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        border-bottom: 6px solid #f39c12; /* Matches the orange "time" in the logo */
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .cover-page .author {
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .cover-logo-container {
+        position: absolute;
+        bottom: 1.5in;
+        right: 1.5in;
+        text-align: right;
+    }
+    
+    .cover-logo-container img {
+        width: 200px;
+    }
+
+    /* Headers for regular pages */
+    .page-header {
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    /* Sections with Icons */
+    .section-header {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .section-icon {
+        width: 50px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    
+    .section-content {
+        flex: 1;
+    }
+    
+    .section-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    /* Listen Page Layout */
+    .listen-page .listen-title {
+        color: var(--primary-color);
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    .listen-notes {
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+
+    /* Lists and Typography */
+    ol.questions {
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ol.questions li {
+        margin-bottom: 14px;
+        font-size: 1.1em;
+        color: var(--dark-text);
+    }
+    
+    ul.checkin {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ul.checkin li { 
+        margin-bottom: 12px; 
+        font-size: 1.1em;
+    }
+
+    .key-verse {
+        font-style: italic;
+        font-size: 1.15em;
+        margin-left: 70px;
+        color: var(--dark-text);
+    }
+    
+    .verse-ref {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 8px;
+        font-size: 1.1em;
+    }
+    
+    p.section-text {
+        font-size: 1.2em;
+        margin-left: 70px;
+    }
+
+    /* Intro pages */
+    .intro-title {
+        font-size: 2.5em;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+    
+    .intro-text {
+        font-size: 1.3em;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .page-number {
+        position: absolute;
+        bottom: 0.5in;
+        width: 100%;
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 0.9em;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="page cover-page">
+    <h2>A SMALL GROUP STUDY</h2>
+    <div>
+        <!-- ✏️ REPLACE: Book name (all caps) -->
+        <h1><span style="white-space: nowrap;">1 CORINTHIANS</span></h1>
+    </div>
+    <!-- ✏️ REPLACE: Author name -->
+    <div class="author">Tom Holladay</div>
+    
+    <div class="cover-logo-container">
+        <!-- ✏️ REPLACE: Cover image (or keep Cover.png if it's your standard logo) -->
+        <img src="Cover.png" alt="Cover Image" style="max-width: 300px;">
+    </div>
+</div>
+
+<!-- ============================================================
+     COPYRIGHT PAGE
+     ============================================================ -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="margin-top: 3in;">
+        <!-- ✏️ REPLACE: Book name -->
+        <h3 style="font-size: 1.2em; color: var(--primary-color); margin-bottom: 30px;"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</h3>
+        <!-- ✏️ REPLACE: Copyright year and author -->
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Copyright © 2026 Tom Holladay</p>
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 40px;">All rights reserved. No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form, without the written permission of the author.</p>
+        
+        <hr style="border: 0; border-bottom: 1px solid #ccc; margin: 40px 0;">
+        
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Unless otherwise noted, all Scripture quotations are taken from THE HOLY BIBLE, NEW INTERNATIONAL VERSION, NIV®. Copyright © 1973, 1978, 1984, 2011, by Biblica, Inc. Used by permission. All rights reserved worldwide.</p>
+    </div>
+</div>
+
+<!-- ============================================================
+     ABOUT DRIVETIME DEVOTIONS (Page 3)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">ABOUT DRIVETIME DEVOTIONS<br>SMALL GROUP STUDIES</h2>
+    
+    <!-- ✏️ OPTIONAL: Change "five-week" to match your study length -->
+    <p class="intro-text"><strong style="color: var(--primary-color);">Welcome</strong> to this special Drivetime Devotions, small group study. This 16-week study is designed so that you can enjoy Drivetime Devotions as a podcast throughout the week and then talk about it with your small group. This will allow for more time in your small group for discussion, application, and fellowship.</p>
+    
+    <p class="intro-text">The purpose of Drivetime Devotions is to help you know God's Word and put it into practice. It's usually better to study small sections of God's Word each day instead of a larger section once a week. Studying the Bible is like eating—you'll be healthier if you eat small amounts each day rather than one big meal a week! Episodes are designed to be listened to once per day, five days a week. In the event you miss a day or two, you can still stay on schedule.</p>
+    <div class="page-number">3</div>
+</div>
+
+<div class="page" style="padding-top: 1.5in;">
+    <div class="page-header">ABOUT DRIVETIME DEVOTIONS SMALL GROUP STUDIES</div>
+    
+    <p class="intro-text">In Drivetime Devotions, Pastor Tom Holladay teaches God's Word and helps you put it into practice. With over 30 million downloads, Drivetime Devotions has built a reputation for changing lives and helping people grow closer to God. You can access this podcast study on <span style="white-space: nowrap;">1 CORINTHIANS</span> by downloading the DrivetimeDevotions app for your phone or by going to DrivetimeDevotions.com.</p>
+    <div class="page-number">4</div>
+</div>
+
+<!-- ============================================================
+     HOW TO USE (Page 5)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">HOW TO USE THIS INTERACTIVE<br>STUDY GUIDE</h2>
+    
+    <p class="intro-text">This study guide is designed to be used as a downloaded file on your tablet or phone. You do not need to print it out unless you want to.</p>
+    <div class="page-number">5</div>
+</div>
+
+<!-- ============================================================
+     A FEW TIPS (Page 6)
+     ============================================================ -->
+<div class="page" style="padding-top: 2.5in;">
+    <h2 class="intro-title">A FEW TIPS BEFORE YOU DIG IN</h2>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Prepare yourself before each study by listening to each week's five daily podcast episodes (one per day).</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Open each meeting with a time for everyone to check in on each other's progress with the podcast. Accountability is a key to success in this study!</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Each week you will find a key verse (or verses) from the chapter you are studying. You may want to memorize this verse together as a group.</p>
+        </div>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<div class="page">
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">These are questions for group discussion. Please don't feel pressured to discuss every single question. The material in this study is meant to be your servant, not your master. Therefore there is no reason to rush through your discussions. Give everyone ample time to share their thoughts.</p>
+            <p style="font-size: 1.2em;">Some questions will reference the verses from which they are taken. Many groups will want to have someone read those verses accompanying the question. There is something powerful about hearing the Bible read aloud together as a group.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">This section helps you encourage each other in balancing God's five purposes of evangelism, discipleship, fellowship, ministry, and worship. Each week, there will be a prayer, practical action, or personal assignment that focuses on one of these purposes.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">At the end of each session you will find suggestions for your group prayer time. Praying together is one of the greatest privileges of small group life. Please don't take it for granted.</p>
+            <p style="font-size: 1.2em;">Get ready for God to do incredible things in your life as you begin the adventure of learning more deeply about the most exciting message in the world: the truth about God!</p>
+        </div>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<div class="page">
+    <div class="page-header">A FEW TIPS BEFORE YOU DIG IN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">As you go through each session, the Holy Spirit may bring to mind different people in your life. You may even want to write their names down beside a point, phrase, or verse in the margins. Take the opportunity to share God's Word in a friend's life during the week.</p>
+        </div>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+
+<!-- ============================================================
+     ╔══════════════════════════════════════════════════════════╗
+     ║  WEEKLY CONTENT STARTS HERE                             ║
+     ║  Copy the 4-page block below for each week of study.    ║
+     ║  Each week = 4 pages (to fit 6 discovery questions):    ║
+     ║    Page A: Listen page                                  ║
+     ║    Page B: Checking In + Key Verse + Questions 1-4      ║
+     ║    Page C: Questions 5-6 + Purpose + Prayer             ║
+     ║    Page D: Tell a Friend                                ║
+     ╚══════════════════════════════════════════════════════════╝
+     ============================================================ -->
+
+
+<!-- ============================================================
+     WEEK ONE
+     ======<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK ONE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 1</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">9</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>What is a hobby or interest you have that most people don't know about?</li>
+        <li>When you hear the word "Corinth" or think of an ancient, bustling city, what comes to mind?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "God is faithful, who has called you into fellowship with his Son, Jesus Christ our Lord."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 1:9 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the greeting of grace and peace in verses 1-3, how do you personally experience this in your daily life, and how can we help each other recognize God's peace during stressful times? <i>Verses 1:1-3</i></li>
+        <li>When considering the spiritual gifts mentioned in verses 4-9, where do you feel you are lacking, and how can we support each other in trusting God's faithfulness to provide what we need? <i>Verses 1:4-9</i></li>
+    </ol>
+    <div class="page-number">10</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on Paul's plea for unity in verses 10-17, how do you personally navigate disagreements within the church, and how can we encourage one another to keep our focus on Christ rather than taking sides? <i>Verses 1:10-17</i></li>
+        <li>As we read about the message of the cross in verses 18-25, when has this message felt foolish to you or hard to explain, and how can we build up each other's confidence in God's power? <i>Verses 1:18-25</i></li>
+        <li>Looking at God's habit of choosing the foolish things of the world in verses 26-29, in what ways do you struggle with relying on your own status, and how can we remind each other to boast only in the Lord? <i>Verses 1:26-29</i></li>
+        <li>Considering that Christ has become our wisdom and righteousness in verses 30-31, how can you practically give God all the credit this week, and how can we hold each other accountable to practicing humility? <i>Verses 1:30-31</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To worship God intentionally by acknowledging His grace and letting go of our pride or reliance on our own wisdom.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Let's pray together, thanking God for calling us and asking for His help to stay unified as a group, completely reliant on His wisdom rather than our own.</p>
+        </div>
+    </div>
+    <div class="page-number">11</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWO: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 2</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">13</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you apply what we talked about last week regarding letting go of pride and trusting God's wisdom?</li>
+        <li>What is the most memorable conversation you've ever had with a stranger?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "My message and my preaching were not with wise and persuasive words, but with a demonstration of the Spirit’s power, so that your faith might not rest on human wisdom, but on God’s power."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 2:4-5 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When reading about Paul's weakness and fear in verses 1-5, how do you handle your own anxiety when sharing your faith, and how can we encourage each other to rely on the Spirit's power rather than persuasive words? <i>Verses 2:1-5</i></li>
+        <li>Looking at the contrast between human wisdom and God's power in verses 4-5, when have you felt inadequate to share the gospel, and how can we remind one another that God works through our weakness? <i>Verses 2:4-5</i></li>
+    </ol>
+    <div class="page-number">14</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the secret wisdom of God discussed in verses 6-10, what is a truth you have recently come to understand, and how can we encourage each other to share these revelations with those around us? <i>Verses 2:6-10</i></li>
+        <li>As we consider the role of the Holy Spirit in verses 10-12, how does the Spirit help you understand difficult things about God, and how can we seek the Spirit's guidance together this week? <i>Verses 2:10-12</i></li>
+        <li>Looking at the reality that the world cannot understand spiritual truths in verses 13-14, how do you respond when people reject your faith, and how can we support each other when we feel misunderstood? <i>Verses 2:13-14</i></li>
+        <li>When considering what it means to have the mind of Christ in verses 15-16, in what practical ways can we cultivate this mindset together so we are better prepared to evangelize? <i>Verses 2:15-16</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To approach evangelism not with our own cleverness, but by relying completely on the Spirit’s power and the mind of Christ.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for opportunities this week to share the gospel, asking the Holy Spirit to give us the right words and the courage to speak without fear.</p>
+        </div>
+    </div>
+    <div class="page-number">15</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">16</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK THREE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 3</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">17</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Did you have any opportunities to share the gospel or rely on the Spirit's power in a conversation this past week?</li>
+        <li>Have you ever tried to build something (furniture, a model, a shed) without reading the instructions first? How did it go?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "By the grace God has given me, I laid a foundation as a wise builder, and someone else is building on it. But each one should build with care."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 3:10 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Reflecting on the difference between spiritual milk and solid food in verses 1-4, in what areas of your life are you struggling to mature, and how can we encourage one another to pursue deeper discipleship? <i>Verses 3:1-4</i></li>
+        <li>When looking at the jealousy and quarreling described in verses 3-4, how do you personally battle these feelings in your relationships, and how can we hold each other accountable to acting maturely? <i>Verses 3:3-4</i></li>
+    </ol>
+    <div class="page-number">18</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Considering that God is the one who makes things grow in verses 5-9, how do you struggle with relying on human leaders, and how can we support each other in keeping our focus on God's role in our growth? <i>Verses 3:5-9</i></li>
+        <li>As we read about building on the foundation of Christ in verses 10-15, what materials are you using to build your life right now, and how can we help each other build with things that will last? <i>Verses 3:10-15</i></li>
+        <li>Looking at the truth that you are God's temple in verses 16-17, how does this change the way you treat yourself, and how can we encourage one another to honor the Spirit living within us? <i>Verses 3:16-17</i></li>
+        <li>When considering the call to become a fool in the world's eyes in verses 18-23, where might you need to let go of worldly wisdom, and how can we support each other in fully belonging to Christ? <i>Verses 3:18-23</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To evaluate what we are building our lives upon and commit to growing past spiritual immaturity into deep, lasting discipleship.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to reveal any areas of jealousy or superficiality in our lives, and pray that we build on the solid foundation of Jesus Christ.</p>
+        </div>
+    </div>
+    <div class="page-number">19</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">20</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FOUR: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 4</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">21</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did evaluating your spiritual foundation change your decisions or actions last week?</li>
+        <li>What is a responsibility or chore you had growing up that you absolutely hated doing?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "This, then, is how you ought to regard us: as servants of Christ and as those entrusted with the mysteries God has revealed."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 4:1 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Reflecting on Paul's view of being judged by the Lord in verses 1-4, how do you handle the pressure of caring about what others think of you, and how can we remind each other to seek only God's approval? <i>Verses 4:1-4</i></li>
+        <li>Looking at the command to judge nothing before the appointed time in verse 5, when do you struggle with the temptation to judge others, and how can we help each other leave the judging to God? <i>Verses 4:5</i></li>
+    </ol>
+    <div class="page-number">22</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>As we read about not taking pride in one person over another in verses 6-7, how do you fight the urge to compare yourself to others, and how can we encourage true humility in our fellowship? <i>Verses 4:6-7</i></li>
+        <li>Considering the hardships the apostles faced in verses 8-13, when have you felt dishonored for following Christ, and how can we support one another when facing persecution or ridicule? <i>Verses 4:8-13</i></li>
+        <li>Reflecting on Paul's plea for the Corinthians to imitate him in verses 14-17, in what ways can you better imitate the sacrificial love of your mentors, and how can we model this for each other? <i>Verses 4:14-17</i></li>
+        <li>Looking at the contrast between arrogant talk and spiritual power in verses 18-21, how do you deal with arrogance in your community, and how can we encourage gentle restoration instead of harshness? <i>Verses 4:18-21</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To build stronger fellowship by dropping our judgments and pride, serving one another humbly as Christ intended.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for a spirit of deep humility in our fellowship, asking God to help us stop judging each other and start serving one another genuinely.</p>
+        </div>
+    </div>
+    <div class="page-number">23</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">24</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FIVE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 5</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">25</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you practice humility and avoid judging others in your relationships this past week?</li>
+        <li>Have you ever had to confront a friend about something difficult? How did you muster the courage to do it?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Therefore let us keep the Festival, not with the old bread leavened with malice and wickedness, but with the unleavened bread of sincerity and truth."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 5:8 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When reading about the blatant sin happening in the church in verses 1-2, how do you normally react to seeing unrepentant sin in your community, and how can we encourage each other to grieve over it rather than ignore it? <i>Verses 5:1-2</i></li>
+        <li>Considering the metaphor of a little yeast working through the whole batch of dough in verses 6-8, how can we support one another in identifying and removing the hidden sins in our own lives? <i>Verses 5:6-8</i></li>
+    </ol>
+    <div class="page-number">26</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Looking at the instruction to not associate with someone who claims to be a believer but lives in sin in verses 9-11, when have you found this boundary difficult to set, and how can we help each other navigate these painful situations? <i>Verses 5:9-11</i></li>
+        <li>As we read about judging those inside the church rather than outside in verses 12-13, how do you balance showing grace with holding fellow believers accountable in your ministry? <i>Verses 5:12-13</i></li>
+        <li>Reflecting on the call to keep the Festival with sincerity and truth in verses 7-8, in what practical ways can we keep our community focused on authenticity this week, and how can we encourage each other to be genuine? <i>Verses 5:7-8</i></li>
+        <li>Considering the need to expel the wicked person in verses 1-13, how can we lovingly and courageously confront one another when we notice behaviors that could harm the group's ministry? <i>Verses 5:1-13</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To minister in sincerity and truth by holding ourselves and our community accountable to God's standard of holiness.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask for the courage to confront sin in our own lives first, and for the wisdom to hold each other accountable with deep love and truth.</p>
+        </div>
+    </div>
+    <div class="page-number">27</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">28</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SIX: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 6</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">29</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>In what ways did you pursue sincerity and truth, or handle accountability, in the last week?</li>
+        <li>What is the most trivial thing you’ve ever seen people get into a serious argument over?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own; you were bought at a price. Therefore honor God with your bodies."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 6:19-20 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the issue of believers taking each other to court in verses 1-6, how do you personally handle disputes in the church, and how can we encourage each other to resolve conflicts peacefully? <i>Verses 6:1-6</i></li>
+        <li>When considering the idea that it is better to be wronged than to sue a brother in verses 7-8, in what situations do you struggle to let go of revenge, and how can we support each other in choosing grace over our rights? <i>Verses 6:7-8</i></li>
+    </ol>
+    <div class="page-number">30</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>As we read the reminder that we were washed, sanctified, and justified in verses 9-11, how does this change the way you view your past mistakes, and how can we remind each other of this truth when we feel condemned? <i>Verses 6:9-11</i></li>
+        <li>Reflecting on the statement that not everything permissible is beneficial in verse 12, how do you draw the line in your daily choices, and how can we help each other pursue what is actually good for us? <i>Verses 6:12</i></li>
+        <li>Looking at the command to flee from sexual immorality in verses 13-18, in what specific ways do you struggle to escape physical temptations, and how can we practically support one another in fleeing from them? <i>Verses 6:13-18</i></li>
+        <li>Considering the truth that your body is a temple of the Holy Spirit in verses 19-20, how can you practically honor God with your body this week, and how can we hold each other accountable to this act of worship? <i>Verses 6:19-20</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To worship God not just with our minds, but by resolving disputes peacefully and honoring Him with our physical bodies.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that we would fully grasp what it means to be bought at a price, and ask God for strength to honor Him with our bodies and choices.</p>
+        </div>
+    </div>
+    <div class="page-number">31</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">32</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SEVEN: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 7</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">33</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you intentionally honor God with your physical body or choices this past week?</li>
+        <li>Are you more of a planner who needs to know exactly what's next, or do you prefer to go with the flow?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "For how do you know, wife, whether you will save your husband? Or, how do you know, husband, whether you will save your wife?"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 7:16 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Reflecting on the instructions for mutual respect and intimacy in marriage in verses 1-5, how do you navigate these challenges in your closest relationships, and how can we encourage each other to be selfless with our spouses? <i>Verses 7:1-5</i></li>
+        <li>Looking at Paul's perspective on singleness as a gift in verses 6-9, how can we better support single members of our community, and how can we encourage one another to utilize our current relationship status for God’s kingdom? <i>Verses 7:6-9</i></li>
+    </ol>
+    <div class="page-number">34</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>When considering the advice for those married to unbelievers in verses 10-16, if you are in a difficult relationship, how do you model Christ’s love to them, and how can we pray for each other's witness at home? <i>Verses 7:10-16</i></li>
+        <li>As we read about remaining in the situation God has assigned to us in verses 17-24, in what ways do you struggle to find peace in your current life season, and how can we encourage each other to bloom where we are planted? <i>Verses 7:17-24</i></li>
+        <li>Reflecting on the warning that the time is short in verses 29-35, how do you keep your worldly responsibilities from distracting you from your devotion to the Lord, and how can we help each other maintain an eternal perspective? <i>Verses 7:29-35</i></li>
+        <li>Looking at the call for undivided devotion to the Lord in verses 32-35, how can we encourage each other to use our current season of life—whether married or single—as a platform to share the gospel without distraction? <i>Verses 7:32-35</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To leverage whatever season of life or marital status we are in to share the gospel and live in undivided devotion to the Lord.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for contentment in our current life situations, and ask God to use our marriages or our singleness as a light to unbelievers.</p>
+        </div>
+    </div>
+    <div class="page-number">35</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">36</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK EIGHT: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 8</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">37</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you use your current life situation (married, single, etc.) to serve or share Christ this past week?</li>
+        <li>What is a food you absolutely cannot stand, even if it’s considered a delicacy?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "But knowledge puffs up while love builds up. Those who think they know something do not yet know as they ought to know."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 8:1-2 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When reading that knowledge puffs up while love builds up in verses 1-3, when have you found yourself feeling proud of your own biblical knowledge, and how can we encourage each other to prioritize love over being right? <i>Verses 8:1-3</i></li>
+        <li>Looking at the truth that idols are nothing in verses 4-8, how do you practically ensure that your theological freedom doesn't become an excuse to ignore the needs of others, and how can we hold each other accountable to this? <i>Verses 8:4-8</i></li>
+    </ol>
+    <div class="page-number">38</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the warning to be careful with our freedom in verses 9-11, how do you handle situations where your personal liberty might conflict with someone else's convictions, and how can we support each other in navigating this? <i>Verses 8:9-11</i></li>
+        <li>As we consider the danger of becoming a stumbling block to a newer believer in verses 9-13, when have you had to restrict your own habits, and how can we help each other identify the blind spots where our actions might be hurting someone? <i>Verses 8:9-13</i></li>
+        <li>Looking at the strong statement that sinning against a brother is sinning against Christ in verse 12, how does this reality change the way you view your interactions with other believers, and how can we remind each other of this weight? <i>Verses 8:12</i></li>
+        <li>When considering Paul's willingness to never eat meat again in verse 13, what specific freedom are you willing to give up this week for the sake of another believer's spiritual growth, and how can we encourage each other in this sacrifice? <i>Verses 8:13</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To grow as disciples by choosing love over being right, and willingly limiting our freedoms so we don't stumble others.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to reveal any areas where our "knowledge" is hurting others, and pray for the selflessness to limit our freedoms for the sake of our brothers and sisters.</p>
+        </div>
+    </div>
+    <div class="page-number">39</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">40</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK NINE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 9</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">41</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK NINE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Did you have to restrict any personal freedoms this week to avoid causing someone else to stumble?</li>
+        <li>What was the most physically demanding sport or activity you’ve ever tried?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "I have become all things to all people so that by all possible means I might save some. I do all this for the sake of the gospel, that I may share in its blessings."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 9:22-23 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Reflecting on Paul's defense of his rights as an apostle in verses 1-12, how do you respond when you feel like your legitimate rights are being ignored, and how can we encourage each other to respond with grace? <i>Verses 9:1-12</i></li>
+        <li>Looking at Paul's choice to not use his right to material support in verses 12-18, when have you willingly laid down a privilege for the benefit of the group, and how can we help each other prioritize the gospel over our own comfort? <i>Verses 9:12-18</i></li>
+    </ol>
+    <div class="page-number">42</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>When considering what it means to become all things to all people in verses 19-23, how can we practically relate to those outside our comfort zone without compromising our faith, and how can we challenge each other to step out of our bubbles? <i>Verses 9:19-23</i></li>
+        <li>As we read about doing everything for the sake of the gospel in verses 22-23, what sacrifices do you find hardest to make when trying to reach others, and how can we support one another in making these tough choices? <i>Verses 9:22-23</i></li>
+        <li>Reflecting on the metaphor of running a race in verses 24-27, in what areas of your spiritual life do you need more strict training and self-control, and how can we hold each other accountable to disciplined living? <i>Verses 9:24-27</i></li>
+        <li>Looking at the fear of being disqualified for the prize in verse 27, how can we train together as a community so that none of us lose our way, and how can we encourage each other to finish the race strong? <i>Verses 9:27</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To strengthen fellowship by laying down our personal rights and running the spiritual race with discipline together.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for the discipline to run the spiritual race with purpose, and ask for the willingness to set aside our rights for the sake of others in the fellowship.</p>
+        </div>
+    </div>
+    <div class="page-number">43</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK NINE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">44</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TEN: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 10</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">45</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>In what way did you practice self-discipline or lay down your rights for someone else this past week?</li>
+        <li>Have you ever ignored a warning sign and immediately regretted it? What happened?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "So whether you eat or drink or whatever you do, do it all for the glory of God."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 10:31 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When reading about the Israelites' failure in the wilderness in verses 1-7, what modern-day idols do you find yourself tempted to rely on, and how can we encourage each other to keep God on the throne of our lives? <i>Verses 10:1-7</i></li>
+        <li>Reflecting on the promise that God provides a way out of temptation in verses 11-13, how do you usually react when you face intense temptation, and how can we support and pray for you in those moments? <i>Verses 10:11-13</i></li>
+    </ol>
+    <div class="page-number">46</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Looking at the command to flee from idolatry in verse 14, what is a specific temptation you’ve overcome recently, and how can we celebrate together the "way out" that God provided for you? <i>Verses 10:14</i></li>
+        <li>As we consider the principle that not everything is beneficial in verses 23-24, how do you discern whether a harmless activity is actually constructive for your ministry, and how can we help each other prioritize the good of others over our own good? <i>Verses 10:23-24</i></li>
+        <li>Reflecting on the freedom to eat meat sold in the market but the need to care for others' consciences in verses 25-30, how do you balance your freedom with sensitivity to others, and how can we remind each other to be considerate? <i>Verses 10:25-30</i></li>
+        <li>Looking at the ultimate goal of doing everything for the glory of God in verses 31-33, what is one practical way you can bring glory to God at your workplace or home this week, and how can we encourage each other to live this out? <i>Verses 10:31-33</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To ensure our ministry is effective by fleeing from idolatry, resisting temptation, and doing absolutely everything for God’s glory.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God for always providing a way out of temptation, and ask Him to help us do all things for His glory rather than our own satisfaction.</p>
+        </div>
+    </div>
+    <div class="page-number">47</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">48</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK ELEVEN: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 11</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">49</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK ELEVEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How were you able to prioritize God's glory in your everyday tasks this past week?</li>
+        <li>What is your favorite holiday tradition and why does it mean so much to you?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "For whenever you eat this bread and drink this cup, you proclaim the Lord’s death until he comes."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 11:26 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Reflecting on the discussions of head coverings and cultural norms in verses 2-16, how do you balance respecting traditions with maintaining the core truths of the gospel, and how can we support each other in keeping our focus on Christ in worship? <i>Verses 11:2-16</i></li>
+        <li>When considering the rebuke against divisions during the Lord's Supper in verses 17-22, how do cliques in our group impact our ability to worship authentically, and how can we actively work to break down these barriers among us? <i>Verses 11:17-22</i></li>
+    </ol>
+    <div class="page-number">50</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Looking at the solemn reminder of what communion represents in verses 23-26, what runs through your mind when you participate in it, and how can we encourage each other to make it a more meaningful time of remembrance? <i>Verses 11:23-26</i></li>
+        <li>As we read about the need to examine ourselves before taking communion in verses 27-28, how do you practically prepare your heart for worship, and how can we help each other take this self-examination seriously? <i>Verses 11:27-28</i></li>
+        <li>Reflecting on the serious consequences of taking communion in an unworthy manner in verses 29-32, when have you experienced the fallout of taking God's grace lightly, and how can we gently hold each other accountable to a life of reverence? <i>Verses 11:29-32</i></li>
+        <li>Looking at the practical instruction to wait for each other in verses 33-34, how can we better care for one another's practical needs when we gather, and how can we ensure everyone feels valued in our fellowship? <i>Verses 11:33-34</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To worship God with a unified body, examining our own hearts deeply and honoring Christ's sacrifice when we gather.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would reveal any hidden divisions among us, and ask for a heart of deep reverence whenever we remember Christ's sacrifice.</p>
+        </div>
+    </div>
+    <div class="page-number">51</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK ELEVEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">52</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWELVE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 12</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">53</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWELVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Did you discover anything new when examining your own heart during worship or communion this week?</li>
+        <li>If you could instantly be an expert in any musical instrument, which would you choose?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Now to each one the manifestation of the Spirit is given for the common good."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 12:7 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When reading that the manifestation of the Spirit is given for the common good in verses 1-7, what spiritual gifts do you feel you have, and how can we encourage each other to actively use our gifts to serve the group? <i>Verses 12:1-7</i></li>
+        <li>Looking at the analogy of the body with many parts in verses 12-16, how do you overcome the feeling that your contribution is insignificant, and how can we better affirm the unique value each person brings to our church? <i>Verses 12:12-16</i></li>
+    </ol>
+    <div class="page-number">54</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the truth that every part of the body is indispensable in verses 21-25, when have you found yourself looking down on someone else's role, and how can we remind each other to treat every member with equal respect? <i>Verses 12:21-25</i></li>
+        <li>As we consider the diversity of gifts listed in verses 4-11, how can we better celebrate and utilize the different strengths in this group to reach out to the lost, and how can we collaborate more effectively? <i>Verses 12:4-11</i></li>
+        <li>Looking at the reality that if one part suffers, every part suffers with it in verses 26-27, in what ways do you personally feel the pain of others in our body, and how can we better support those among us who are hurting? <i>Verses 12:26-27</i></li>
+        <li>When reading the encouragement to eagerly desire the greater gifts in verse 31, what gifts should we be asking God for as a group, and how can we pray together for the Spirit to equip us for the work ahead? <i>Verses 12:31</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To recognize and use our diverse spiritual gifts harmoniously so that the body of Christ can effectively impact the world.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the Holy Spirit would reveal our individual gifts and give us opportunities to use them together for the common good.</p>
+        </div>
+    </div>
+    <div class="page-number">55</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWELVE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">56</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK THIRTEEN: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 13</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">57</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK THIRTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you intentionally use your spiritual gifts for the common good this past week?</li>
+        <li>What is the most chaotic or noisy environment you've ever had to work or sleep in?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "And now these three remain: faith, hope and love. But the greatest of these is love."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 13:13 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Reflecting on the truth that spiritual gifts without love are meaningless in verses 1-3, in what areas of your life are you doing good things but lacking genuine love, and how can we encourage each other to check our motives? <i>Verses 13:1-3</i></li>
+        <li>Looking at the description of what love is in verses 4-5, which characteristic (patient, kind, not easily angered, etc.) is the hardest for you to practice right now, and how can we help each other grow in this specific area? <i>Verses 13:4-5</i></li>
+    </ol>
+    <div class="page-number">58</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>When considering the statement that love keeps no record of wrongs in verses 5-6, how do you respond when you feel wronged, and how can we hold each other accountable to forgiving rather than holding grudges? <i>Verses 13:5-6</i></li>
+        <li>As we read that love always protects, trusts, hopes, and perseveres in verse 7, when has someone else's love been a shield for you during a difficult time, and how can we be that kind of shield for each other? <i>Verses 13:7</i></li>
+        <li>Reflecting on the reality that our current knowledge is incomplete in verses 8-12, how does this help you stay humble in your spiritual growth, and how can we encourage one another to keep seeking God even when we don't have all the answers? <i>Verses 13:8-12</i></li>
+        <li>Looking at the conclusion that the greatest of these is love in verse 13, how can we hold each other accountable to making love the absolute highest priority in our discipleship and daily interactions? <i>Verses 13:13</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To evaluate all of our actions and knowledge through the lens of perfect, Christ-like love.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to strip away the things we do out of obligation or pride, and fill us with a love that is truly patient, kind, and forgiving.</p>
+        </div>
+    </div>
+    <div class="page-number">59</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK THIRTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">60</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FOURTEEN: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 14</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">61</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FOURTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>In what specific relationship did you try to practice patience or keep no record of wrongs this week?</li>
+        <li>Have you ever been to a foreign country where you couldn't understand the language? What was it like?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "What then shall we say, brothers and sisters? When you come together, each of you has a hymn, or a word of instruction, a revelation, a tongue or an interpretation. Everything must be done so that the church may be built up."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 14:26 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When reading about the goal of building up the church in verses 1-5, how do you ensure that your contributions to the group actually edify others, and how can we encourage each other to speak words that strengthen the fellowship? <i>Verses 14:1-5</i></li>
+        <li>Looking at the warning against speaking in unintelligible ways in verses 6-12, when have you felt alienated or confused in a church setting, and how can we prevent that from happening in our own gatherings? <i>Verses 14:6-12</i></li>
+    </ol>
+    <div class="page-number">62</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the need to pray with both the spirit and the mind in verses 13-17, how can we balance engaging our intellects with engaging our emotions when we worship, and how can we support each other in this balance? <i>Verses 14:13-17</i></li>
+        <li>As we consider the call to be infants in evil but adults in thinking in verse 20, in what ways do you need to mature your mindset, and how can we challenge each other to think deeply about our faith? <i>Verses 14:20</i></li>
+        <li>Looking at the description of an orderly worship service that leads an outsider to fall down and worship God in verses 23-25, how can we make our meetings so clear and impactful, and how can we prepare our hearts for visitors? <i>Verses 14:23-25</i></li>
+        <li>When reading that everyone should bring a hymn, a word of instruction, or a revelation in verses 26-33, what is one practical way you can bring something to share at our next gathering, and how can we encourage full participation from everyone? <i>Verses 14:26-33</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To ensure that whenever we gather, everything we say and do is orderly, understandable, and designed to build up the fellowship.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that our gatherings would always be encouraging, orderly, and filled with the presence of God so that everyone is built up.</p>
+        </div>
+    </div>
+    <div class="page-number">63</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FOURTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">64</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FIFTEEN: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 15</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">65</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FIFTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>What did you intentionally do to help build up the fellowship or encourage someone this week?</li>
+        <li>What is the hardest physical labor or longest project you've ever completed?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Therefore, my dear brothers and sisters, stand firm. Let nothing move you. Always give yourselves fully to the work of the Lord, because you know that your labor in the Lord is not in vain."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 15:58 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Reflecting on the core message of Christ's death and resurrection in verses 1-8, how does the reality of the resurrection impact the way you live your daily life, and how can we remind each other of this foundational truth when we face doubt? <i>Verses 15:1-8</i></li>
+        <li>Looking at the argument that our faith is useless if the dead are not raised in verses 12-19, when do you find yourself doubting the power of the gospel, and how can we help each other stand firm in what we believe? <i>Verses 15:12-19</i></li>
+    </ol>
+    <div class="page-number">66</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>When considering that Christ is the firstfruits of those who have fallen asleep in verses 20-22, how does the promise of our own future resurrection give you hope during times of grief, and how can we comfort one another with these words? <i>Verses 15:20-22</i></li>
+        <li>As we read about the danger of adopting a "let us eat and drink" mentality in verses 32-34, in what ways are you tempted by short-term, worldly thinking, and how can we hold each other accountable to living for eternity? <i>Verses 15:32-34</i></li>
+        <li>Reflecting on the victory over death described in verses 54-57, how does knowing that death has lost its sting change your fear of the future, and how can we celebrate this victory together in our daily struggles? <i>Verses 15:54-57</i></li>
+        <li>Looking at the command to give ourselves fully to the work of the Lord in verse 58, what specific work are you doing right now, and how can we encourage each other to keep laboring when it feels like our efforts are in vain? <i>Verses 15:58</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">To minister with unwavering endurance, knowing that because of the resurrection, our labor for the Lord is never wasted.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Thank God for the victory we have through Jesus Christ, and ask for the strength to give ourselves fully to the work of the Lord this week.</p>
+        </div>
+    </div>
+    <div class="page-number">67</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FIFTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">68</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SIXTEEN: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 CORINTHIANS</span> Chapter 16</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">69</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SIXTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did remembering the resurrection change your perspective on your struggles or your ministry work this week?</li>
+        <li>Who is someone you consider a hero of the faith, and why?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Be on your guard; stand firm in the faith; be courageous; be strong. Do everything in love."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Corinthians</span> 16:13-14 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When reading about the collection for the Lord’s people in verses 1-4, how do you plan and manage your finances to ensure you are consistently giving, and how can we encourage each other to be generous stewards? <i>Verses 16:1-4</i></li>
+        <li>Looking at Paul's mention of a great door for effective work opening up alongside many adversaries in verses 8-9, when have you experienced opposition while trying to serve, and how can we pray for your endurance in those moments? <i>Verses 16:8-9</i></li>
+    </ol>
+    <div class="page-number">70</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 CORINTHIANS</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the instruction to submit to and recognize those who work hard in the ministry in verses 10-18, how can we better support and respect the spiritual leaders who serve among us, and how can we practically show our appreciation? <i>Verses 16:10-18</i></li>
+        <li>As we consider the rapid-fire commands to be on your guard and stand firm in the faith in verse 13, what does it look like practically for you to be vigilant this week, and how can we watch each other's backs spiritually? <i>Verses 16:13</i></li>
+        <li>Looking at the instruction to do everything in love right after being told to be strong and courageous in verse 14, how do you ensure that your strength is always balanced by love, and how can we help each other maintain this balance? <i>Verses 16:14</i></li>
+        <li>When reading the final greetings from various churches and individuals in verses 19-24, in what ways can we show grace and hospitality to the wider body of believers, and how can we foster a deeper sense of global Christian family? <i>Verses 16:19-24</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;"></p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;"></p>
+        </div>
+    </div>
+    <div class="page-number">71</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SIXTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">72</div>
+</div>
+
+
+
+
+</body>
+</html>

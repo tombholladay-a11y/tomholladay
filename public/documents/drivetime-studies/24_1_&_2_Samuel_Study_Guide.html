@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A Small Group Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-color: #1a365d; /* Dark Blue Theme */
+        --gray-text: #7f8c8d;
+        --dark-text: #2c3e50;
+        --light-gray: #f5f5f5;
+    }
+    
+    body {
+        font-family: 'Lato', sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+
+    .page {
+        background-color: white;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto 20px auto;
+        padding: 0.85in 1in 1.4in 1in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    /* Print settings */
+    @page { margin: 0; size: letter; }
+    @media print {
+        body { 
+            background-color: white; 
+            margin: 0;
+            padding: 0;
+        }
+        .page { 
+            width: 8.5in;
+            height: 11in;
+            margin: 0; 
+            box-shadow: none; 
+            border: none;
+            padding: 0.65in 0.75in 1.1in 0.75in;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: var(--primary-color);
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    /* Cover Page */
+    .cover-page {
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2in 1in;
+    }
+    
+    .cover-page h2 {
+        color: white;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    
+    .cover-page h1 {
+        color: white;
+        font-size: 4.5em;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        border-bottom: 6px solid #f39c12; /* Matches the orange "time" in the logo */
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .cover-page .author {
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .cover-logo-container {
+        position: absolute;
+        bottom: 1.5in;
+        right: 1.5in;
+        text-align: right;
+    }
+    
+    .cover-logo-container img {
+        width: 200px;
+    }
+
+    /* Headers for regular pages */
+    .page-header {
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    /* Sections with Icons */
+    .section-header {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .section-icon {
+        width: 50px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    
+    .section-content {
+        flex: 1;
+    }
+    
+    .section-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    /* Listen Page Layout */
+    .listen-page .listen-title {
+        color: var(--primary-color);
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    .listen-notes {
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+
+    /* Lists and Typography */
+    ol.questions {
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ol.questions li {
+        margin-bottom: 14px;
+        font-size: 1.1em;
+        color: var(--dark-text);
+    }
+    
+    ul.checkin {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ul.checkin li { 
+        margin-bottom: 12px; 
+        font-size: 1.1em;
+    }
+
+    .key-verse {
+        font-style: italic;
+        font-size: 1.15em;
+        margin-left: 70px;
+        color: var(--dark-text);
+    }
+    
+    .verse-ref {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 8px;
+        font-size: 1.1em;
+    }
+    
+    p.section-text {
+        font-size: 1.2em;
+        margin-left: 70px;
+    }
+
+    /* Intro pages */
+    .intro-title {
+        font-size: 2.5em;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+    
+    .intro-text {
+        font-size: 1.3em;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .page-number {
+        position: absolute;
+        bottom: 0.5in;
+        width: 100%;
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 0.9em;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="page cover-page">
+    <h2>A SMALL GROUP STUDY</h2>
+    <div>
+        <!-- ✏️ REPLACE: Book name (all caps) -->
+        <h1><span style="white-space: nowrap;">1 & 2 SAMUEL</span></h1>
+    </div>
+    <!-- ✏️ REPLACE: Author name -->
+    <div class="author">Tom Holladay</div>
+    
+    <div class="cover-logo-container">
+        <!-- ✏️ REPLACE: Cover image (or keep Cover.png if it's your standard logo) -->
+        <img src="Cover.png" alt="Cover Image" style="max-width: 300px;">
+    </div>
+</div>
+
+<!-- ============================================================
+     COPYRIGHT PAGE
+     ============================================================ -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="margin-top: 3in;">
+        <!-- ✏️ REPLACE: Book name -->
+        <h3 style="font-size: 1.2em; color: var(--primary-color); margin-bottom: 30px;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</h3>
+        <!-- ✏️ REPLACE: Copyright year and author -->
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Copyright © 2026 Tom Holladay</p>
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 40px;">All rights reserved. No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form, without the written permission of the author.</p>
+        
+        <hr style="border: 0; border-bottom: 1px solid #ccc; margin: 40px 0;">
+        
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Unless otherwise noted, all Scripture quotations are taken from THE HOLY BIBLE, NEW INTERNATIONAL VERSION, NIV®. Copyright © 1973, 1978, 1984, 2011, by Biblica, Inc. Used by permission. All rights reserved worldwide.</p>
+    </div>
+</div>
+
+<!-- ============================================================
+     ABOUT DRIVETIME DEVOTIONS (Page 3)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">ABOUT DRIVETIME DEVOTIONS<br>SMALL GROUP STUDIES</h2>
+    
+    <!-- ✏️ OPTIONAL: Change "five-week" to match your study length -->
+    <p class="intro-text"><strong style="color: var(--primary-color);">Welcome</strong> to this special Drivetime Devotions, small group study. This 9-week study is designed so that you can enjoy Drivetime Devotions as a podcast throughout the week and then talk about it with your small group. This will allow for more time in your small group for discussion, application, and fellowship.</p>
+    
+    <p class="intro-text">The purpose of Drivetime Devotions is to help you know God's Word and put it into practice. It's usually better to study small sections of God's Word each day instead of a larger section once a week. Studying the Bible is like eating—you'll be healthier if you eat small amounts each day rather than one big meal a week! Episodes are designed to be listened to once per day, five days a week. In the event you miss a day or two, you can still stay on schedule.</p>
+    <div class="page-number">3</div>
+</div>
+
+<div class="page" style="padding-top: 1.5in;">
+    <div class="page-header">ABOUT DRIVETIME DEVOTIONS SMALL GROUP STUDIES</div>
+    
+    <p class="intro-text">In Drivetime Devotions, Pastor Tom Holladay teaches God's Word and helps you put it into practice. With over 30 million downloads, Drivetime Devotions has built a reputation for changing lives and helping people grow closer to God. You can access this podcast study on <span style="white-space: nowrap;">1 & 2 SAMUEL</span> by downloading the DrivetimeDevotions app for your phone or by going to DrivetimeDevotions.com.</p>
+    <div class="page-number">4</div>
+</div>
+
+<!-- ============================================================
+     HOW TO USE (Page 5)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">HOW TO USE THIS INTERACTIVE<br>STUDY GUIDE</h2>
+    
+    <p class="intro-text">This study guide is designed to be used as a downloaded file on your tablet or phone. You do not need to print it out unless you want to.</p>
+    <div class="page-number">5</div>
+</div>
+
+<!-- ============================================================
+     A FEW TIPS (Page 6)
+     ============================================================ -->
+<div class="page" style="padding-top: 2.5in;">
+    <h2 class="intro-title">A FEW TIPS BEFORE YOU DIG IN</h2>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Prepare yourself before each study by listening to each week's five daily podcast episodes (one per day).</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Open each meeting with a time for everyone to check in on each other's progress with the podcast. Accountability is a key to success in this study!</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Each week you will find a key verse (or verses) from the chapter you are studying. You may want to memorize this verse together as a group.</p>
+        </div>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<div class="page">
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">These are questions for group discussion. Please don't feel pressured to discuss every single question. The material in this study is meant to be your servant, not your master. Therefore there is no reason to rush through your discussions. Give everyone ample time to share their thoughts.</p>
+            <p style="font-size: 1.2em;">Some questions will reference the verses from which they are taken. Many groups will want to have someone read those verses accompanying the question. There is something powerful about hearing the Bible read aloud together as a group.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">This section helps you encourage each other in balancing God's five purposes of evangelism, discipleship, fellowship, ministry, and worship. Each week, there will be a prayer, practical action, or personal assignment that focuses on one of these purposes.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">At the end of each session you will find suggestions for your group prayer time. Praying together is one of the greatest privileges of small group life. Please don't take it for granted.</p>
+            <p style="font-size: 1.2em;">Get ready for God to do incredible things in your life as you begin the adventure of learning more deeply about the most exciting message in the world: the truth about God!</p>
+        </div>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<div class="page">
+    <div class="page-header">A FEW TIPS BEFORE YOU DIG IN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">As you go through each session, the Holy Spirit may bring to mind different people in your life. You may even want to write their names down beside a point, phrase, or verse in the margins. Take the opportunity to share God's Word in a friend's life during the week.</p>
+        </div>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+
+<!-- ============================================================
+     ╔══════════════════════════════════════════════════════════╗
+     ║  WEEKLY CONTENT STARTS HERE                             ║
+     ║  Copy the 4-page block below for each week of study.    ║
+     ║  Each week = 4 pages (to fit 6 discovery questions):    ║
+     ║    Page A: Listen page                                  ║
+     ║    Page B: Checking In + Key Verse + Questions 1-4      ║
+     ║    Page C: Questions 5-6 + Purpose + Prayer             ║
+     ║    Page D: Tell a Friend                                ║
+     ╚══════════════════════════════════════════════════════════╝
+     ============================================================ -->
+
+
+<!-- ============================================================
+     WEEK ONE
+     ======<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK ONE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 1-3</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">9</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>If you're just starting as a group, take some time to get to know each other by going around the circle and sharing your name, where you grew up, and something about your life.</li>
+        <li>What is the most memorable gift you have ever given away to someone else?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "So now I give him to the LORD. For his whole life he will be given over to the LORD."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Samuel</span> 1:28 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at Hannah's deep anguish and vow in verses 9-11, when have you found yourself praying out of a place of deep sorrow, and how can we support each other when we feel overwhelmed by our circumstances? <i>Verses 1:9-11</i></li>
+        <li>As we consider Eli's sons in verses 27-29, how do you struggle with prioritizing other things over your relationship with God, and what practical steps can we take to keep God first in our lives? <i>Verses 2:27-29</i></li>
+        <li>Reflecting on Hannah's prayer of praise in verses 1-10, how does recognizing God's power to raise up the humble change the way you view your own challenges, and how can we encourage one another to pray with this kind of trust? <i>Verses 2:1-10</i></li>
+        <li>When we see Hannah keeping her promise to dedicate Samuel in verses 24-28, what makes it difficult for you to fully surrender the people or things you love to God, and how can we help each other release control? <i>Verses 1:24-28</i></li>
+    </ol>
+    <div class="page-number">10</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>Looking at God's call to Samuel in the night in verses 8-10, how do you personally try to listen for God's voice in your daily life, and how can we remind each other to respond with "Speak, for your servant is listening"? <i>Verses 3:8-10</i></li>
+        <li>As Samuel bravely shares a difficult message with Eli in verses 15-18, when have you found it hard to be honest about a tough truth, and how can our group be a safe place to hold each other accountable? <i>Verses 3:15-18</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Take 10 minutes as a group to share one thing you are grateful for this week and offer a short prayer of praise, focusing on God's character rather than just your requests.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Spend time praying for the group members as they seek to keep their hearts open to God's voice, asking for the courage to prioritize their relationship with Him above all else.</p>
+        </div>
+    </div>
+    <div class="page-number">11</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWO: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 4-8</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">13</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you do this past week with taking time to listen for God's voice and keeping your heart open to His leading?</li>
+        <li>Have you ever tried to fix something yourself only to realize you made it worse?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "If you are returning to the LORD with all your hearts, then rid yourselves of the foreign gods and the Ashtoreths and commit yourselves to the LORD and serve him only, and he will deliver you out of the hand of the Philistines."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Samuel</span> 7:3 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the Israelites treating the Ark like a lucky charm in verses 3-5, in what ways do you sometimes try to manipulate God to get what you want, and how can we challenge each other to simply serve Him instead? <i>Verses 4:3-5</i></li>
+        <li>When considering how the idol of Dagon fell before the Ark in verses 1-5, what are the modern "idols" or worries that compete for your attention, and how can we remind each other that God is bigger than them all? <i>Verses 5:1-5</i></li>
+        <li>Reflecting on the Philistines' attempt to test God in verses 7-12, when have you struggled to recognize God's hand in your life versus chalking things up to coincidence, and how can we encourage each other to see His work clearly? <i>Verses 6:7-12</i></li>
+        <li>Looking at Samuel's call for the people to return to God in verses 3-4, what "foreign gods" or distractions do you need to remove from your life today, and how can our group help you stay accountable to that commitment? <i>Verses 7:3-4</i></li>
+    </ol>
+    <div class="page-number">14</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>As we consider Samuel setting up the Ebenezer stone to remember God's help in verse 12, what is a practical way you can set up a reminder of God's faithfulness in your own life, and how can we celebrate those milestones together? <i>Verses 7:12</i></li>
+        <li>When reading about the people demanding a king like the other nations in verses 19-20, how do you struggle with wanting to fit in with the culture around you rather than trusting God's unique plan, and how can we support each other in choosing faith over feelings? <i>Verses 8:19-20</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one person in your life who doesn't know the Lord, write their name on a card, and commit to praying for an opportunity to share a story of God's faithfulness with them this week.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the group would develop a deep, healthy reverence for God's holiness, asking Him to reveal any areas of compromise and to renew a spirit of true humility and service.</p>
+        </div>
+    </div>
+    <div class="page-number">15</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">16</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK THREE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 9-16</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">17</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>What happened this past week when you tried to recognize and remove a distraction or idol that had been taking your focus away from God?</li>
+        <li>What is a mistake you made in the past that you are now able to look back on and laugh about?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "But the LORD said to Samuel, 'Do not consider his appearance or his height, for I have rejected him. The LORD does not look at the things man looks at. Man looks at the outward appearance, but the LORD looks at the heart.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Samuel</span> 16:7 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at Saul hiding in the baggage instead of embracing his calling in verses 20-23, what fears or past baggage are keeping you from stepping into what God is asking of you, and how can we help each other step out in faith? <i>Verses 10:20-23</i></li>
+        <li>When considering Saul's excuse for offering the sacrifice himself in verses 11-12, in what areas of life do you struggle most with impatience and taking matters into your own hands, and how can we encourage each other to wait on God's timing? <i>Verses 13:11-12</i></li>
+        <li>Reflecting on Saul's partial obedience with the Amalekites in verses 13-15, how do you sometimes try to spiritualize or justify your own disobedience, and how can we hold each other to a standard of full surrender? <i>Verses 15:13-15</i></li>
+        <li>As we look at Samuel confronting Saul's failure directly in verses 20-22, how do you usually react when someone points out a blind spot in your life, and how can we create a culture in this group where speaking the truth in love is welcomed? <i>Verses 15:20-22</i></li>
+    </ol>
+    <div class="page-number">18</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>Considering Samuel's tendency to look at the outward appearance of Jesse's older sons in verses 6-7, in what ways do you evaluate yourself or others based on worldly success, and how can we remind each other to value what God values? <i>Verses 16:6-7</i></li>
+        <li>When seeing God choose David the shepherd boy in verses 11-13, how does it encourage you to know that God uses unexpected people, and how can we help each other discover our own unique God-given potential? <i>Verses 16:11-13</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Choose one specific area of partial obedience in your life to bring fully under God's control this week, and share your commitment with an accountability partner from the group.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for each other to have hearts that are fully devoted to the Lord, asking for the courage to confront past failures and the faith to trust that God can turn those failures into spiritual growth.</p>
+        </div>
+    </div>
+    <div class="page-number">19</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">20</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FOUR: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 17-18</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">21</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did your focus on the condition of your heart rather than outward appearances change the way you interacted with others this week?</li>
+        <li>If you had to face a giant in a battle, what unconventional weapon or tool would you choose to bring?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "All those gathered here will know that it is not by sword or spear that the LORD saves; for the battle is the LORD's, and he will give all of you into our hands."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Samuel</span> 17:47 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at Eliab's discouraging words to David in verse 28, when have you felt discouraged by someone questioning your motives or readiness, and how can we be a source of encouragement to each other instead of critics? <i>Verses 17:28</i></li>
+        <li>As we consider David recalling his past victories over the lion and bear in verses 34-37, what past faithfulness of God can you draw on today to face your current challenges, and how can we help each other remember those victories? <i>Verses 17:34-37</i></li>
+        <li>Reflecting on David refusing to wear Saul's armor in verses 38-39, when have you felt pressured to fight your battles using someone else's methods, and how can we support each other in trusting the unique way God has equipped us? <i>Verses 17:38-39</i></li>
+        <li>When looking at David's bold declaration that the battle is the Lord's in verses 45-47, what "Goliath" in your life do you need to hand over to God right now, and how can we pray for your faith in that specific area? <i>Verses 17:45-47</i></li>
+    </ol>
+    <div class="page-number">22</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>Considering the women singing David's praises and Saul's angry reaction in verses 6-9, when have you struggled with jealousy over someone else's success, and how can we cultivate a habit of genuinely celebrating each other's wins? <i>Verses 18:6-9</i></li>
+        <li>As we see Saul's fear growing into hatred in verses 28-29, how do you handle feelings of insecurity when you feel threatened by another person, and how can we remind each other of our secure identity in Christ? <i>Verses 18:28-29</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Plan a time this week to reach out to another group member simply to encourage them in whatever "Goliath" battle they are currently facing, offering a listening ear or a cup of coffee.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for the faith to face the seemingly impossible situations in life, asking God to help the group keep their eyes on Him rather than on the giants, and for protection against the destructive trap of jealousy.</p>
+        </div>
+    </div>
+    <div class="page-number">23</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">24</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FIVE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 19-31</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">25</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did remembering that the "battle is the Lord's" change your perspective on a stressful situation this past week?</li>
+        <li>What is the most disappointed you have ever been by a canceled plan or changed event?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "David was greatly distressed because the men were talking of stoning him; each one was bitter in spirit because of his sons and daughters. But David found strength in the LORD his God."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">1 Samuel</span> 30:6 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at Jonathan's commitment to protect David despite Saul's anger in verses 1-3, when have you had to stand up for a friend in a difficult situation, and how can we build that kind of loyal friendship within our group? <i>Verses 19:1-3</i></li>
+        <li>As we consider Jonathan encouraging David to find strength in God in verses 15-18, who in your life needs you to help them find spiritual strength right now, and how can we encourage one another not to quit dreaming? <i>Verses 23:15-18</i></li>
+        <li>Reflecting on David's choice not to harm Saul in the cave in verses 4-6, what makes it difficult for you to leave vengeance in God's hands when you've been wronged, and how can we help each other choose submission over retaliation? <i>Verses 24:4-6</i></li>
+        <li>When reading about David and his men weeping over their captured families at Ziklag in verses 3-4, how comfortable are you with expressing raw grief to God, and how can our group be a safe space for people to process deep pain? <i>Verses 30:3-4</i></li>
+    </ol>
+    <div class="page-number">26</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>Considering that David found strength in the Lord despite the bitterness of his men in verse 6, what practical steps do you take to encourage yourself in God when everything seems to be falling apart, and how can we remind each other of His promises? <i>Verses 30:6</i></li>
+        <li>As we look at David deciding to share the recovered plunder with the exhausted men who stayed behind in verses 21-24, when have you struggled to be generous after experiencing a victory, and how can we challenge each other to share our blessings freely? <i>Verses 30:21-24</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Find a tangible way to serve someone outside of the group who has recently experienced a significant disappointment or loss, such as cooking a meal, writing an encouraging note, or running an errand for them.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for those in the group walking through seasons of deep disappointment or waiting, asking God to supply the strength to endure, the grace to forgive, and the faith to trust His sovereign timing.</p>
+        </div>
+    </div>
+    <div class="page-number">27</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">28</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SIX: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 1-5</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">29</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you practice finding your strength in the Lord or showing generosity to someone else during a difficult moment this past week?</li>
+        <li>What is the hardest life transition (moving, changing jobs, new school) you've ever had to navigate?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "And David knew that the LORD had established him as king over Israel and had exalted his kingdom for the sake of his people Israel."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">2 Samuel</span> 5:12 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at David's respectful mourning for Saul in verses 11-12 instead of celebrating his enemy's death, when have you found it challenging to honor the past during a transition, and how can we help each other let go of bitterness? <i>Verses 1:11-12</i></li>
+        <li>As we consider David asking God exactly where he should go in verses 1-2, how often do you truly seek God's direction before taking the next practical step in your life, and how can we encourage each other to pause and pray first? <i>Verses 2:1-2</i></li>
+        <li>Reflecting on the conflict between Abner and Joab in verses 12-17, how do you typically react when a transition brings unexpected conflict or competition, and how can we support each other in maintaining our character under pressure? <i>Verses 2:12-17</i></li>
+        <li>When looking at David's strong response to the men who assassinated Ishbosheth in verses 8-12, what shortcuts are you tempted to take to reach your goals faster, and how can we hold each other accountable to doing things God's way? <i>Verses 4:8-12</i></li>
+    </ol>
+    <div class="page-number">30</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>Considering the covenant David made with the elders before finally being anointed king over all Israel in verses 1-3, what commitments do you need to make to God as you step into a new season or responsibility, and how can we pray for your leadership? <i>Verses 5:1-3</i></li>
+        <li>As we see David realizing that God gave him the kingdom for the sake of His people in verse 12, in what ways do you sometimes use your blessings or position purely for yourself, and how can we challenge each other to lead for the sake of others? <i>Verses 5:12</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Take a moment to write down one major transition or change in your life and dedicate it to the Lord through a prayer of surrender, praising Him for being the one constant through every season.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for God's wisdom and patience in the midst of life's transitions, asking that the group would lead with integrity, avoid taking sinful shortcuts, and always recognize that their blessings are meant to serve others.</p>
+        </div>
+    </div>
+    <div class="page-number">31</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">32</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SEVEN: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 6-10</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">33</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did viewing your position or blessings as a tool to serve others change your actions this week?</li>
+        <li>Have you ever been completely misunderstood by someone when you were just trying to do something good?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "David said to Michal, 'It was before the LORD, who chose me rather than your father or anyone from his house when he appointed me ruler over the LORD's people Israel—I will celebrate before the LORD.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">2 Samuel</span> 6:21 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the tragic result of Uzzah touching the Ark in verses 6-7, in what areas of your life have you started treating the things of God as common or casual, and how can we help each other restore a sense of holy reverence? <i>Verses 6:6-7</i></li>
+        <li>As we consider David's unrestrained dancing and Michal's cynical reaction in verses 14-16, when have you held back in your worship because you were worried about what others would think, and how can we encourage a more authentic, joyful celebration of God? <i>Verses 6:14-16</i></li>
+        <li>Reflecting on God's response to David's plan to build a temple in verses 4-7, how do you handle it when God says "no" to something you genuinely thought was a good idea, and how can we support each other when our plans get redirected? <i>Verses 7:4-7</i></li>
+        <li>When reading David's prayer acknowledging God's sovereignty in verses 18-21, how does remembering what God has already done for you help you accept His current answers, and how can we practice this kind of humble prayer together? <i>Verses 7:18-21</i></li>
+    </ol>
+    <div class="page-number">34</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>Considering David's active search to show kindness to someone from Saul's house in verses 1-3, who in your life might be considered an "outsider" or an "enemy" that needs your compassion, and how can we challenge each other to reach out to them? <i>Verses 9:1-3</i></li>
+        <li>As we look at Mephibosheth's shock at being invited to the king's table in verses 7-8, how does this picture of grace change the way you view your own salvation, and how can we remind each other of this unearned privilege when we feel unworthy? <i>Verses 9:7-8</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Share the story of Mephibosheth with someone who feels unworthy of God's love this week, explaining how Jesus invites us to His table not because of what we have done, but because of His grace.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the group would strike a healthy balance between trembling at God's holy power and rejoicing in His intimate grace, and ask for open eyes to see those who need to be shown the unconditional kindness of the King.</p>
+        </div>
+    </div>
+    <div class="page-number">35</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">36</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK EIGHT: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 11-19</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">37</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you do this week with accepting a "no" or a redirection from God while still trusting His goodness?</li>
+        <li>If you could have one completely honest conversation with any historical figure, who would it be and why?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Then David confessed to Nathan, 'I have sinned against the LORD.' Nathan replied, 'Yes, but the LORD has forgiven you, and you won't die for this sin.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">2 Samuel</span> 12:13 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at David deciding to stay home from the war and lingering on the roof in verses 1-3, what idle moments or small compromises make you most vulnerable to temptation, and how can we help each other stay out of those situations? <i>Verses 11:1-3</i></li>
+        <li>As we consider David's escalating attempts to cover up his sin with Uriah in verses 14-15, when have you found yourself compounding a mistake by trying to hide it, and how can our group be a place where it's safe to confess early? <i>Verses 11:14-15</i></li>
+        <li>Reflecting on Nathan's courage to confront the king with a story in verses 1-7, who are the people in your life that you trust enough to point out your blind spots, and how can we invite that kind of loving accountability? <i>Verses 12:1-7</i></li>
+        <li>When looking at Absalom's bitterness and plotting in verses 28-29, how do unresolved anger and a lack of communication damage your own family relationships, and how can we encourage each other to seek reconciliation? <i>Verses 13:28-29</i></li>
+    </ol>
+    <div class="page-number">38</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>Considering David crossing the Kidron Valley in tears in verse 23, when have you had to walk away from a deeply held dream because of a painful betrayal or loss, and how can we support each other in our own "Gethsemane" moments? <i>Verses 15:23</i></li>
+        <li>As we see David extending grace to Shimei despite his past curses in verses 18-23, who in your life do you need to stop punishing and start forgiving, and how can we help each other pass on the grace we've received? <i>Verses 19:18-23</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask a trusted friend or group member to be your "Nathan" this week, giving them explicit permission to ask you tough questions about an area where you are struggling with temptation.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for the courage to confess hidden sins and the humility to accept loving correction, asking God to bring deep healing and forgiveness to any broken family relationships represented in the group.</p>
+        </div>
+    </div>
+    <div class="page-number">39</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">40</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK NINE: <span style="color: var(--gray-text); font-weight: 400;"><span style="white-space: nowrap;">1 & 2 SAMUEL</span> Chapters 20-24</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">41</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK NINE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did having an accountability partner help you recognize or avoid a temptation this past week?</li>
+        <li>What is your favorite song to listen to when you need to be encouraged or uplifted?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "He said: 'The LORD is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge, my shield and the horn of my salvation.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"><span style="white-space: nowrap;">2 Samuel</span> 22:2-3 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at David seeking the Lord's face during the famine in verse 1, what is your first reaction when unexpected trouble hits, and how can we remind each other to seek God's perspective before trying to fix the problem? <i>Verses 21:1</i></li>
+        <li>As we consider David describing God as a rock, fortress, and shield in verses 2-3, which picture of God's character do you need most in your life right now, and how can we help each other focus on that aspect of Who He is? <i>Verses 22:2-3</i></li>
+        <li>Reflecting on David praising God for drawing him out of deep waters in verses 17-20, when has God rescued you from a seemingly impossible situation, and how can sharing these stories strengthen our group's faith? <i>Verses 22:17-20</i></li>
+        <li>When looking at David taking responsibility for his sin in counting the fighting men in verse 10, why is it so hard for us to admit when we are relying on our own strength rather than God's, and how can we practice quicker repentance? <i>Verses 24:10</i></li>
+    </ol>
+    <div class="page-number">42</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header"><span style="white-space: nowrap;">1 & 2 SAMUEL</span>: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="5">
+        <li>Considering David's refusal to offer a sacrifice that cost him nothing in verse 24, in what ways has your worship or service become too comfortable or convenient, and how can we challenge each other to offer God our very best? <i>Verses 24:24</i></li>
+        <li>As we read David's last words highlighting the Spirit of the Lord in verses 1-3, what do you hope will be the defining message or legacy of your own life, and how can we encourage each other to live faithfully to the end? <i>Verses 23:1-3</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Host a celebration meal with your group this week to commemorate the end of this study, taking time during the meal for each person to share one specific way they have seen God work in another member's life.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the group would cultivate a lifestyle of costly, authentic worship, asking God to make them people after His own heart who rely entirely on His strength and seek His face in every season of life.</p>
+        </div>
+    </div>
+    <div class="page-number">43</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK NINE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">44</div>
+</div>
+
+
+
+
+</body>
+</html>

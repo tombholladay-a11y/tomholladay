@@ -1,0 +1,3777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATTHEW: A Small Group Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary-color: #1a365d; /* Dark Blue Theme */
+        --gray-text: #7f8c8d;
+        --dark-text: #2c3e50;
+        --light-gray: #f5f5f5;
+    }
+    
+    body {
+        font-family: 'Lato', sans-serif;
+        color: var(--dark-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #e0e0e0;
+    }
+
+    .page {
+        background-color: white;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto 20px auto;
+        padding: 0.85in 1in 1.4in 1in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    /* Print settings */
+    @page { margin: 0; size: letter; }
+    @media print {
+        body { 
+            background-color: white; 
+            margin: 0;
+            padding: 0;
+        }
+        .page { 
+            width: 8.5in;
+            height: 11in;
+            margin: 0; 
+            box-shadow: none; 
+            border: none;
+            padding: 0.65in 0.75in 1.1in 0.75in;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: var(--primary-color);
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    /* Cover Page */
+    .cover-page {
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2in 1in;
+    }
+    
+    .cover-page h2 {
+        color: white;
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    
+    .cover-page h1 {
+        color: white;
+        font-size: 4.5em;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        border-bottom: 6px solid #f39c12; /* Matches the orange "time" in the logo */
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    
+    .cover-page .author {
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .cover-logo-container {
+        position: absolute;
+        bottom: 1.5in;
+        right: 1.5in;
+        text-align: right;
+    }
+    
+    .cover-logo-container img {
+        width: 200px;
+    }
+
+    /* Headers for regular pages */
+    .page-header {
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    /* Sections with Icons */
+    .section-header {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .section-icon {
+        width: 50px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    
+    .section-content {
+        flex: 1;
+    }
+    
+    .section-title {
+        font-size: 1.4em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 8px;
+    }
+
+    /* Listen Page Layout */
+    .listen-page .listen-title {
+        color: var(--primary-color);
+        font-size: 2em;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    .listen-notes {
+        margin-top: 40px;
+        font-size: 1.2em;
+    }
+
+    /* Lists and Typography */
+    ol.questions {
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ol.questions li {
+        margin-bottom: 14px;
+        font-size: 1.1em;
+        color: var(--dark-text);
+    }
+    
+    ul.checkin {
+        list-style-type: decimal;
+        padding-left: 20px;
+        margin-left: 70px;
+    }
+    
+    ul.checkin li { 
+        margin-bottom: 12px; 
+        font-size: 1.1em;
+    }
+
+    .key-verse {
+        font-style: italic;
+        font-size: 1.15em;
+        margin-left: 70px;
+        color: var(--dark-text);
+    }
+    
+    .verse-ref {
+        text-align: right;
+        font-weight: bold;
+        margin-top: 8px;
+        font-size: 1.1em;
+    }
+    
+    p.section-text {
+        font-size: 1.2em;
+        margin-left: 70px;
+    }
+
+    /* Intro pages */
+    .intro-title {
+        font-size: 2.5em;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+    
+    .intro-text {
+        font-size: 1.3em;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .page-number {
+        position: absolute;
+        bottom: 0.5in;
+        width: 100%;
+        text-align: center;
+        color: var(--gray-text);
+        font-size: 0.9em;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="page cover-page">
+    <h2>A SMALL GROUP STUDY</h2>
+    <div>
+        <!-- ✏️ REPLACE: Book name (all caps) -->
+        <h1>MATTHEW</h1>
+    </div>
+    <!-- ✏️ REPLACE: Author name -->
+    <div class="author">Tom Holladay</div>
+    
+    <div class="cover-logo-container">
+        <!-- ✏️ REPLACE: Cover image (or keep Cover.png if it's your standard logo) -->
+        <img src="Cover.png" alt="Cover Image" style="max-width: 300px;">
+    </div>
+</div>
+
+<!-- ============================================================
+     COPYRIGHT PAGE
+     ============================================================ -->
+<div class="page" style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="margin-top: 3in;">
+        <!-- ✏️ REPLACE: Book name -->
+        <h3 style="font-size: 1.2em; color: var(--primary-color); margin-bottom: 30px;">MATTHEW: A SMALL GROUP STUDY</h3>
+        <!-- ✏️ REPLACE: Copyright year and author -->
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Copyright © 2026 Tom Holladay</p>
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 40px;">All rights reserved. No part of this book may be reproduced, stored in a retrieval system, or transmitted in any form, without the written permission of the author.</p>
+        
+        <hr style="border: 0; border-bottom: 1px solid #ccc; margin: 40px 0;">
+        
+        <p style="font-size: 1.1em; color: var(--dark-text); margin-bottom: 20px;">Unless otherwise noted, all Scripture quotations are taken from THE HOLY BIBLE, NEW INTERNATIONAL VERSION, NIV®. Copyright © 1973, 1978, 1984, 2011, by Biblica, Inc. Used by permission. All rights reserved worldwide.</p>
+    </div>
+</div>
+
+<!-- ============================================================
+     ABOUT DRIVETIME DEVOTIONS (Page 3)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">ABOUT DRIVETIME DEVOTIONS<br>SMALL GROUP STUDIES</h2>
+    
+    <!-- ✏️ OPTIONAL: Change "five-week" to match your study length -->
+    <p class="intro-text"><strong style="color: var(--primary-color);">Welcome</strong> to this special Drivetime Devotions, small group study. This 30-week study is designed so that you can enjoy Drivetime Devotions as a podcast throughout the week and then talk about it with your small group. This will allow for more time in your small group for discussion, application, and fellowship.</p>
+    
+    <p class="intro-text">The purpose of Drivetime Devotions is to help you know God's Word and put it into practice. It's usually better to study small sections of God's Word each day instead of a larger section once a week. Studying the Bible is like eating—you'll be healthier if you eat small amounts each day rather than one big meal a week! Episodes are designed to be listened to once per day, five days a week. In the event you miss a day or two, you can still stay on schedule.</p>
+    <div class="page-number">3</div>
+</div>
+
+<div class="page" style="padding-top: 1.5in;">
+    <div class="page-header">ABOUT DRIVETIME DEVOTIONS SMALL GROUP STUDIES</div>
+    
+    <p class="intro-text">In Drivetime Devotions, Pastor Tom Holladay teaches God's Word and helps you put it into practice. With over 30 million downloads, Drivetime Devotions has built a reputation for changing lives and helping people grow closer to God. You can access this podcast study on MATTHEW by downloading the DrivetimeDevotions app for your phone or by going to DrivetimeDevotions.com.</p>
+    <div class="page-number">4</div>
+</div>
+
+<!-- ============================================================
+     HOW TO USE (Page 5)
+     ============================================================ -->
+<div class="page" style="padding-top: 3in;">
+    <h2 class="intro-title">HOW TO USE THIS INTERACTIVE<br>STUDY GUIDE</h2>
+    
+    <p class="intro-text">This study guide is designed to be used as a downloaded file on your tablet or phone. You do not need to print it out unless you want to.</p>
+    <div class="page-number">5</div>
+</div>
+
+<!-- ============================================================
+     A FEW TIPS (Page 6)
+     ============================================================ -->
+<div class="page" style="padding-top: 2.5in;">
+    <h2 class="intro-title">A FEW TIPS BEFORE YOU DIG IN</h2>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Prepare yourself before each study by listening to each week's five daily podcast episodes (one per day).</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Open each meeting with a time for everyone to check in on each other's progress with the podcast. Accountability is a key to success in this study!</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Each week you will find a key verse (or verses) from the chapter you are studying. You may want to memorize this verse together as a group.</p>
+        </div>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<div class="page">
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">These are questions for group discussion. Please don't feel pressured to discuss every single question. The material in this study is meant to be your servant, not your master. Therefore there is no reason to rush through your discussions. Give everyone ample time to share their thoughts.</p>
+            <p style="font-size: 1.2em;">Some questions will reference the verses from which they are taken. Many groups will want to have someone read those verses accompanying the question. There is something powerful about hearing the Bible read aloud together as a group.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">This section helps you encourage each other in balancing God's five purposes of evangelism, discipleship, fellowship, ministry, and worship. Each week, there will be a prayer, practical action, or personal assignment that focuses on one of these purposes.</p>
+        </div>
+    </div>
+    
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">At the end of each session you will find suggestions for your group prayer time. Praying together is one of the greatest privileges of small group life. Please don't take it for granted.</p>
+            <p style="font-size: 1.2em;">Get ready for God to do incredible things in your life as you begin the adventure of learning more deeply about the most exciting message in the world: the truth about God!</p>
+        </div>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<div class="page">
+    <div class="page-header">A FEW TIPS BEFORE YOU DIG IN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">As you go through each session, the Holy Spirit may bring to mind different people in your life. You may even want to write their names down beside a point, phrase, or verse in the margins. Take the opportunity to share God's Word in a friend's life during the week.</p>
+        </div>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+
+<!-- ============================================================
+     ╔══════════════════════════════════════════════════════════╗
+     ║  WEEKLY CONTENT STARTS HERE                             ║
+     ║  Copy the 4-page block below for each week of study.    ║
+     ║  Each week = 4 pages (to fit 6 discovery questions):    ║
+     ║    Page A: Listen page                                  ║
+     ║    Page B: Checking In + Key Verse + Questions 1-4      ║
+     ║    Page C: Questions 5-6 + Purpose + Prayer             ║
+     ║    Page D: Tell a Friend                                ║
+     ╚══════════════════════════════════════════════════════════╝
+     ============================================================ -->
+
+
+<!-- ============================================================
+     WEEK ONE
+     ======<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK ONE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 1</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">9</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>If you're just starting as a group, take some time to get to know each other by going around the circle and sharing your name, where you grew up, and something about your life.</li>
+        <li>What is the most memorable Christmas gift you have ever received or given?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "The virgin will conceive and give birth to a son, and they will call him Immanuel (which means 'God with us')."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 1:23 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Look at the grace shown to the unlikely people included in Jesus' family tree. How does it encourage you personally to know that your past doesn't disqualify you, and how can we remind each other of this truth? <i>Matthew 1:1-6</i></li>
+        <li>Consider the way God wove brokenness and sorrow into His perfect plan for the Messiah. How does this challenge the way you are currently handling a major disappointment in your life? <i>Matthew 1:1-17</i></li>
+    </ol>
+    <div class="page-number">10</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflect on Joseph's choice to prioritize love and relationship over strict rules in a painful situation. Where in your own life do you find it difficult to extend that kind of grace, and how can we support each other in choosing love? <i>Matthew 1:18-19</i></li>
+        <li>Look at the immediate and consistent obedience demanded of Joseph. What is an area right now where you know God is asking you to take a step of faith, but you've been putting it off? <i>Matthew 1:20-25</i></li>
+        <li>Think about the balance between obeying God immediately and staying consistent over the long haul. Which of these is a bigger struggle for you, and what practical steps can you take this week to improve? <i>Matthew 1:24</i></li>
+        <li>Remember the promise that Jesus is "Immanuel, God with us." How does that truth give you peace in the middle of shattered plans or unexpected hardships? <i>Matthew 1:22-23</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Set aside 10 minutes each day this week to simply thank God for being "Immanuel"—God with us—and worship Him for His presence in the midst of your daily circumstances.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that as a group you would continually remind each other of God's grace and presence, and ask God to help you worship Him fully even when facing unexpected disappointments or difficult steps of obedience.</p>
+        </div>
+    </div>
+    <div class="page-number">11</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK ONE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWO: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 2</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">13</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week, how did your daily times of focusing on "God with us" impact your worship and attitude?</li>
+        <li>What is the longest or most difficult road trip you've ever taken?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "On coming to the house, they saw the child with his mother Mary, and they bowed down and worshiped him. Then they opened their treasures and presented him with gifts of gold, frankincense and myrrh."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 2:11 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Consider the deep, sincere desire that drove the wise men to seek out Jesus. What are the things in your own life that most often distract you from wanting to connect with God? <i>Matthew 2:1-2</i></li>
+        <li>Reflect on the exceeding great joy the wise men expressed in their worship. How naturally does joy characterize your own relationship with Jesus, and how can we help each other when our joy is stolen? <i>Matthew 2:9-10</i></li>
+    </ol>
+    <div class="page-number">14</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Think about the costly gifts the wise men presented to Jesus in worship. What is a specific, costly gift of time, talent, or obedience that you feel prompted to offer Him right now? <i>Matthew 2:11</i></li>
+        <li>Look at the way Joseph had to sacrifice his comfort to flee to Egypt. What comfortable area of your life might God be asking you to let go of in order to follow His plan? <i>Matthew 2:13-15</i></li>
+        <li>Consider the courage it took for Joseph to return to Israel despite his fears. What is a specific fear holding you back from a step of faith, and how can we pray for your courage? <i>Matthew 2:19-21</i></li>
+        <li>Reflect on the immediate obedience required of both the wise men and Joseph. Where do you need to stop making excuses and simply take action on what God has already shown you to do? <i>Matthew 2:12-14</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Think of one person in your life who does not know Jesus, and take a risk this week to share with them how God has been working in your life, inviting them to experience His love.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to give everyone in the group a sincere, joyful desire to follow Him and the boldness to share His love with others, even when it requires sacrificing our own comfort.</p>
+        </div>
+    </div>
+    <div class="page-number">15</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWO</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">16</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK THREE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 3 & 4</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">17</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week, how did it go when you tried to take a risk and share your story with someone who doesn't know Jesus?</li>
+        <li>What is a skill or hobby that you had to be taught by someone else before you could do it on your own?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "'Come, follow me,' Jesus said, 'and I will send you out to fish for people.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 4:19 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Think about John the Baptist’s challenging call to completely change the way we think. What is a specific mindset in your life that God has been prompting you to turn around? <i>Matthew 3:1-2</i></li>
+        <li>Reflect on the expectation to produce fruit that proves our repentance. What practical changes would others see in your life if you were truly surrendering your daily decisions to God? <i>Matthew 3:8</i></li>
+    </ol>
+    <div class="page-number">18</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Look at Jesus's experience of being tested in the wilderness. How does it help you to know that temptation itself isn't a sin, and how do you typically respond when you feel tested? <i>Matthew 4:1-11</i></li>
+        <li>Consider that every temptation Jesus faced was countered with God's truth. What is a specific lie from the enemy you are struggling with right now, and what truth from Scripture can we remind you of to fight it? <i>Matthew 4:4-10</i></li>
+        <li>Think about Jesus's bold invitation to become fishers of men. Who is someone in your life right now that you need to intentionally invite to know Jesus, and how can we encourage you in that step? <i>Matthew 4:19</i></li>
+        <li>Reflect on how immediately the first disciples left their nets behind. What comfortable routines or security blankets are you most hesitant to drop when God calls you to reach out? <i>Matthew 4:18-20</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one "net" or distraction in your daily routine that is keeping you from following Jesus closely, and replace it this week with a dedicated time of reading the Word and praying.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for the specific people you identified to reach out to, asking God to open their hearts and give you the discipline to drop your "nets" to pursue Him.</p>
+        </div>
+    </div>
+    <div class="page-number">19</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK THREE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">20</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FOUR: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 5 Part 1</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">21</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week, what "net" did you drop, and how did replacing it with time in the Word impact your daily life?</li>
+        <li>What is the best piece of advice you've ever received from a mentor or teacher?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "In the same way, let your light shine before others, that they may see your good deeds and glorify your Father in heaven."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 5:16 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Look at the description of being 'poor in spirit.' In what areas of your life do you find it most difficult to admit your own inadequacy and rely completely on God's strength? <i>Matthew 5:3</i></li>
+        <li>Consider how our culture often views gentleness as weakness. How does the call to be meek challenge the way you typically react when you feel you’ve been wronged or overlooked? <i>Matthew 5:5</i></li>
+    </ol>
+    <div class="page-number">22</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflect on the promise that those who hunger and thirst for righteousness will be filled. What is a temporary fix you often find yourself hungering for instead of the things of God? <i>Matthew 5:6</i></li>
+        <li>Think about how a pure heart comes from what we surrender to rather than just what we avoid. What is one attitude you need to surrender this week to get a clearer perspective of God? <i>Matthew 5:8</i></li>
+        <li>Look at the call to be the 'salt of the earth.' Where in your daily life do you most struggle with the 'confidence gap' between what you believe on the inside and how you actually live? <i>Matthew 5:13</i></li>
+        <li>Consider the command to let your light shine before others. What is one practical way this group can encourage you to live more distinctively at your workplace or in your neighborhood this week? <i>Matthew 5:14-16</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Reach out to another member of the group this week outside of normal meeting time to grab coffee, share a meal, or simply encourage them in the specific area they are trying to grow.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to change our spiritual appetites so that we hunger for His righteousness, and pray that our lives would be a distinctive, salty influence that encourages others in our fellowship.</p>
+        </div>
+    </div>
+    <div class="page-number">23</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FOUR</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">24</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FIVE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 5 Part 2</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">25</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week, who did you connect with from the group, and how did that fellowship encourage you?</li>
+        <li>What is a relationship in your life that has required a lot of hard work but has been incredibly rewarding?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "But I tell you, love your enemies and pray for those who persecute you."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 5:44 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Consider the emphasis on the heart behind our actions rather than just outward compliance. Where in your relationships do you tend to settle for 'following the rules' instead of truly loving the person? <i>Matthew 5:21-22</i></li>
+        <li>Look at the strong warning about the destructive nature of internal sin like lust. What practical boundaries do you need to 'cut off' to protect your heart and your relationships? <i>Matthew 5:27-30</i></li>
+    </ol>
+    <div class="page-number">26</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflect on the challenge to simply let your 'Yes' be 'Yes' and your 'No' be 'No.' In what situations are you most tempted to twist the truth or make excuses to protect your image? <i>Matthew 5:33-37</i></li>
+        <li>Think about the command to turn the other cheek. Who is someone that has insulted or hurt you recently, and how can you choose love instead of retaliation? <i>Matthew 5:38-39</i></li>
+        <li>Consider the radical call to pray for our enemies. What is the hardest part for you personally when it comes to praying for someone who has caused you pain, and how can we help you take that step? <i>Matthew 5:43-44</i></li>
+        <li>Look at the ultimate goal of managing relationships with grace. How can this group support you in extending unexpected kindness to someone who is difficult to love this week? <i>Matthew 5:46-48</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Find a practical way to serve or bless someone who has been difficult to love or has hurt you recently, extending the grace of Jesus to them without expecting anything in return.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for the specific difficult relationships mentioned in the group, asking God to replace our natural desire for revenge or anger with His supernatural love and grace as we minister to them.</p>
+        </div>
+    </div>
+    <div class="page-number">27</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FIVE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">28</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SIX: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 6:1-15</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">29</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week's discussion on managing our relationships with others, how did your efforts to practice what we talked about go?</li>
+        <li>What is your favorite quiet spot to retreat to when you need to be alone?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""But when you pray, go into your room, close the door and pray to your Father, who is unseen. Then your Father, who sees what is done in secret, will reward you." â€” Matthew 6:6"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you look at Jesus' contrast between public performance and secret devotion in verses 1-8, what struggles do you face with praying authentically, and how can we encourage one another to simply depend on our Father behind closed doors? <i>Matthew 6:1-8</i></li>
+        <li>When you reflect on addressing God as "Our Father in heaven" in verses 9-10, how does this relationship change the way you approach your daily desires, and how can we support each other in inviting God's will into our lives? <i>Matthew 6:9-10</i></li>
+    </ol>
+    <div class="page-number">30</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Thinking about the command to ask for our "daily bread" in verse 11, in what areas of your life is it most difficult to trust God for your needs just one day at a time, and how can we remind each other that God is our faithful supplier? <i>Matthew 6:11</i></li>
+        <li>When considering the link between being forgiven and forgiving others in verse 12, where do you find it hardest to release bitterness, and how can we help each other experience the freedom that comes from extending God's grace? <i>Matthew 6:12</i></li>
+        <li>Looking at the prayer for protection from temptation in verse 13, what practical steps can you take to say "yes" to God's gifts instead of opening yourself up to compromise, and how can we stand together against the attacks of the evil one? <i>Matthew 6:13</i></li>
+        <li>When you review this entire model for prayer from verses 9-13, which specific area do you feel most challenged to grow in right now, and how can we hold each other accountable to developing a more genuine daily conversation with God? <i>Matthew 6:9-13</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Take ten minutes each day this week to go into a quiet room alone, close the door, and simply worship God as your loving Father without performing or striving.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would strip away any desire to impress others in our prayer lives and give us a deeper, more authentic connection with Him as our Heavenly Father.</p>
+        </div>
+    </div>
+    <div class="page-number">31</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SIX</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">32</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SEVEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 6:16-34</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">33</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week's discussion about prayer, how did your efforts go this week in taking time to connect with God as a loving Father?</li>
+        <li>What is your favorite or most memorable purchase you've ever made?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""But seek first his kingdom and his righteousness, and all these things will be given to you as well." â€” Matthew 6:33"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at Jesus' teachings about earthly and heavenly treasures in verses 19-21, what are some of the ways we can tell our hearts have followed the wrong treasures, and how can we support each other in making investments in eternity instead? <i>Matthew 6:19-21</i></li>
+        <li>When considering the illustration of having a "good eye" or a generous heart in verses 22-23, how have you experienced generosity bringing clarity to your life, and how can we as a group help each other cultivate a generous spirit? <i>Matthew 6:22-23</i></li>
+    </ol>
+    <div class="page-number">34</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the reality that we cannot serve both God and money in verse 24, where do you find money or debt trying to make your decisions for you, and how can we encourage one another to keep God on the throne of our lives? <i>Matthew 6:24</i></li>
+        <li>In light of Jesus' commands not to worry about our life in verses 25-30, what specific financial or material worries tend to weigh you down the most, and how can we pray for each other to trust God's care like the birds and lilies? <i>Matthew 6:25-30</i></li>
+        <li>Looking at the invitation to "seek first his kingdom" in verses 31-33, what does it practically look like for you to put God first in your everyday life, and how can we as a small group prioritize His kingdom together? <i>Matthew 6:31-33</i></li>
+        <li>When you consider Jesus' words about not worrying about tomorrow in verse 34, how does worrying about the future rob you of today's blessing, and how can we remind each other to live and trust God just one day at a time? <i>Matthew 6:34</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Discuss one specific way you can use your money, time, or possessions this week to bless someone else in your group or church community, and follow through on it.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the group would grow in generosity and that God would replace any financial anxiety with a deep contentment and trust in His provision.</p>
+        </div>
+    </div>
+    <div class="page-number">35</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">36</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK EIGHT: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 7:1-12</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">37</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week's discussion about managing possessions, what happened as you tried to apply the purpose step we talked about?</li>
+        <li>When you were a kid, what was a rule you had the hardest time following?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""So in everything, do to others what you would have them do to you, for this sums up the Law and the Prophets." â€” Matthew 7:12"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at Jesus' command regarding judging others in verses 1-2, what do you think is the difference between exercising wise discernment in a relationship and having a prideful, judgmental spirit, and where do you struggle with this the most? <i>Matthew 7:1-2</i></li>
+        <li>When you consider the imagery of the speck and the plank in verses 3-5, why are we so quick to excuse our own massive faults while hyper-focusing on the minor flaws of others, and how can we help each other deal with the "planks" in our lives? <i>Matthew 7:3-5</i></li>
+    </ol>
+    <div class="page-number">38</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the instruction about pearls and pigs in verse 6, how have you experienced the difficulty of sharing truth with someone who was unwilling to listen, and how can we encourage each other to use discernment without losing love? <i>Matthew 7:6</i></li>
+        <li>When considering Jesus' promises about asking, seeking, and knocking in verses 7-11, what is something you've been hesitant to ask God for recently, and how can we build each other's confidence in our Father's good gifts? <i>Matthew 7:7-11</i></li>
+        <li>Looking at the Golden Rule in verse 12, how does treating others the way you want to be treated completely change the dynamic of a strained relationship, and where is God challenging you to take the initiative? <i>Matthew 7:12</i></li>
+        <li>Thinking about the ultimate goal of offering mercy to others that we see across this passage, how can we support each other when our attempts to show mercy or meet a need are rejected or misunderstood? <i>Matthew 7:1-12</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one practical need of someone you interact with regularly (a coworker, neighbor, or family member) and choose to actively serve them this week, even if it feels unreciprocated.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the group would grow in self-awareness regarding the "planks" in their own eyes and ask God to give everyone a heart of true mercy and service toward others.</p>
+        </div>
+    </div>
+    <div class="page-number">39</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">40</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK NINE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 7:13-29</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">41</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK NINE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week, how did you do at applying the Golden Rule or showing mercy in a difficult relationship?</li>
+        <li>What are the most confusing or misleading directions you've ever been given when trying to find a destination?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Therefore everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock." â€” Matthew 7:24"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at Jesus' description of the wide and narrow gates in verses 13-14, where in your life are you most tempted to take the path of least resistance rather than the path that leads to life, and how can we encourage each other to make the tough choices? <i>Matthew 7:13-14</i></li>
+        <li>When you consider Jesus' warning about false prophets in verse 15, why is it so easy for us to be fooled by things that look harmless on the outside, and how can we help each other stay spiritually discerning? <i>Matthew 7:15</i></li>
+    </ol>
+    <div class="page-number">42</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the instruction to recognize a tree by its fruit in verses 16-20, what kind of "fruit" are you currently producing in your character, and how can we support one another in cultivating the fruit of the Spirit rather than just outward success? <i>Matthew 7:16-20</i></li>
+        <li>When considering the sobering reality of those who say "Lord, Lord" but are turned away in verses 21-23, how does this challenge you to examine the sincerity of your own faith, and how can we ensure our discipleship is based on knowing Jesus rather than just doing things for Him? <i>Matthew 7:21-23</i></li>
+        <li>Looking at the parable of the wise and foolish builders in verses 24-27, what recent "storms" in your life have revealed the true foundation you are building on, and how can we help each other anchor our lives to the rock of Christ's teaching? <i>Matthew 7:24-27</i></li>
+        <li>Thinking about the crowd's amazement at Jesus' authority in verses 28-29, how does recognizing Jesus as the ultimate authority in your life change the way you read His Word, and how can we hold each other accountable to not just hearing His words, but putting them into practice? <i>Matthew 7:28-29</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pick one specific teaching of Jesus from the Sermon on the Mount that you have been hearing but not doing, and commit to one practical way you will begin putting it into practice this week.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that your small group would not just be listeners of the Word, but doers, and that God would give you the strength to build your lives on the solid rock of Christ's authority.</p>
+        </div>
+    </div>
+    <div class="page-number">43</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK NINE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">44</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 8</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">45</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at the teaching you committed to putting into practice last week, how did building your life on that truth work out for you?</li>
+        <li>What is the most memorable or frightening storm you've ever been caught in?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""He replied, 'You of little faith, why are you so afraid?' Then he got up and rebuked the winds and the waves, and it was completely calm." â€” Matthew 8:26"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the story of Jesus healing the man with leprosy in verses 1-4, what does Jesus' willingness to reach out and touch someone considered "unclean" teach us about who we should be sharing the gospel with, and how can we encourage each other to cross those boundaries? <i>Matthew 8:1-4</i></li>
+        <li>When you consider the amazing faith of the Roman centurion in verses 5-13, how does it challenge your own expectations of what Jesus can do, and who is someone in your life that you need to boldly bring to Jesus in faith? <i>Matthew 8:5-13</i></li>
+    </ol>
+    <div class="page-number">46</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on Jesus healing Peter's mother-in-law and the crowds in verses 14-17, how does it impact you to know that Jesus genuinely cares about our physical and emotional pain, and how can we share this compassion with those around us who are hurting? <i>Matthew 8:14-17</i></li>
+        <li>When considering the cost of following Jesus described in verses 18-22, what are the things you find hardest to leave behind in order to follow Him fully, and how can we support each other in making Him our absolute priority? <i>Matthew 8:18-22</i></li>
+        <li>Looking at the disciples' panic and Jesus' calm during the storm in verses 23-27, in what current situations are you tempted to forget that God is in the boat with you, and how can we remind each other of His power when we are afraid? <i>Matthew 8:23-27</i></li>
+        <li>Thinking about the townspeople who asked Jesus to leave after He healed the demon-possessed men in verses 28-34, what fears keep people today from welcoming Jesus into their lives, and how can we gently help our friends see that the freedom He offers is worth the cost? <i>Matthew 8:28-34</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one person in your life who is going through a "storm" or feeling isolated, and intentionally share a story with them this week about how Jesus has brought peace or healing to your own life.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would give you His eyes of compassion for the hurting people around you, and ask for the courage to step into their lives with the good news of Jesus' power and love.</p>
+        </div>
+    </div>
+    <div class="page-number">47</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">48</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK ELEVEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 9</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">49</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK ELEVEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did you put into practice the truth from last week's study?</li>
+        <li>What is a time in your life when you felt "stuck" or "paralyzed" in some way, and how did you eventually move forward?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Take heart, son; your sins are forgiven." â€” Matthew 9:2"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the contrast between the paralyzed man finding freedom and the religious leaders remaining stuck in unbelief in verses 1-8, where in your life might unbelief be keeping you paralyzed, and how can we pray for each other to find freedom? <i>Matthew 9:1-8</i></li>
+        <li>Reflecting on Matthew's immediate decision to risk his comfortable life to follow Jesus in verses 9-13, what risks is God prompting you to take for His glory, and how can we support each other in taking them? <i>Matthew 9:9-13</i></li>
+    </ol>
+    <div class="page-number">50</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>When you read Jesus' desire for mercy over sacrifice in verse 13, what is a specific area where you need to allow Him to change you from the inside out, and how can we encourage you in that process? <i>Matthew 9:13</i></li>
+        <li>Looking at the metaphor of the new wine and new wineskins in verses 14-17, what is an "old way" of doing things you need to let go of to make room for what God is doing now? <i>Matthew 9:14-17</i></li>
+        <li>Thinking about the woman who pushed past all the barriers to touch Jesus' cloak in verses 18-26, what deep hurt are you bringing to Jesus for healing today, and how can this group stand with you? <i>Matthew 9:18-26</i></li>
+        <li>When you see Jesus' deep compassion for the harassed and helpless crowds in verses 35-38, who is someone God is calling you to serve with genuine compassion this week, and how will you reach out to them? <i>Matthew 9:35-38</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one area of your life where you feel stuck or paralyzed, and take time this week to intentionally praise and worship God for His power to release you.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Spend time praising God for His compassion and power to heal, and pray for one another to experience His freedom in the areas where we feel paralyzed by unbelief.</p>
+        </div>
+    </div>
+    <div class="page-number">51</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK ELEVEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">52</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWELVE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 10</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">53</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWELVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did your intentional time of worship and praising God for His power change your perspective this past week?</li>
+        <li>If you could go on a mission trip anywhere in the world, where would you go and why?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""As you go, preach this message: 'The kingdom of heaven is near.'" â€” Matthew 10:7"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the way Jesus gave His disciples authority to share the good news and heal in verses 1-5, how does realizing you are an authorized representative of Christ change your confidence in sharing your faith with others? <i>Matthew 10:1-5</i></li>
+        <li>Considering Jesus' instruction to focus on specific people in verses 5-6, who are the "receptive" people in your life right now that God might be asking you to intentionally reach out to? <i>Matthew 10:5-6</i></li>
+    </ol>
+    <div class="page-number">54</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on Jesus' command to both preach the message and serve physical needs in verses 7-8, what is one practical way you can serve someone this week while also sharing the hope of Christ? <i>Matthew 10:7-8</i></li>
+        <li>When you read about shaking the dust off your feet in verses 14-15, how do you discern when to keep pursuing someone with the gospel versus when it's time to entrust them to God and move on? <i>Matthew 10:14-15</i></li>
+        <li>Thinking about Jesus' warning that He is sending us out "like sheep among wolves" in verse 16, what fears hold you back from being vulnerable about your faith, and how can we help you face those fears with grace and truth? <i>Matthew 10:16</i></li>
+        <li>Looking at the promise that God's Spirit will speak through you when you face opposition in verses 17-20, how does this reassure you, and what step of faith can you take this week to speak up for Jesus? <i>Matthew 10:17-20</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one receptive person in your life this week and take a concrete step to serve them and share the good news with them.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for courage to boldly yet humbly share the message of Jesus with those who are receptive, and ask God to guide your words and actions this week.</p>
+        </div>
+    </div>
+    <div class="page-number">55</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWELVE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">56</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK THIRTEEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 11</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">57</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK THIRTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did it go with serving and sharing the good news with the receptive person you identified last week?</li>
+        <li>What is the most exhausting thing you have ever done, and how did you recover from it?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Come to me, all you who are weary and burdened, and I will give you rest." â€” Matthew 11:28"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at John the Baptist's struggle with doubt in verses 2-6, how does this change the way you handle your own questions about faith, and how can we support each other when we experience periods of doubt? <i>Matthew 11:2-6</i></li>
+        <li>Considering the people's childish criticism of both John's strictness and Jesus' openness in verses 16-19, what is an area where a critical spirit might be creeping into your life, and how can you practice humility instead? <i>Matthew 11:16-19</i></li>
+    </ol>
+    <div class="page-number">58</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on Jesus' strong words to the unrepentant cities in verses 20-24, where have you become apathetic toward God's work in your life, and what does true repentance look like for you this week? <i>Matthew 11:20-24</i></li>
+        <li>When you read that God reveals His truth to little children rather than the wise and learned in verses 25-26, how can you cultivate a more dependent, childlike faith in your daily walk with Him? <i>Matthew 11:25-26</i></li>
+        <li>Thinking about Jesus' invitation to find rest by taking His yoke in verses 28-30, what heavy burdens are you carrying that you need to trade for His gentle and light task? <i>Matthew 11:28-30</i></li>
+        <li>Hearing Jesus describe Himself as gentle and humble in heart in verse 29, how does this shape the way you approach Him when you are completely exhausted, and how can we help each other find true soul rest? <i>Matthew 11:29</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Take a 10-minute "rest break" each day this week to simply sit quietly with Jesus, lay down your burdens, and learn from His gentle heart.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to replace our critical spirits and apathy with a childlike faith, and pray for one another to experience the true soul rest that Jesus offers.</p>
+        </div>
+    </div>
+    <div class="page-number">59</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK THIRTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">60</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FOURTEEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 12</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">61</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FOURTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did your daily "rest breaks" with Jesus affect your stress levels and your spiritual growth this past week?</li>
+        <li>What is the best or worst piece of advice you've ever received from a friend?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""For out of the overflow of the heart the mouth speaks." â€” Matthew 12:34"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the way the Pharisees valued their Sabbath rules over human need in verses 9-14, where might we be prioritizing our own religious traditions or preferences over loving and caring for the people around us? <i>Matthew 12:9-14</i></li>
+        <li>When you read the description of Jesus not breaking a bruised reed or snuffing out a smoldering wick in verses 18-21, who in your life is hurting right now, and how can we gently support them together? <i>Matthew 12:18-21</i></li>
+    </ol>
+    <div class="page-number">62</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on Jesus' teaching that our words flow directly from our hearts in verses 33-35, what do your recent words reveal about the current condition of your heart, and what needs to change? <i>Matthew 12:33-35</i></li>
+        <li>Considering the warning that we will give an account for every careless word in verses 36-37, how can we help hold each other accountable to speak words that build up rather than tear down? <i>Matthew 12:36-37</i></li>
+        <li>Thinking about how the Pharisees demanded a sign despite all Jesus had done in verses 38-42, where are you struggling to trust God without needing Him to prove Himself to you first? <i>Matthew 12:38-42</i></li>
+        <li>Noticing that Jesus defines His true family as those who do the will of His Father in verses 46-50, how does this challenge our group to deepen our commitment to one another and to living out God's purposes together? <i>Matthew 12:46-50</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Choose one person in your small group or church family and intentionally speak words of encouragement and life to them this week.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for God to purify our hearts so that our words overflow with grace, and ask for help in prioritizing true fellowship and love over our own rules and preferences.</p>
+        </div>
+    </div>
+    <div class="page-number">63</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FOURTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">64</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK FIFTEEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 13</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">65</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK FIFTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Who did you encourage this past week, and how did it impact both of you?</li>
+        <li>Have you ever tried to grow a garden or a plant? What was the result?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""But the one who received the seed that fell on good soil is the man who hears the word and understands it." â€” Matthew 13:23"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you look at the different types of soil in the parable of the sower in verses 1-9, which soil best describes your heart right now, and what is one practical way you can become "good soil" this week? <i>Matthew 13:1-9</i></li>
+        <li>Considering how the worries of life and the deceitfulness of wealth can choke out the seed in verse 22, what specific distractions are keeping you from being fruitful in your ministry to others? <i>Matthew 13:22</i></li>
+    </ol>
+    <div class="page-number">66</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Reflecting on the parable of the mustard seed in verses 31-32, where do you feel like your efforts to serve God are too small, and how does this story encourage you to keep investing in His kingdom? <i>Matthew 13:31-32</i></li>
+        <li>When you read about the hidden treasure and the pearl of great price in verses 44-46, what is something you might need to "sell" or give up in order to fully invest in the work of God's kingdom? <i>Matthew 13:44-46</i></li>
+        <li>Thinking about the enemy sowing weeds among the wheat in verses 24-30, how do you handle the reality of evil and trouble in your life without losing your passion for serving God? <i>Matthew 13:24-30</i></li>
+        <li>Looking at the parable of the net and the reality of God's final judgment in verses 47-50, how does this motivate you to be more urgently involved in ministry and sharing His love with the world? <i>Matthew 13:47-50</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one small "mustard seed" action you can take this week to serve someone in need, and trust God to bring the growth and the harvest.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would remove the distractions and worries from our lives, making our hearts good soil that produces a rich harvest through serving others.</p>
+        </div>
+    </div>
+    <div class="page-number">67</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK FIFTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">68</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SIXTEEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 14</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">69</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SIXTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week, how did you find yourself practicing or reflecting on what we discussed in your daily life?</li>
+        <li>If you were ever stranded in an impossible situation, what is a funny or memorable way you tried to fix it?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Immediately Jesus reached out his hand and caught him. 'You of little faith,' he said, 'why did you doubt?'" â€” Matthew 14:31"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you consider how Jesus sought solitude out of grief for John but still responded to the crowd with healing, how does it challenge your own reaction when you are hurting but others need you? <i>Matthew 14:13-14</i></li>
+        <li>Looking at how the disciples felt overwhelmed by the physical needs of the crowd, when was a time you felt entirely inadequate for a challenge and what did you learn about trusting God through it? <i>Matthew 14:15-17</i></li>
+    </ol>
+    <div class="page-number">70</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Seeing Jesus take the small lunch and multiply it to feed thousands, in what areas of your life do you feel you have "too little" to offer, and how can we encourage each other to surrender that little to God? <i>Matthew 14:18-21</i></li>
+        <li>When you read about Peter stepping out of the boat into the storm, what is a "boat" of comfort or security that you feel God might be calling you to step out of right now? <i>Matthew 14:27-29</i></li>
+        <li>Considering Peter's distraction by the wind and his cry for help when he began to sink, how do you personally refocus on Jesus when the circumstances around you become overwhelming? <i>Matthew 14:30</i></li>
+        <li>When you look at Jesus reaching out immediately to save Peter despite his faltering faith, how does this reassure you in moments when you feel like you have failed in your walk with God? <i>Matthew 14:31-33</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify an "impossible" situation or area of stress in your life this week, and spend dedicated time each day in worship, intentionally shifting your focus from the size of the problem to the greatness of God.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray together that God would give each of us the courage to step out of our comfort zones in worship and faith, and that we would keep our eyes fixed on Jesus in the midst of life's storms.</p>
+        </div>
+    </div>
+    <div class="page-number">71</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SIXTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">72</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK SEVENTEEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 15</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">73</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK SEVENTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at our discussion on walking on water last week, did anyone take a step out of their "boat" of comfort, and how did it go?</li>
+        <li>What is a family tradition you grew up with that you didn't realize was strange until you shared it with someone else?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""These people honor me with their lips, but their hearts are far from me." â€” Matthew 15:8"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you see Jesus confront the Pharisees about letting traditions nullify the word of God, what are some modern church habits or traditions that you feel sometimes become barriers to reaching others with the gospel? <i>Matthew 15:1-9</i></li>
+        <li>Looking at Jesus' teaching that true impurity comes from the heart rather than external actions, how can we help each other focus more on inner transformation rather than just keeping up outer appearances? <i>Matthew 15:10-20</i></li>
+    </ol>
+    <div class="page-number">74</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Considering the disciples' initial annoyance with the Canaanite woman and Jesus' interaction with her, who are the people in our society that we might be blind to or quick to dismiss, and how can we change our perspective? <i>Matthew 15:21-28</i></li>
+        <li>When you see Jesus' compassion for the hungry crowd even after three days of ministry, how do you handle "compassion fatigue" when you are exhausted from continually helping others? <i>Matthew 15:29-32</i></li>
+        <li>Looking at the disciples questioning how to feed the 4,000 despite having seen Jesus feed the 5,000, why do you think we often forget God's past faithfulness when faced with a new challenge? <i>Matthew 15:33</i></li>
+        <li>Seeing Jesus take the seven loaves and multiply them to satisfy everyone, how can you personally hand over your limited time, resources, or energy this week to let God use it for His kingdom? <i>Matthew 15:34-38</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one person or group of people you have previously overlooked or judged, and take a practical step to show them the love and good news of Jesus this week.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would break down our internal barriers of tradition and self-righteousness, and give us a renewed heart of compassion for those who desperately need to hear the gospel.</p>
+        </div>
+    </div>
+    <div class="page-number">75</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK SEVENTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">76</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK EIGHTEEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 16</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">77</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK EIGHTEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at our discussion on evangelism and barriers, did anyone have a chance to show compassion or share the gospel with someone you usually overlook?</li>
+        <li>If you could have the absolute true answer to any one question in the world, what would you ask?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Then Jesus said to his disciples, 'If anyone would come after me, he must deny himself and take up his cross and follow me.'" â€” Matthew 16:24"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you observe the disciples misunderstanding Jesus' warning about yeast because they were worried about forgetting bread, how does guilt or distraction sometimes cause you to miss what God is trying to say to you? <i>Matthew 16:5-12</i></li>
+        <li>Looking at Jesus asking his disciples who they believe he is, how would you personally answer that question today based on what He has done in your life? <i>Matthew 16:13-16</i></li>
+    </ol>
+    <div class="page-number">78</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Considering the incredible responsibility Jesus gives to Peter and the church with the keys to the kingdom, in what ways do you feel challenged to take your role as a believer more seriously? <i>Matthew 16:17-19</i></li>
+        <li>When you read about Peter going from a profound confession of faith to rebuking Jesus just moments later, how can you relate to experiencing a spiritual high followed immediately by a failure in faith? <i>Matthew 16:21-23</i></li>
+        <li>Looking at Jesus' command to deny ourselves and take up our cross, what is one specific area of your life right now where you find it hardest to say "no" to yourself and "yes" to God? <i>Matthew 16:24</i></li>
+        <li>Considering the promise that whoever loses their life for Jesus will find it, how have you personally experienced true freedom or joy by surrendering something you once tightly controlled? <i>Matthew 16:25-26</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Choose one specific daily habit or selfish desire to intentionally deny this week, and replace that time or energy with reading the Word or serving another person in your life.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Ask God to give us the strength to truly take up our cross daily, and pray that we would support each other in the messy, real process of following Jesus without wearing masks.</p>
+        </div>
+    </div>
+    <div class="page-number">79</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK EIGHTEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">80</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK NINETEEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 17</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">81</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK NINETEEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week's challenge to deny yourself, how did it go when you tried to surrender a specific habit or desire?</li>
+        <li>What is the most memorable "mountaintop" experience or breathtaking view you have ever seen in nature?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""I tell you the truth, if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there' and it will move. Nothing will be impossible for you." â€” Matthew 17:20"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you see Peter wanting to build tents to stay on the Mount of Transfiguration, how do you balance the desire to stay in a comfortable "spiritual high" with the need to engage with the messy world around you? <i>Matthew 17:1-4</i></li>
+        <li>Considering how the terrified disciples were comforted by Jesus' touch and command not to fear, how can we be a source of Christ-like comfort to each other when one of us is feeling overwhelmed or afraid? <i>Matthew 17:5-8</i></li>
+    </ol>
+    <div class="page-number">82</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Looking at the disciples' failure to heal the boy and Jesus' frustration, how do you handle the disappointment when your faith feels inadequate for the challenges in front of you? <i>Matthew 17:14-17</i></li>
+        <li>When you read Jesus' promise about mustard seed faith moving mountains, what is a "mountain" in your life right now that you need our group to help you pray for? <i>Matthew 17:19-20</i></li>
+        <li>Considering the disciples' grief when Jesus again predicted his death without fully understanding his resurrection, how can we help each other remember the hope of God's promises when we only see the painful parts of our current situation? <i>Matthew 17:22-23</i></li>
+        <li>Seeing Jesus miraculously provide the temple tax from a fish to avoid causing offense, how can we practice that same kind of freedom and consideration in our relationships with other believers? <i>Matthew 17:24-27</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Reach out to a fellow group member this week to pray together specifically over a "mountain" in their life, carrying each other's burdens in true fellowship.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would strengthen the bonds of our group, giving us the faith to believe for mountains to move in each other's lives and the love to support one another in the valleys.</p>
+        </div>
+    </div>
+    <div class="page-number">83</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK NINETEEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">84</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 18</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">85</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at the mountains we shared last week, has anyone seen God move or felt a shift in their faith as we prayed for each other?</li>
+        <li>What was your favorite game or activity to play when you were a little child?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Therefore, whoever humbles himself like this child is the greatest in the kingdom of heaven." â€” Matthew 18:4"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you hear Jesus say we must become like little children to enter the kingdom, what does childlike dependence on God look like for you practically in your daily life? <i>Matthew 18:1-4</i></li>
+        <li>Looking at the strong warning against causing a little one to stumble, how can we hold each other accountable to ensure our actions and examples are not hindering someone else's faith? <i>Matthew 18:5-9</i></li>
+    </ol>
+    <div class="page-number">86</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Considering the shepherd who leaves the ninety-nine to search for the one wandering sheep, who is someone God has laid on your heart to reach out and minister to right now? <i>Matthew 18:10-14</i></li>
+        <li>When you read Jesus' instructions on confronting someone who sins against you privately rather than gossiping, why is it so difficult for us to follow this, and how can we support each other in doing it right? <i>Matthew 18:15-17</i></li>
+        <li>Seeing Jesus' command to forgive "seventy-seven times," what is a situation where you have struggled to keep forgiving someone who repeatedly hurts you? <i>Matthew 18:21-22</i></li>
+        <li>Looking at the parable of the unmerciful servant, how does reflecting on the immense grace God has given you change the way you approach forgiving those who owe you a debt? <i>Matthew 18:23-35</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify someone who has wronged you or someone you have a conflict with, and take one practical step this week to minister to them through forgiveness or initiating a peaceful conversation.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that we would be given a deep sense of humility to depend on God entirely, and that we would minister to others with the same radical forgiveness we have received from Him.</p>
+        </div>
+    </div>
+    <div class="page-number">87</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">88</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-ONE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 19</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">89</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-ONE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did it go this past week as you tried to apply the lessons of serving and valuing each other from our last study?</li>
+        <li>What is the most memorable piece of advice you have ever received about marriage or relationships?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Jesus said, 'Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these.'" â€” Matthew 19:14"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you read about the original design for marriage in verses 4-6, what challenges have you faced in valuing differences in relationships, and how can we support each other in honoring those differences? <i>Matthew 19:4-6</i></li>
+        <li>In light of the lifelong commitment described in verses 7-9, where do you find it difficult to fight for unity in your own relationships, and how can we encourage one another to keep trying? <i>Matthew 19:7-9</i></li>
+    </ol>
+    <div class="page-number">90</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>When you look at how the children are welcomed in verses 13-15, what unexpected 'interruptions' in your life right now might actually be an opportunity to practice His priorities, and how can our group help you embrace them? <i>Matthew 19:13-15</i></li>
+        <li>Reflecting on the conversation with the rich young ruler in verses 16-22, in what areas of your life do you catch yourself trying to earn God's approval instead of trusting Him, and how can we remind each other of His grace? <i>Matthew 19:16-22</i></li>
+        <li>Looking at the discussion about wealth and the kingdom in verses 23-26, how does our culture's pursuit of material things distract you from growing spiritually, and what practical steps can we take to help each other prioritize eternal things? <i>Matthew 19:23-26</i></li>
+        <li>Thinking about the promise of reward for surrender in verses 27-29, what is something difficult you feel God is asking you to surrender, and how can we stand with you as you take that step of faith? <i>Matthew 19:27-29</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Take time this week to identify one "interruption" in your daily routine and treat it as a chance to foster a meaningful relationship or fellowship with someone.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray together that God would give you the strength to honor your commitments, the humility to embrace interruptions, and the courage to surrender anything that keeps you from fully trusting Him.</p>
+        </div>
+    </div>
+    <div class="page-number">91</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-ONE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">92</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-TWO: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 20</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">93</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-TWO</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week, how were you able to turn a frustrating interruption into an opportunity for relationship?</li>
+        <li>What is a time you felt you were treated unfairly, and how did you react?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Just as the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many." â€” Matthew 20:28"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you consider the landowner's generosity in verses 1-15, how does it challenge your own sense of what is 'fair' when you see others blessed, and how can we encourage each other to celebrate God's grace toward others? <i>Matthew 20:1-15</i></li>
+        <li>Looking closely at the workers' reaction in verses 10-15, what specific areas of your life make you prone to envy, and how can this group help you focus on gratitude instead? <i>Matthew 20:10-15</i></li>
+    </ol>
+    <div class="page-number">94</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>As you read the prediction of suffering in verses 17-19, how do you typically respond when following God leads you into difficult seasons, and how can we bear one another's burdens during those times? <i>Matthew 20:17-19</i></li>
+        <li>Reflecting on the request for power in verses 20-23, where do you find yourself seeking status or recognition instead of trusting God's plan, and how can we keep each other grounded in humility? <i>Matthew 20:20-23</i></li>
+        <li>When you think about the call to servanthood in verses 25-28, what are some small, practical ways you can serve someone in your life this week, and how can we hold each other accountable to doing it? <i>Matthew 20:25-28</i></li>
+        <li>Looking at the persistent cry for mercy in verses 29-34, what is a deep hurt or need you've hesitated to bring to Jesus, and how can we pray for your healing together today? <i>Matthew 20:29-34</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Focus on worshiping God for His generosity this week by intentionally thanking Him every time you feel tempted to compare yourself to someone else.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the group would embrace a posture of serving others and ask God to heal any hidden hurts that keep members from fully worshiping Him.</p>
+        </div>
+    </div>
+    <div class="page-number">95</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-TWO</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">96</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-THREE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 21</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">97</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-THREE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did intentionally thanking God help you combat the temptation to compare yourself to others this past week?</li>
+        <li>What is the most chaotic or messy place you've ever had to clean up?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""If you believe, you will receive whatever you ask for in prayer." â€” Matthew 21:22"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you read about the clearing of the temple in verses 12-13, what 'clutter' or distractions in your own life do you need Him to clear out so you can minister more effectively, and how can we support you in that process? <i>Matthew 21:12-13</i></li>
+        <li>As you reflect on the fig tree described in verses 18-19, in what ways do you sometimes look good on the outside while lacking spiritual fruit on the inside, and how can we encourage genuine growth in one another? <i>Matthew 21:18-19</i></li>
+    </ol>
+    <div class="page-number">98</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Considering the promise about faith in verses 21-22, what 'mountain' in your life or ministry are you struggling to believe God can move, and how can we pray alongside you in faith? <i>Matthew 21:21-22</i></li>
+        <li>Thinking about the challenge to authority in verses 23-27, when do you find it most difficult to submit your own decisions to His authority, and how can we help each other surrender control? <i>Matthew 21:23-27</i></li>
+        <li>Reflecting on the parable of the two sons in verses 28-31, where do your actions sometimes fail to match your commitments to God, and how can we keep each other accountable to follow through? <i>Matthew 21:28-31</i></li>
+        <li>When looking at the parable of the tenants in verses 33-39, what is one area of your life where you act like the 'owner' instead of a steward, and how can we help each other entrust those areas back to God? <i>Matthew 21:33-39</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Identify one specific area of your life or community where you can act as a steward this week by serving someone in need.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the group would bear genuine spiritual fruit and ask God for the faith to trust Him with the 'mountains' in their lives.</p>
+        </div>
+    </div>
+    <div class="page-number">99</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-THREE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">100</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-FOUR: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 22</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">101</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-FOUR</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Were you able to act as a steward this past week by serving someone in need? How did it go?</li>
+        <li>What is the best party or wedding you have ever been invited to?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""Jesus replied: 'Love the Lord your God with all your heart and with all your soul and with all your mind.'" â€” Matthew 22:37"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you consider the ignored invitations in verses 1-5, who are the people in your life that you struggle to invite into God's kingdom, and how can we encourage each other to share the good news with them? <i>Matthew 22:1-5</i></li>
+        <li>Looking at the requirement of wedding clothes in verses 11-14, how does the idea that we can only enter God's presence on His terms challenge your view of yourself, and how can we remind each other to rely solely on His grace? <i>Matthew 22:11-14</i></li>
+    </ol>
+    <div class="page-number">102</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>As you think about the instruction regarding taxes in verses 15-21, what parts of your life are you holding back from God, and how can we support each other in giving Him our full devotion? <i>Matthew 22:15-21</i></li>
+        <li>Reflecting on the debate about the resurrection in verses 23-33, when do you find yourself overthinking or debating technicalities of faith instead of simply trusting God's power, and how can this group keep you grounded? <i>Matthew 22:23-33</i></li>
+        <li>Looking at the greatest commandment in verses 37-38, what competes most for your affections right now, and how can we help you intentionally put God first? <i>Matthew 22:37-38</i></li>
+        <li>When considering the command to love your neighbor in verses 39-40, who is a 'neighbor' you find difficult to love, and what practical steps can we take together to show them Christ's love? <i>Matthew 22:39-40</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Think of one person in your life who needs to hear the good news or experience God's love, and intentionally invite them to an upcoming gathering or have a meaningful conversation with them this week.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray for the boldness to share the invitation of the gospel with those around you, and that God would help the group to love Him and love their neighbors deeply.</p>
+        </div>
+    </div>
+    <div class="page-number">103</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-FOUR</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">104</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-FIVE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 23</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">105</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-FIVE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Did you get the chance to invite someone to a gathering or have a meaningful conversation with them last week?</li>
+        <li>What is a habit or phrase you picked up from a parent or mentor without even realizing it?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        ""The greatest among you will be your servant. For those who exalt themselves will be humbled, and those who humble themselves will be exalted." â€” Matthew 23:11-12"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref"> (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>When you examine the warning about the Pharisees in verses 1-3, where in your own life do you see a gap between what you say you believe and how you actually live, and how can we help close that gap? <i>Matthew 23:1-3</i></li>
+        <li>Reflecting on the desire for public approval described in verse 5, in what areas do you find yourself performing for people's approval rather than living for God's, and how can we keep each other focused on an audience of One? <i>Matthew 23:5</i></li>
+    </ol>
+    <div class="page-number">106</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>As you consider the teaching on greatness in verses 11-12, what specific task or role do you feel 'too important' to do, and how can we challenge each other to embrace a lifestyle of humility? <i>Matthew 23:11-12</i></li>
+        <li>Looking at the woe pronounced on misplaced priorities in verses 23-24, how do you sometimes major on the minors in your spiritual walk, and how can this group help you refocus on what truly matters? <i>Matthew 23:23-24</i></li>
+        <li>Thinking about the image of the unwashed cup in verses 25-26, what internal struggles or 'messes' are you trying to hide from others, and how can we create a safe space here for genuine transparency? <i>Matthew 23:25-26</i></li>
+        <li>When you hear the lament over Jerusalem in verse 37, how does His deep longing to protect and comfort you change the way you approach Him when you fail, and how can we remind each other of His compassionate heart? <i>Matthew 23:37</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Commit to an 'inside-out' discipleship practice this week: spend 10 minutes each day confessing hidden thoughts or attitudes to God, focusing on inner transformation rather than outward behavior.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that the group would be freed from the pressure of performing for others, and ask God to create genuine humility, mercy, and faithfulness in each of your hearts.</p>
+        </div>
+    </div>
+    <div class="page-number">107</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-FIVE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">108</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-SIX: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 24</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">109</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-SIX</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Think back to our last study. How did you put something we talked about into practice this past week?</li>
+        <li>If you knew for certain that Jesus was returning tomorrow, what is one thing you would want to spend time doing today?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Therefore keep watch, because you do not know on what day your Lord will come."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 24:42 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at Jesus' striking words about the massive temple stones crumbling, what temporary things are you tempted to build your hope on, and how can we help each other build on Christ instead? <i>Matthew 24:1-2</i></li>
+        <li>When you read the warnings about hearing of wars and rumors of wars, how do you handle anxiety over today's headlines, and how can we encourage one another to trust God's control? <i>Matthew 24:4-8</i></li>
+    </ol>
+    <div class="page-number">110</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>As you reflect on the encouragement to stand firm to the end, what personal struggles make endurance difficult for you, and how can we actively support you this week? <i>Matthew 24:9-13</i></li>
+        <li>When you imagine the visible return of Jesus coming on the clouds with power and glory, how does this future hope reshape your current worship, and how can we remind each other of His majesty? <i>Matthew 24:30-31</i></li>
+        <li>Considering the command to keep watch because we don't know the day of our Lord's return, how does this unexpectedness impact your daily choices, and how can we spur each other on to stay spiritually alert? <i>Matthew 24:42-44</i></li>
+        <li>Thinking about the faithful servant who actively manages his master's household, what specific responsibilities has God entrusted to you right now, and how can we hold each other accountable to manage them well? <i>Matthew 24:45-51</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">WORSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">This week, spend a few minutes each morning reading a Psalm of praise to realign your heart and remind yourself of God's sovereignty over the future.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray together that God would give each person the faith to remain grounded and expectant, living with a sense of wonder and worship for His promised return.</p>
+        </div>
+    </div>
+    <div class="page-number">111</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-SIX</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">112</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-SEVEN: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 25</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">113</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>What is one opportunity you took this past week to connect with someone or practice what we discussed?</li>
+        <li>What is the most memorable gift or responsibility someone has ever entrusted to you?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "The King will reply, 'Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 25:40 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>As you reflect on the story of the bridesmaids waiting for the bridegroom, in what areas of your life do you find it hardest to maintain spiritual readiness, and how can we encourage each other to keep our lamps burning? <i>Matthew 25:1-13</i></li>
+        <li>Looking at how the master distributed his wealth for his servants to manage, what specific resources or opportunities do you feel God is asking you to invest for His kingdom right now? <i>Matthew 25:14-15</i></li>
+    </ol>
+    <div class="page-number">114</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Considering the servant who was too afraid to invest what he was given, what fears hold you back from taking risks for God, and how can this group help you step out in faith? <i>Matthew 25:24-25</i></li>
+        <li>When reading about the King who identifies deeply with the hungry, sick, and imprisoned, who are the "least of these" in your own path that you might be overlooking, and how can we challenge each other to see them? <i>Matthew 25:31-40</i></li>
+        <li>Given that those who cared for others were completely surprised that they were actually serving Jesus, how does this reality change the way you view the ordinary, everyday interruptions in your schedule? <i>Matthew 25:37-45</i></li>
+        <li>Since practically serving others opens doors to share the gospel, what is one tangible way our group could serve someone in our community this month as an expression of Christ's love? <i>Matthew 25:40</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">EVANGELISM</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">This week, identify one person in your workplace or neighborhood who is easily overlooked or going through a hard time, and take one practical step (a meal, a note, a conversation) to show them Christ's love.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that God would give your group eyes to see the people around you the way He sees them, and the courage to step out and serve them in Jesus' name.</p>
+        </div>
+    </div>
+    <div class="page-number">115</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-SEVEN</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">116</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-EIGHT: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 26</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">117</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Looking back at last week, how did your perspective shift when you tried to intentionally notice the "least of these" around you?</li>
+        <li>What is the most memorable meal you have ever shared with a group of friends?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Then he said to them, 'My soul is overwhelmed with sorrow to the point of death. Stay here and keep watch with me.'"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 26:38 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Thinking about the Last Supper where Jesus gave His disciples the bread and the cup, what does communion personally mean to you, and how does it help you stay centered as His disciple? <i>Matthew 26:26-30</i></li>
+        <li>When you read about Jesus being overwhelmed with sorrow in Gethsemane and asking His friends to stay awake with Him, what does it tell you about the importance of having close friends during your own dark times, and how can we be that for each other? <i>Matthew 26:36-38</i></li>
+    </ol>
+    <div class="page-number">118</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Considering Jesus' prayer, "Not as I will, but as you will," in what specific area of your life are you currently struggling to submit your will to God's, and how can we support you in surrendering? <i>Matthew 26:39</i></li>
+        <li>Reflecting on the unfair trial of Jesus and how God used it to accomplish His perfect plan, when have you experienced an unfair or painful situation, and how can we help each other trust God's sovereignty in the middle of it? <i>Matthew 26:57-68</i></li>
+        <li>Looking at Peter's bold claim that he would never fall away, what are the "icebergs" or unexpected temptations that challenge your own faith, and how can we hold you accountable? <i>Matthew 26:31-35</i></li>
+        <li>Since Peter wept bitterly after denying Jesus, what do you usually do when you realize you've failed the Lord, and how can our group create a safe place for honest repentance and restoration? <i>Matthew 26:69-75</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">DISCIPLESHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">This week, spend 10 minutes each day journaling one specific area where you need to say "not my will, but yours be done," completely surrendering it to Jesus.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that your group will grow in transparency and trust, becoming the kind of friends who "keep watch" with one another during life's most difficult moments.</p>
+        </div>
+    </div>
+    <div class="page-number">119</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-EIGHT</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">120</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK TWENTY-NINE: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 27</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">121</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-NINE</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>How did surrendering your will to God last week impact your perspective or peace of mind?</li>
+        <li>What is the most memorable road trip or journey you have ever taken with a group of friends?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "About three in the afternoon Jesus cried out in a loud voice, 'Eli, Eli, lema sabachthani?' (which means 'My God, my God, why have you forsaken me?')"
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 27:46 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>Looking at the stark contrast between Judas' lonely, tragic end and the disciples who ultimately returned to each other, how can our group make sure no one walks through intense guilt or regret alone? <i>Matthew 27:1-5</i></li>
+        <li>When you consider how the crowds easily swayed to demand Jesus' crucifixion, when have you felt pressured to go along with the crowd instead of standing for Christ, and how can we support each other in those moments? <i>Matthew 27:20-23</i></li>
+    </ol>
+    <div class="page-number">122</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Seeing Simon of Cyrene forced to carry the cross for Jesus, who in your life right now is carrying a heavy burden, and how can we come alongside them to help shoulder the weight? <i>Matthew 27:32</i></li>
+        <li>When you reflect on Jesus' cry of feeling completely abandoned by God on the cross, how does His willingness to suffer that isolation make you feel when you go through seasons of deep loneliness, and how can we be present for one another? <i>Matthew 27:46</i></li>
+        <li>Considering that the tearing of the temple curtain signifies our direct access to God, how does this incredible privilege inspire you to pray with and for each other more boldly? <i>Matthew 27:51</i></li>
+        <li>In the story of Joseph of Arimathea and Nicodemus stepping up to care for Jesus' body, what risks are you willing to take to support other believers when it's not popular, and how can we foster that kind of courageous community? <i>Matthew 27:57-60</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">FELLOWSHIP</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">This week, reach out to one person in the group you haven't talked to much lately. Send a text or make a call just to check in and see how you can pray for them.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that your group will be a place where no one has to suffer in isolation, but that you would actively carry one another's burdens as Christ carried yours.</p>
+        </div>
+    </div>
+    <div class="page-number">123</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK TWENTY-NINE</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">124</div>
+</div>
+
+
+
+
+<!-- Page A: Listen -->
+<div class="page listen-page" style="padding-top: 2.5in;">
+    <!-- ✏️ REPLACE: Week number and chapter reference -->
+    <div class="listen-title">WEEK THIRTY: <span style="color: var(--gray-text); font-weight: 400;">MATTHEW Matthew 28</span></div>
+    
+    <div class="section-header">
+        <img src="Listen.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LISTEN</h3>
+        </div>
+    </div>
+    
+    <p class="listen-notes">Use this space below to type any notes or thoughts you may have had while listening:</p>
+    
+    <div class="page-number">125</div>
+</div>
+
+<!-- Page B: Checking In + Key Verse + Questions 1-4 -->
+<div class="page">
+    <div class="page-header">WEEK THIRTY</div>
+    
+    <div class="section-header">
+        <img src="Catching_up.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">CHECKING IN</h3>
+        </div>
+    </div>
+    <ul class="checkin">
+        <!-- ✏️ REPLACE: Checking-in questions (2 per week) -->
+        <li>Who did you reach out to in the group this past week, and what was one thing you learned or appreciated about connecting with them?</li>
+        <li>If you could learn a new skill from any expert in the world, what would you want to learn and who would be your teacher?</li>
+    </ul>
+
+    <div class="section-header">
+        <img src="Key Verse.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">KEY VERSE</h3>
+        </div>
+    </div>
+    <div class="key-verse">
+        <!-- ✏️ REPLACE: Key verse text -->
+        "Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age."
+    </div>
+    <!-- ✏️ REPLACE: Verse reference -->
+    <div class="verse-ref">Matthew 28:19-20 (NIV)</div>
+
+    <div class="section-header">
+        <img src="Discovery Questions.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">DISCOVERY QUESTIONS</h3>
+        </div>
+    </div>
+    <ol class="questions">
+        <!-- ✏️ REPLACE: Discovery questions 1-4
+             Include verse references at the end of each question. -->
+        <li>As you reflect on the women who faithfully came to the tomb early in the morning to care for Jesus' body, what are the unseen acts of service you quietly do, and how can we encourage you when you feel tired or unnoticed? <i>Matthew 28:1-4</i></li>
+        <li>Given the angel's command not to be afraid because Jesus is risen, how does the reality of His resurrection give you courage to step into a new or challenging area of ministry? <i>Matthew 28:5-7</i></li>
+    </ol>
+    <div class="page-number">126</div>
+</div>
+
+<!-- Page C: Questions 5-6 + Living on Purpose + Praying Together -->
+<div class="page">
+    <!-- ✏️ REPLACE: Book name in header -->
+    <div class="page-header">MATTHEW: A SMALL GROUP STUDY</div>
+    
+    <!-- ✏️ REPLACE: Discovery questions 5-6 -->
+    <ol class="questions" start="3">
+        <li>Seeing how quickly the women ran to share their incredible discovery with the disciples, what recent "good news" or answered prayer has God given you that we can celebrate together? <i>Matthew 28:8</i></li>
+        <li>When you consider Jesus' bold claim that "all authority in heaven and on earth" is His, how does this truth reshape the way you view the obstacles you face when trying to serve others? <i>Matthew 28:18</i></li>
+        <li>Considering the call to "make disciples" by actively teaching others to follow Jesus, who in your life is God prompting you to intentionally invest in right now, and how can we pray for that relationship? <i>Matthew 28:19</i></li>
+        <li>Knowing that Jesus promises His constant presence "to the very end of the age," how does this absolute assurance empower you to minister to those around you, even when you feel inadequate? <i>Matthew 28:20</i></li>
+    </ol>
+    
+    <div class="section-header">
+        <img src="Purpose.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">LIVING ON PURPOSE</h3>
+            <!-- ✏️ REPLACE: Purpose theme -->
+            <h4 style="font-size: 1.2em; color: var(--dark-text); margin-bottom: 10px;">MINISTRY</h4>
+            <!-- ✏️ REPLACE: Purpose text -->
+            <p style="font-size: 1.2em; margin-top: 0;">This week, identify one specific way you can serve someone in your church or neighborhood, and take action on it, trusting that Jesus goes with you and empowers you.</p>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <img src="Prayer.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">PRAYING TOGETHER</h3>
+            <!-- ✏️ REPLACE: Prayer text -->
+            <p style="font-size: 1.2em; margin-top: 0;">Pray that as your group steps out to minister and make disciples, each person would deeply experience the reality of Jesus' promise, "I am with you always."</p>
+        </div>
+    </div>
+    <div class="page-number">127</div>
+</div>
+
+<!-- Page D: Tell a Friend -->
+<div class="page">
+    <div class="page-header">WEEK THIRTY</div>
+    
+    <div class="section-header">
+        <img src="Tell a Friend.png" class="section-icon">
+        <div class="section-content">
+            <h3 class="section-title">TELL A FRIEND</h3>
+            <p style="font-size: 1.2em; margin-top: 0;">Look back through the study guide above and highlight a point, phrase, or verse that you would like to share with somebody this week.</p>
+        </div>
+    </div>
+    <div class="page-number">128</div>
+</div>
+
+
+
+
+</body>
+</html>
